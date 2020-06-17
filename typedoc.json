@@ -1,0 +1,41 @@
+{
+  "out": "docs",
+  "exclude": [
+    "**/_test/**/*.*",
+    "**/index.ts",
+    "**/common.ts"
+  ],
+  "ignoreCompilerErrors": true,
+  "disableOutputCheck": true,
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "excludeNotExported": true,
+  "links": [{
+    "label": "Guides",
+    "url": "https://developers.google.com/assistant/conversational/overview"
+  }, {
+    "label": "Codelabs",
+    "url": "https://developers.google.com/assistant/codelabs"
+  }, {
+    "label": "Samples",
+    "url": "https://developers.google.com/assistant/actions/samples"
+  }, {
+    "label": "Glossary",
+    "url": "https://developers.google.com/assistant/actions/glossary"
+  }],
+  "outline": [{
+    "Conversation builder": {
+      "Overview": "modules/_conversation_conversation_",
+      "Conversation": "classes/_conversation_conv_.conversationv3",
+      "api/schema": "modules/_api_schema_"
+    }
+  }],
+  "search": [{
+    "name": "conversation/prompt.*",
+    "subtitle": "Prompt"
+  }],
+  "source": [{
+    "path": "https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/",
+    "line": "L"
+  }]
+}

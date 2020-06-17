@@ -1,0 +1,69 @@
+{
+  "name": "@assistant/conversation",
+  "description": "Actions SDK Fulfillment Library for Node.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "version": "3.0.0",
+  "license": "Apache-2.0",
+  "author": "Google LLC",
+  "engines": {
+    "node": ">=10.18.0"
+  },
+  "scripts": {
+    "lint": "tslint -p .",
+    "lint:fix": "tslint --fix -p .",
+    "clean": "rm -rf dist",
+    "clean:pack": "rm -f *.tgz",
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "build:clean": "yarn clean:pack && yarn clean && yarn build",
+    "package": "yarn build:clean && yarn ci:audit && npm pack",
+    "test": "yarn build:clean && yarn lint && nyc ava --fail-fast",
+    "test:watch": "yarn build:clean && concurrently -rk \"yarn build:watch\" \"ava -w --fail-fast\"",
+    "ci:audit": "yarn audit --groups dependencies",
+    "ci": "yarn ci:audit && yarn test",
+    "docs": "typedoc --options typedoc.json --theme node_modules/typedoc-neo-theme/bin/default && touch docs/.nojekyll",
+    "docs:clean": "rm -rf docs && yarn docs",
+    "docs:serve": "yarn docs:clean && hs docs -o",
+    "coverage": "yarn coverage:serve",
+    "coverage:serve": "yarn test && hs coverage -o"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/actions-on-google/assistant-conversation-nodejs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/actions-on-google/assistant-conversation-nodejs/issues"
+  },
+  "homepage": "https://github.com/actions-on-google/assistant-conversation-nodejs#readme",
+  "keywords": [
+    "google",
+    "google actions",
+    "google assistant",
+    "assistant conversation",
+    "fulfillment library",
+    "client library"
+  ],
+  "devDependencies": {
+    "@types/sinon": "^4.3.3",
+    "ava": "^3.8.1",
+    "concurrently": "^3.5.1",
+    "http-server": "^0.12.3",
+    "nyc": "^14.0.0",
+    "sinon": "^6.0.0",
+    "tslint": "^5.9.1",
+    "tslint-eslint-rules": "^5.1.0",
+    "typedoc": "^0.17.7",
+    "typedoc-neo-theme": "^1.0.8",
+    "typescript": "~3.9.5",
+    "yarn": "^1.22.4"
+  },
+  "dependencies": {
+    "@types/aws-lambda": "^0.0.33",
+    "@types/debug": "^0.0.30",
+    "@types/express": "^4.11.1",
+    "@types/node": "12.12.24",
+    "debug": "^3.1.0",
+    "google-auth-library": "^5.10.1"
+  }
+}

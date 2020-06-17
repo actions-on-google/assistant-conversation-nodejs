@@ -1,0 +1,11 @@
+node_modules
+*.DS_Store
+.nyc_output
+coverage
+*.log
+*.tgz
+dist
+package
+package-lock.json
+docs
+yarn.lock
