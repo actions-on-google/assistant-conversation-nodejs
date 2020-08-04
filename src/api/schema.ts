@@ -23,8 +23,8 @@
  */
 export interface HandlerRequest {
   /**
-   * Optional. Information of current context of the request. Includes but isn't limited
-   * to active media session info or canvas info.
+   * Optional. Information of current context of the request. Includes but isn't limited to
+   * active media session info or canvas info.
    */
   context?: Context
   /**
@@ -32,15 +32,13 @@ export interface HandlerRequest {
    */
   device?: Device
   /**
-   * Required. Information to fulfillment on how to handle the request. For
-   * example a request intending to get a fact might have a handler with a name
-   * of "getFact".
+   * Required. Information to fulfillment on how to handle the request. For example a request
+   * intending to get a fact might have a handler with a name of "getFact".
    */
   handler?: Handler
   /**
-   * Optional. Information related to the HomeGraph structure that the target device
-   * belongs to. See
-   * https://developers.google.com/actions/smarthome/concepts/homegraph.
+   * Optional. Information related to the HomeGraph structure that the target device belongs
+   * to. See https://developers.google.com/actions/smarthome/concepts/homegraph.
    */
   home?: Home
   /**
@@ -48,9 +46,8 @@ export interface HandlerRequest {
    */
   intent?: Intent
   /**
-   * Optional. Info on the current and next scene when the function was called.
-   * Will be filled when the fulfillment call is made
-   * within the scope of a scene.
+   * Optional. Info on the current and next scene when the function was called. Will be filled
+   * when the fulfillment call is made within the scope of a scene.
    */
   scene?: Scene
   /**
@@ -64,17 +61,33 @@ export interface HandlerRequest {
 }
 
 /**
- * Optional. Information of current context of the request. Includes but isn't limited
- * to active media session info or canvas info.
+ * Optional. Information of current context of the request. Includes but isn't limited to
+ * active media session info or canvas info.
  *
- * Contains context information when user makes query. Such context includes but
- * not limited to info about active media session, state of canvas web app, etc.
+ * Contains context information when user makes query. Such context includes but not limited
+ * to info about active media session, state of canvas web app, etc.
  */
 export interface Context {
+  /**
+   * Contains context information about current canvas.
+   */
+  canvas?: CanvasContext
   /**
    * Contains context information about current active media session.
    */
   media?: MediaContext
+}
+
+/**
+ * Contains context information about current canvas.
+ */
+export interface CanvasContext {
+  /**
+   * Optional. State set by 3P Interactive Canvas app. This is only set for request, not for
+   * response. For example, if this is a recipe app, the state can be a value of struct : {
+   * "current_page" : 5, "last_page" : 3, } The size limit is 50KB.
+   */
+  state?: any
 }
 
 /**
@@ -111,15 +124,13 @@ export enum Capability {
 }
 
 /**
- * Required. Information to fulfillment on how to handle the request. For
- * example a request intending to get a fact might have a handler with a name
- * of "getFact".
+ * Required. Information to fulfillment on how to handle the request. For example a request
+ * intending to get a fact might have a handler with a name of "getFact".
  *
- * Represents a fulfillment handler that maps event information
- * from Actions on Google to fulfillment. Use the handler name to determine what
- * code you should run in fulfillment.  For instance, a handler might be
- * used to get information on a user's order information with a handler name
- * like "OrderLookup" while another might get product information from a
+ * Represents a fulfillment handler that maps event information from Actions on Google to
+ * fulfillment. Use the handler name to determine what code you should run in fulfillment.
+ * For instance, a handler might be used to get information on a user's order information
+ * with a handler name like "OrderLookup" while another might get product information from a
  * database, with a handler name like "GetProductInfo".
  */
 export interface Handler {
@@ -130,20 +141,18 @@ export interface Handler {
 }
 
 /**
- * Optional. Information related to the HomeGraph structure that the target device
- * belongs to. See
- * https://developers.google.com/actions/smarthome/concepts/homegraph.
+ * Optional. Information related to the HomeGraph structure that the target device belongs
+ * to. See https://developers.google.com/actions/smarthome/concepts/homegraph.
  *
  * Represents the HomeGraph structure that the user's target device belongs to.
  *
- * Optional. Used to specify parameters related to the HomeGraph structure
- * that the target device belongs to. See
- * https://developers.google.com/actions/smarthome/concepts/homegraph.
+ * Optional. Used to specify parameters related to the HomeGraph structure that the target
+ * device belongs to. See https://developers.google.com/actions/smarthome/concepts/homegraph.
  */
 export interface Home {
   /**
-   * Optional. List of parameters associated with the HomeGraph structure the target
-   * device belongs to.
+   * Optional. List of parameters associated with the HomeGraph structure the target device
+   * belongs to.
    */
   params?: { [key: string]: any }
 }
@@ -159,15 +168,15 @@ export interface Intent {
    */
   name?: string
   /**
-   * Required. Represents parameters identified as part of intent matching.
-   * This is a map of the name of the identified parameter to the value of the
-   * parameter identified from user input. All parameters defined in
-   * the matched intent that are identified will be surfaced here.
+   * Required. Represents parameters identified as part of intent matching. This is a map of
+   * the name of the identified parameter to the value of the parameter identified from user
+   * input. All parameters defined in the matched intent that are identified will be surfaced
+   * here.
    */
   params?: { [key: string]: IntentParameterValue }
   /**
-   * Optional. Typed or spoken input from the end user that matched this intent.
-   * This will be populated when an intent is matched, based on the user input.
+   * Optional. Typed or spoken input from the end user that matched this intent. This will be
+   * populated when an intent is matched, based on the user input.
    */
   query?: string
 }
@@ -187,16 +196,15 @@ export interface IntentParameterValue {
 }
 
 /**
- * Optional. Info on the current and next scene when the function was called.
- * Will be filled when the fulfillment call is made
- * within the scope of a scene.
+ * Optional. Info on the current and next scene when the function was called. Will be filled
+ * when the fulfillment call is made within the scope of a scene.
  *
- * Represent a scene. Scenes can call fulfillment, add prompts, and collect slot
- * values from the user. Scenes are triggered by events or intents and can
- * trigger events and match intents to transition to other scenes.
+ * Represent a scene. Scenes can call fulfillment, add prompts, and collect slot values from
+ * the user. Scenes are triggered by events or intents and can trigger events and match
+ * intents to transition to other scenes.
  *
- * Optional. Represents the current and next scene. If `Scene.next` is set
- * the runtime will immediately transition to the specified scene.
+ * Optional. Represents the current and next scene. If `Scene.next` is set the runtime will
+ * immediately transition to the specified scene.
  */
 export interface Scene {
   /**
@@ -212,8 +220,8 @@ export interface Scene {
    */
   slotFillingStatus?: SlotFillingStatus
   /**
-   * The slots associated with the current scene. Handler responses cannot
-   * return slots which were not sent in the request.
+   * The slots associated with the current scene. Handler responses cannot return slots which
+   * were not sent in the request.
    */
   slots?: { [key: string]: Slot }
 }
@@ -276,7 +284,6 @@ export interface NextScene {
 export enum SlotFillingStatus {
   Collecting = 'COLLECTING',
   Final = 'FINAL',
-  Finalizing = 'FINALIZING',
   Initialized = 'INITIALIZED',
   Unspecified = 'UNSPECIFIED',
 }
@@ -286,36 +293,31 @@ export enum SlotFillingStatus {
  *
  * Contains information on the current conversation session
  *
- * Optional. Describes data for the current session, session
- * parameters can be created, updated, or removed by the fulfillment.
+ * Optional. Describes data for the current session, session parameters can be created,
+ * updated, or removed by the fulfillment.
  */
 export interface Session {
   /**
-   * Required. Globally unique ID of the current conversation session.
-   * This field is read-only.
+   * Required. Globally unique ID of the current conversation session. This field is read-only.
    */
   id?: string
   /**
-   * Language of the current conversation session. Follows IETF BCP-47 language
-   * code http://www.rfc-editor.org/rfc/bcp/bcp47.txt.
-   * This could be different from user locale if the action uses multi-language
-   * features. For example, when handler_response.expected.language is set, it
-   * changes the conversation language for all following turns, which will be
-   * reflected in this field.
+   * Language of the current conversation session. Follows IETF BCP-47 language code
+   * http://www.rfc-editor.org/rfc/bcp/bcp47.txt. This could be different from user locale if
+   * the action uses multi-language features. For example, when
+   * handler_response.expected.language_code is set, it changes the conversation language for
+   * all following turns, which will be reflected in this field.
    */
   languageCode?: string
   /**
-   * Required. List of all parameters collected from forms and intents during
-   * the session. Key is the parameter name.
-   * Parameters defined here will be merged
-   * with parameters already defined in the session.
-   * Parameters with a null value will be removed from the session.
+   * Required. List of all parameters collected from forms and intents during the session. Key
+   * is the parameter name. Parameters defined here will be merged with parameters already
+   * defined in the session. Parameters with a null value will be removed from the session.
    */
   params?: { [key: string]: any }
   /**
-   * Optional. Types scoped to the session.
-   * Session type defines can supplement or replace existing types.
-   * Type names must be unique.
+   * Optional. Types scoped to the session. Session type defines can supplement or replace
+   * existing types. Type names must be unique.
    */
   typeOverrides?: TypeOverride[]
 }
@@ -331,7 +333,7 @@ export interface TypeOverride {
   /**
    * Required. Name of the type to supplement or override.
    */
-  name?: string
+  name?:    string
   synonym?: SynonymType
 }
 
@@ -363,9 +365,8 @@ export interface Entry {
    */
   display?: EntryDisplay
   /**
-   * Required. Name of the entry  (e.g. "bicycle"). The entry in this field
-   * must be included in repeated synonyms field to be recogonized as a valid
-   * type value.
+   * Required. Name of the entry (e.g. "bicycle"). The entry in this field must be included in
+   * repeated synonyms field to be recogonized as a valid type value.
    */
   name?: string
   /**
@@ -383,8 +384,8 @@ export interface EntryDisplay {
    */
   description?: string
   /**
-   * Optional. Footer text for the browsing collection item, displayed below
-   * the description. Single line of text, truncated with an ellipsis.
+   * Optional. Footer text for the browsing collection item, displayed below the description.
+   * Single line of text, truncated with an ellipsis.
    */
   footer?: string
   /**
@@ -392,14 +393,13 @@ export interface EntryDisplay {
    */
   image?: Image
   /**
-   * URL of document associated with browsing carousel item.
-   * Required for browsing carousel.
+   * URL of document associated with browsing carousel item. Required for browsing carousel.
    */
   openUrl?: OpenURL
   /**
-   * Required. Title of the item. When tapped, this text will be
-   * posted back to the conversation verbatim as if the user had typed it.
-   * Each title must be unique among the set of collection items.
+   * Required. Title of the item. When tapped, this text will be posted back to the
+   * conversation verbatim as if the user had typed it. Each title must be unique among the
+   * set of collection items.
    */
   title?: string
 }
@@ -409,13 +409,11 @@ export interface EntryDisplay {
  *
  * An image displayed in the card.
  *
- * A hero image for the card. The height is fixed to 192dp.
- * Optional.
+ * A hero image for the card. The height is fixed to 192dp. Optional.
  *
  * An image.
  *
- * A small image icon displayed on the right from the title.
- * It's resized to 36x36 dp.
+ * A small image icon displayed on the right from the title. It's resized to 36x36 dp.
  *
  * A large image, such as the cover of the album, etc.
  *
@@ -423,31 +421,27 @@ export interface EntryDisplay {
  */
 export interface Image {
   /**
-   * A text description of the image to be used for accessibility, e.g. screen
-   * readers.
+   * A text description of the image to be used for accessibility, e.g. screen readers.
    * Required.
    */
   alt?: string
   /**
-   * The height of the image in pixels.
-   * Optional.
+   * The height of the image in pixels. Optional.
    */
   height?: number
   /**
-   * The source url of the image. Images can be JPG, PNG and GIF (animated and
-   * non-animated). For example,`https://www.agentx.com/logo.png`. Required.
+   * The source url of the image. Images can be JPG, PNG and GIF (animated and non-animated).
+   * For example,`https://www.agentx.com/logo.png`. Required.
    */
   url?: string
   /**
-   * The width of the image in pixels.
-   * Optional.
+   * The width of the image in pixels. Optional.
    */
   width?: number
 }
 
 /**
- * URL of document associated with browsing carousel item.
- * Required for browsing carousel.
+ * URL of document associated with browsing carousel item. Required for browsing carousel.
  *
  * What happens when a user opens the link
  */
@@ -457,8 +451,8 @@ export interface OpenURL {
    */
   hint?: Hint
   /**
-   * The url field which could be any of:
-   * - http/https urls for opening an App-linked App or a webpage
+   * The url field which could be any of: - http/https urls for opening an App-linked App or a
+   * webpage
    */
   url?: string
 }
@@ -488,20 +482,17 @@ export interface User {
    */
   engagement?: Engagement
   /**
-   * The timestamp of the last interaction with this user.
-   * This field will be omitted if the user has not interacted with the agent
-   * before.
+   * The timestamp of the last interaction with this user. This field will be omitted if the
+   * user has not interacted with the agent before.
    */
   lastSeenTime?: string
   /**
-   * Primary locale setting of the user making the request. Follows IETF BCP-47
-   * language code http://www.rfc-editor.org/rfc/bcp/bcp47.txt However, the
-   * script subtag is not included.
+   * Primary locale setting of the user making the request. Follows IETF BCP-47 language code
+   * http://www.rfc-editor.org/rfc/bcp/bcp47.txt However, the script subtag is not included.
    */
   locale?: string
   /**
-   * User's entitlements related to the Android package associated with the
-   * current action.
+   * User's entitlements related to the Android package associated with the current action.
    */
   packageEntitlements?: PackageEntitlements[]
   /**
@@ -526,22 +517,19 @@ export enum AccountLinkingStatus {
 /**
  * The engagement of the current user including any subscriptions to intents.
  *
- * Provides additional read-only information about what engagement mechanisms
- * the current user has registered for. For example, it can be useful to know
- * what intents the user is already subscribed to in order to avoid asking them
- * to subscribe to the same intent again. i.e. This information can be used to
- * conditionally route to a scene to set up DailyUpdates or PushNotifications
- * only if the user has not subscribed already.
+ * Provides additional read-only information about what engagement mechanisms the current
+ * user has registered for. For example, it can be useful to know what intents the user is
+ * already subscribed to in order to avoid asking them to subscribe to the same intent
+ * again. i.e. This information can be used to conditionally route to a scene to set up
+ * DailyUpdates or PushNotifications only if the user has not subscribed already.
  */
 export interface Engagement {
   /**
-   * Contains a list of intents which the user has enabled daily update
-   * for.
+   * Contains a list of intents which the user has enabled daily update for.
    */
   dailyUpdateIntents?: IntentSubscription[]
   /**
-   * Contains a list of intents which the user has enabled push notification
-   * for.
+   * Contains a list of intents which the user has enabled push notification for.
    */
   pushNotificationIntents?: IntentSubscription[]
 }
@@ -551,8 +539,8 @@ export interface Engagement {
  */
 export interface IntentSubscription {
   /**
-   * A short description of the subscription. It is used as the notification's
-   * label and when Assistant is requesting permission from the user.
+   * A short description of the subscription. It is used as the notification's label and when
+   * Assistant is requesting permission from the user.
    */
   contentTitle?: string
   /**
@@ -584,9 +572,8 @@ export interface Entitlement {
    */
   inAppDetails?: SignedData
   /**
-   * Product sku. Package name for paid app, suffix of Finsky docid for
-   * in-app purchase and in-app subscription.
-   * Match getSku() in Play InApp Billing API.
+   * Product sku. Package name for paid app, suffix of Finsky docid for in-app purchase and
+   * in-app subscription. Match getSku() in Play InApp Billing API.
    */
   sku?: string
   /**
@@ -600,13 +587,11 @@ export interface Entitlement {
  */
 export interface SignedData {
   /**
-   * Matches IN_APP_DATA_SIGNATURE from getPurchases() method in Play InApp
-   * Billing API.
+   * Matches IN_APP_DATA_SIGNATURE from getPurchases() method in Play InApp Billing API.
    */
   inAppDataSignature?: string
   /**
-   * Contains all inapp purchase data in JSON format.
-   * See details in table 6 of
+   * Contains all inapp purchase data in JSON format. See details in table 6 of
    * https://developer.android.com/google/play/billing/billing_reference.html.
    */
   inAppPurchaseData?: { [key: string]: any }
@@ -632,8 +617,7 @@ export enum VerificationStatus {
 }
 
 /**
- * Represents a response sent from a developer's fulfillment to Actions on
- * Google.
+ * Represents a response sent from a developer's fulfillment to Actions on Google.
  */
 export interface HandlerResponse {
   /**
@@ -645,25 +629,23 @@ export interface HandlerResponse {
    */
   expected?: Expected
   /**
-   * Optional. Used to specify parameters related to the HomeGraph structure
-   * that the target device belongs to. See
-   * https://developers.google.com/actions/smarthome/concepts/homegraph.
+   * Optional. Used to specify parameters related to the HomeGraph structure that the target
+   * device belongs to. See https://developers.google.com/actions/smarthome/concepts/homegraph.
    */
   home?: Home
   /**
-   * Optional. Represents the prompts to be sent to the user, these prompts
-   * will be appended to previously added messages unless explicitly
-   * overwritten.
+   * Optional. Represents the prompts to be sent to the user, these prompts will be appended
+   * to previously added messages unless explicitly overwritten.
    */
   prompt?: Prompt
   /**
-   * Optional. Represents the current and next scene. If `Scene.next` is set
-   * the runtime will immediately transition to the specified scene.
+   * Optional. Represents the current and next scene. If `Scene.next` is set the runtime will
+   * immediately transition to the specified scene.
    */
   scene?: Scene
   /**
-   * Optional. Describes data for the current session, session
-   * parameters can be created, updated, or removed by the fulfillment.
+   * Optional. Describes data for the current session, session parameters can be created,
+   * updated, or removed by the fulfillment.
    */
   session?: Session
   /**
@@ -685,18 +667,16 @@ export interface Expected {
    */
   languageCode?: string
   /**
-   * List of phrases the Action expects from the user's utterance for speech
-   * biasing. Up to 1000 phrases are allowed.
-   * Note: This field has the same meaning as ExpectedInput.speech_biasing_hints
-   * in the v2 API.
+   * List of phrases the Action expects from the user's utterance for speech biasing. Up to
+   * 1000 phrases are allowed. Note: This field has the same meaning as
+   * ExpectedInput.speech_biasing_hints in the v2 API.
    */
   speech?: string[]
 }
 
 /**
- * Optional. Represents the prompts to be sent to the user, these prompts
- * will be appended to previously added messages unless explicitly
- * overwritten.
+ * Optional. Represents the prompts to be sent to the user, these prompts will be appended
+ * to previously added messages unless explicitly overwritten.
  *
  * Represent a response to a user.
  */
@@ -718,39 +698,31 @@ export interface Prompt {
    */
   lastSimple?: Simple
   /**
-   * Optional. An additional suggestion chip that can link out to the associated app
-   * or site.
-   * The chip will be rendered with the title "Open <name>". Max 20 chars.
+   * Optional. An additional suggestion chip that can link out to the associated app or site.
+   * The chip will be rendered with the title "Open ". Max 20 chars.
    */
   link?: Link
   /**
-   * Optional
-   * Action responds with an OrderUpdate after receiving the order during the
-   * transactions flow. On receipt of this, Google records this update to the
-   * order, and if successful, displays a receipt card along with the TTS sent
-   * on display devices.
+   * Optional Action responds with an OrderUpdate after receiving the order during the
+   * transactions flow. On receipt of this, Google records this update to the order, and if
+   * successful, displays a receipt card along with the TTS sent on display devices.
    */
   orderUpdate?: OrderUpdate
   /**
-   * Optional. Mode for how this messages should be merged with previously
-   * defined messages.
-   * "true" clears all previously defined messages (first and last
-   * simple, content, suggestions link and canvas) and adds messages defined in
-   * this prompt.
-   * "false" adds messages defined in this prompt to messages defined in
-   * previous responses. Leaving this field to "false" also enables
-   * appending to some fields inside Simple prompts, the Suggestions prompt,
-   * and the Canvas prompt (part of the Content prompt). The Content and Link
-   * messages are always overwritten if defined in the prompt. Default
-   * value is "false".
+   * Optional. Mode for how this messages should be merged with previously defined messages.
+   * "true" clears all previously defined messages (first and last simple, content,
+   * suggestions link and canvas) and adds messages defined in this prompt. "false" adds
+   * messages defined in this prompt to messages defined in previous responses. Leaving this
+   * field to "false" also enables appending to some fields inside Simple prompts, the
+   * Suggestions prompt, and the Canvas prompt (part of the Content prompt). The Content and
+   * Link messages are always overwritten if defined in the prompt. Default value is "false".
    */
   override?: boolean
   /**
-   * Optional. Suggestions to be displayed to the user which will always appear
-   * at the end of the response.
-   * If the "override" field in the containing prompt is "false", the titles
-   * defined in this field will be added to titles defined in any previously
-   * defined suggestions prompts and duplicate values will be removed.
+   * Optional. Suggestions to be displayed to the user which will always appear at the end of
+   * the response. If the "override" field in the containing prompt is "false", the titles
+   * defined in this field will be added to titles defined in any previously defined
+   * suggestions prompts and duplicate values will be removed.
    */
   suggestions?: Suggestion[]
 }
@@ -758,18 +730,16 @@ export interface Prompt {
 /**
  * Optional. Represents a Interactive Canvas response to be sent to the user.
  *
- * Represents an Interactive Canvas response to be sent to the user.
- * This can be used in conjunction with the "first_simple" field in the
- * containing prompt to speak to the user in addition to displaying a
- * interactive canvas response. The maximum size of the response is 50k bytes.
+ * Represents an Interactive Canvas response to be sent to the user. This can be used in
+ * conjunction with the "first_simple" field in the containing prompt to speak to the user
+ * in addition to displaying a interactive canvas response. The maximum size of the response
+ * is 50k bytes.
  */
 export interface Canvas {
   /**
-   * Optional. JSON data to be passed through to the immersive experience
-   * web page as an event.
-   * If the "override" field in the containing prompt is "false" data values
-   * defined in this Canvas prompt will be added after data values defined in
-   * previous Canvas prompts.
+   * Optional. JSON data to be passed through to the immersive experience web page as an
+   * event. If the "override" field in the containing prompt is "false" data values defined in
+   * this Canvas prompt will be added after data values defined in previous Canvas prompts.
    */
   data?: any[]
   /**
@@ -777,8 +747,8 @@ export interface Canvas {
    */
   suppressMic?: boolean
   /**
-   * URL of the interactive canvas web app to load. If not set, the url from
-   * current active canvas will be reused.
+   * URL of the interactive canvas web app to load. If not set, the url from current active
+   * canvas will be reused.
    */
   url?: string
 }
@@ -820,13 +790,11 @@ export interface Content {
  */
 export interface Card {
   /**
-   * Button.
-   * Optional.
+   * Button. Optional.
    */
   button?: Link
   /**
-   * A hero image for the card. The height is fixed to 192dp.
-   * Optional.
+   * A hero image for the card. The height is fixed to 192dp. Optional.
    */
   image?: Image
   /**
@@ -838,27 +806,23 @@ export interface Card {
    */
   subtitle?: string
   /**
-   * Body text of the card.
-   * Supports a limited set of markdown syntax for formatting.
+   * Body text of the card. Supports a limited set of markdown syntax for formatting.
    * Required, unless image is present.
    */
   text?: string
   /**
-   * Overall title of the card.
-   * Optional.
+   * Overall title of the card. Optional.
    */
   title?: string
 }
 
 /**
- * Button.
- * Optional.
+ * Button. Optional.
  *
  * Button.
  *
- * Optional. An additional suggestion chip that can link out to the associated app
- * or site.
- * The chip will be rendered with the title "Open <name>". Max 20 chars.
+ * Optional. An additional suggestion chip that can link out to the associated app or site.
+ * The chip will be rendered with the title "Open ". Max 20 chars.
  */
 export interface Link {
   /**
@@ -912,8 +876,7 @@ export interface Collection {
  */
 export interface CollectionItem {
   /**
-   * Required. The NLU key that matches the entry key name in the associated
-   * Type.
+   * Required. The NLU key that matches the entry key name in the associated Type.
    */
   key?: string
 }
@@ -943,8 +906,7 @@ export interface List {
  */
 export interface ListItem {
   /**
-   * Required. The NLU key that matches the entry key name in the associated
-   * Type.
+   * Required. The NLU key that matches the entry key name in the associated Type.
    */
   key?: string
 }
@@ -952,20 +914,19 @@ export interface ListItem {
 /**
  * Response indicating a set of media to be played.
  *
- * Represents one media object.
- * Contains information about the media, such as name, description, url, etc.
+ * Represents one media object. Contains information about the media, such as name,
+ * description, url, etc.
  */
 export interface Media {
   /**
    * List of Media Objects
    */
   mediaObjects?: MediaObject[]
-  mediaType?: MediaType
+  mediaType?:    MediaType
   /**
-   * Optional media control types this media response session can support.
-   * If set, request will be made to 3p when a certain media event happens.
-   * If not set, 3p must still handle two default control type, FINISHED and
-   * FAILED.
+   * Optional media control types this media response session can support. If set, request
+   * will be made to 3p when a certain media event happens. If not set, 3p must still handle
+   * two default control type, FINISHED and FAILED.
    */
   optionalMediaControls?: OptionalMediaControl[]
   /**
@@ -1001,8 +962,7 @@ export interface MediaObject {
  */
 export interface MediaImage {
   /**
-   * A small image icon displayed on the right from the title.
-   * It's resized to 36x36 dp.
+   * A small image icon displayed on the right from the title. It's resized to 36x36 dp.
    */
   icon?: Image
   /**
@@ -1042,11 +1002,10 @@ export interface Table {
    */
   image?: Image
   /**
-   * Row data of the table. The first 3 rows are guaranteed to be shown but
-   * others might be cut on certain surfaces. Please test with the simulator to
-   * see which rows will be shown for a given surface. On surfaces that support
-   * the WEB_BROWSER capability, you can point the user to
-   * a web page with more data.
+   * Row data of the table. The first 3 rows are guaranteed to be shown but others might be
+   * cut on certain surfaces. Please test with the simulator to see which rows will be shown
+   * for a given surface. On surfaces that support the WEB_BROWSER capability, you can point
+   * the user to a web page with more data.
    */
   rows?: TableRow[]
   /**
@@ -1061,8 +1020,8 @@ export interface Table {
 
 export interface TableColumn {
   /**
-   * Horizontal alignment of content w.r.t column. If unspecified, content
-   * will be aligned to the leading edge.
+   * Horizontal alignment of content w.r.t column. If unspecified, content will be aligned to
+   * the leading edge.
    */
   align?: Align
   /**
@@ -1072,8 +1031,8 @@ export interface TableColumn {
 }
 
 /**
- * Horizontal alignment of content w.r.t column. If unspecified, content
- * will be aligned to the leading edge.
+ * Horizontal alignment of content w.r.t column. If unspecified, content will be aligned to
+ * the leading edge.
  */
 export enum Align {
   Center = 'CENTER',
@@ -1087,9 +1046,9 @@ export enum Align {
  */
 export interface TableRow {
   /**
-   * Cells in this row. The first 3 cells are guaranteed to be shown but
-   * others might be cut on certain surfaces. Please test with the simulator
-   * to see which cells will be shown for a given surface.
+   * Cells in this row. The first 3 cells are guaranteed to be shown but others might be cut
+   * on certain surfaces. Please test with the simulator to see which cells will be shown for
+   * a given surface.
    */
   cells?: TableCell[]
   /**
@@ -1117,28 +1076,24 @@ export interface TableCell {
  */
 export interface Simple {
   /**
-   * Optional. Represents the speech to be spoken to the user. Can be SSML or
-   * text to speech.
-   * If the "override" field in the containing prompt is "true", the speech
-   * defined in this field replaces the previous Simple prompt's speech.
+   * Optional. Represents the speech to be spoken to the user. Can be SSML or text to speech.
+   * If the "override" field in the containing prompt is "true", the speech defined in this
+   * field replaces the previous Simple prompt's speech.
    */
   speech?: string
   /**
-   * Optional text to display in the chat bubble. If not given, a display
-   * rendering of the speech field above will be used. Limited to 640
-   * chars.
-   * If the "override" field in the containing prompt is "true", the text
-   * defined in this field replaces to the previous Simple prompt's text.
+   * Optional text to display in the chat bubble. If not given, a display rendering of the
+   * speech field above will be used. Limited to 640 chars. If the "override" field in the
+   * containing prompt is "true", the text defined in this field replaces to the previous
+   * Simple prompt's text.
    */
   text?: string
 }
 
 /**
- * Optional
- * Action responds with an OrderUpdate after receiving the order during the
- * transactions flow. On receipt of this, Google records this update to the
- * order, and if successful, displays a receipt card along with the TTS sent
- * on display devices.
+ * Optional Action responds with an OrderUpdate after receiving the order during the
+ * transactions flow. On receipt of this, Google records this update to the order, and if
+ * successful, displays a receipt card along with the TTS sent on display devices.
  *
  * Update to an order.
  */
@@ -1149,41 +1104,34 @@ export interface OrderUpdate {
    */
   reason?: string
   /**
-   * Deprecated: Use OrderUpdate.update_mask instead.
-   * If type = SNAPSHOT, OrderUpdate.order should be the entire order.
-   * If type = ORDER_STATUS, this is the order level status change. Only
-   * order.last_update_time and this vertical status are picked up.
-   * Note: type.ORDER_STATUS only supports PurcahaseOrderExtension status
-   * updates and there is no plan to extend this support. Instead, we recommend
-   * using update_mask as it is more generic, extensible and can be used for all
-   * verticals.
+   * Deprecated: Use OrderUpdate.update_mask instead. If type = SNAPSHOT, OrderUpdate.order
+   * should be the entire order. If type = ORDER_STATUS, this is the order level status
+   * change. Only order.last_update_time and this vertical status are picked up. Note:
+   * type.ORDER_STATUS only supports PurcahaseOrderExtension status updates and there is no
+   * plan to extend this support. Instead, we recommend using update_mask as it is more
+   * generic, extensible and can be used for all verticals.
    */
   type?: OrderUpdateType
   /**
-   * Note: There are following consideration/recommendations for following
-   * special fields:
-   * 1. order.last_update_time will always be updated as part of the update
-   * request.
-   * 2. order.create_time, order.google_order_id and order.merchant_order_id
-   * will be ignored if provided as part of the update_mask.
+   * Note: There are following consideration/recommendations for following special fields: 1.
+   * order.last_update_time will always be updated as part of the update request. 2.
+   * order.create_time, order.google_order_id and order.merchant_order_id will be ignored if
+   * provided as part of the update_mask.
    */
   updateMask?: string
   /**
-   * If specified, displays a notification to the user with the specified
-   * title and text. Specifying a notification is a suggestion to
-   * notify and is not guaranteed to result in a notification.
+   * If specified, displays a notification to the user with the specified title and text.
+   * Specifying a notification is a suggestion to notify and is not guaranteed to result in a
+   * notification.
    */
   userNotification?: UserNotification
 }
 
 /**
- * Order entity.
- * Note:
- * 1. All strings at all levels must be less than 1000 chars unless otherwise
- * specified.
- * 2. All repeated fields at all levels must be less than 50 in count unless
- * otherwise specified.
- * 3. All timestamps at all levels, if specified, must be valid timestamps.
+ * Order entity. Note: 1. All strings at all levels must be less than 1000 chars unless
+ * otherwise specified. 2. All repeated fields at all levels must be less than 50 in count
+ * unless otherwise specified. 3. All timestamps at all levels, if specified, must be valid
+ * timestamps.
  */
 export interface Order {
   /**
@@ -1215,17 +1163,15 @@ export interface Order {
    */
   image?: V2UIElementsImage
   /**
-   * Date and time the order was last updated.
-   * Required for OrderUpdate.
+   * Date and time the order was last updated. Required for OrderUpdate.
    */
   lastUpdateTime?: string
   /**
-   * Required: Merchant assigned internal order id. This id must be unique, and
-   * is required for subsequent order update operations. This id may be set to
-   * the provided google_order_id, or any other unique value. Note that the id
-   * presented to users is the user_visible_order_id, which may be a different,
-   * more user-friendly value.
-   * Max allowed length is 128 chars.
+   * Required: Merchant assigned internal order id. This id must be unique, and is required
+   * for subsequent order update operations. This id may be set to the provided
+   * google_order_id, or any other unique value. Note that the id presented to users is the
+   * user_visible_order_id, which may be a different, more user-friendly value. Max allowed
+   * length is 128 chars.
    */
   merchantOrderId?: string
   /**
@@ -1257,27 +1203,24 @@ export interface Order {
    */
   ticket?: TicketTicketOrderExtension
   /**
-   * Merchant that facilitated the checkout. This could be different from
-   * a line item level provider. Example: Expedia Order with line item from ANA.
+   * Merchant that facilitated the checkout. This could be different from a line item level
+   * provider. Example: Expedia Order with line item from ANA.
    */
   transactionMerchant?: Merchant
   /**
-   * The user facing id referencing to current order. This id should be
-   * consistent with the id displayed for this order in other contexts,
-   * including websites, apps and email.
+   * The user facing id referencing to current order. This id should be consistent with the id
+   * displayed for this order in other contexts, including websites, apps and email.
    */
   userVisibleOrderId?: string
   /**
-   * Deprecated: Use OrderExtensions status instead.
-   * User visible label for the state of this order.
+   * Deprecated: Use OrderExtensions status instead. User visible label for the state of this
+   * order.
    */
   userVisibleStateLabel?: string
   /**
-   * Deprecated: Use verticals instead.
-   * These properties will apply to all line items, unless overridden in
-   * some line item. This vertical must match the line item level vertical type.
-   * Possible values:
-   * google.actions.orders.v3.verticals.purchase.PurchaseOrderExtension
+   * Deprecated: Use verticals instead. These properties will apply to all line items, unless
+   * overridden in some line item. This vertical must match the line item level vertical type.
+   * Possible values: google.actions.orders.v3.verticals.purchase.PurchaseOrderExtension
    * google.actions.orders.v3.verticals.ticket.TicketOrderExtension
    */
   vertical?: { [key: string]: any }
@@ -1286,8 +1229,8 @@ export interface Order {
 /**
  * Info about the buyer.
  *
- * Information about user. This is used to represent information of the user
- * associated with an order.
+ * Information about user. This is used to represent information of the user associated with
+ * an order.
  *
  * User contact for this fulfillment.
  */
@@ -1319,32 +1262,27 @@ export interface UserInfo {
  */
 export interface PhoneNumber {
   /**
-   * Phone number in E.164 format, as defined in International
-   * Telecommunication Union (ITU) Recommendation E.164.
-   * wiki link: https://en.wikipedia.org/wiki/E.164
+   * Phone number in E.164 format, as defined in International Telecommunication Union (ITU)
+   * Recommendation E.164. wiki link: https://en.wikipedia.org/wiki/E.164
    */
   e164PhoneNumber?: string
   /**
-   * Extension is not standardized in ITU recommendations, except for being
-   * defined as a series of numbers with a maximum length of 40 digits. It is
-   * defined as a string here to accommodate for the possible use of a leading
-   * zero in the extension (organizations have complete freedom to do so, as
-   * there is no standard defined). Other than digits, some other dialling
-   * characters such as "," (indicating a wait) may be stored here.
-   * For example, in xxx-xxx-xxxx ext. 123, "123" is the extension.
+   * Extension is not standardized in ITU recommendations, except for being defined as a
+   * series of numbers with a maximum length of 40 digits. It is defined as a string here to
+   * accommodate for the possible use of a leading zero in the extension (organizations have
+   * complete freedom to do so, as there is no standard defined). Other than digits, some
+   * other dialling characters such as "," (indicating a wait) may be stored here. For
+   * example, in xxx-xxx-xxxx ext. 123, "123" is the extension.
    */
   extension?: string
   /**
-   * The carrier selection code that is preferred when calling this phone number
-   * domestically. This also includes codes that need to be dialed in some
-   * countries when calling from landlines to mobiles or vice versa. For
-   * example, in Columbia, a "3" needs to be dialed before the phone number
-   * itself when calling from a mobile phone to a domestic landline phone and
-   * vice versa. https://en.wikipedia.org/wiki/Telephone_numbers_in_Colombia
-   * https://en.wikipedia.org/wiki/Brazilian_Carrier_Selection_Code
-   *
-   * Note this is the "preferred" code, which means other codes may work as
-   * well.
+   * The carrier selection code that is preferred when calling this phone number domestically.
+   * This also includes codes that need to be dialed in some countries when calling from
+   * landlines to mobiles or vice versa. For example, in Columbia, a "3" needs to be dialed
+   * before the phone number itself when calling from a mobile phone to a domestic landline
+   * phone and vice versa. https://en.wikipedia.org/wiki/Telephone_numbers_in_Colombia
+   * https://en.wikipedia.org/wiki/Brazilian_Carrier_Selection_Code Note this is the
+   * "preferred" code, which means other codes may work as well.
    */
   preferredDomesticCarrierCode?: string
 }
@@ -1356,23 +1294,19 @@ export interface PhoneNumber {
  */
 export interface Contents {
   /**
-   * List of order line items.
-   * At least 1 line_item is required and at-most 50 is allowed.
-   * All line items must belong to same vertical.
+   * List of order line items. At least 1 line_item is required and at-most 50 is allowed. All
+   * line items must belong to same vertical.
    */
   lineItems?: LineItem[]
 }
 
 /**
- * One line item contains one vertical. An order or cart can have multiple
- * line items of same vertical. Sub-line items/add-ons etc should be defined in
- * vertical protos depending on their use cases.
- * Note:
- * 1. All strings at all levels must be less than 1000 chars unless otherwise
- * specified.
- * 2. All repeated fields at all levels must be less than 50 in count unless
- * otherwise specified.
- * 3. All timestamps at all levels, if specified, must be valid timestamps.
+ * One line item contains one vertical. An order or cart can have multiple line items of
+ * same vertical. Sub-line items/add-ons etc should be defined in vertical protos depending
+ * on their use cases. Note: 1. All strings at all levels must be less than 1000 chars
+ * unless otherwise specified. 2. All repeated fields at all levels must be less than 50 in
+ * count unless otherwise specified. 3. All timestamps at all levels, if specified, must be
+ * valid timestamps.
  */
 export interface LineItem {
   /**
@@ -1388,9 +1322,8 @@ export interface LineItem {
    */
   followUpActions?: Action[]
   /**
-   * Required: Merchant assigned identifier for line item.
-   * Used for identifying existing line item in applying partial updates.
-   * Max allowed length is 64 chars.
+   * Required: Merchant assigned identifier for line item. Used for identifying existing line
+   * item in applying partial updates. Max allowed length is 64 chars.
    */
   id?: string
   /**
@@ -1398,13 +1331,11 @@ export interface LineItem {
    */
   image?: V2UIElementsImage
   /**
-   * Name of line item as displayed on the receipt.
-   * Max allowed length is 100 chars.
+   * Name of line item as displayed on the receipt. Max allowed length is 100 chars.
    */
   name?: string
   /**
-   * Additional notes applicable to this particular line item, for example
-   * cancellation policy.
+   * Additional notes applicable to this particular line item, for example cancellation policy.
    */
   notes?: string[]
   /**
@@ -1412,8 +1343,8 @@ export interface LineItem {
    */
   priceAttributes?: PriceAttribute[]
   /**
-   * The provider of the particular line item, if different from the overall
-   * order. Example: Expedia Order with line item provider ANA.
+   * The provider of the particular line item, if different from the overall order. Example:
+   * Expedia Order with line item provider ANA.
    */
   provider?: Merchant
   /**
@@ -1421,8 +1352,8 @@ export interface LineItem {
    */
   purchase?: PurchasePurchaseItemExtension
   /**
-   * Line item level customers, this could be different from Order level buyer.
-   * Example: User X made restaurant reservation under name of user Y.
+   * Line item level customers, this could be different from Order level buyer. Example: User
+   * X made restaurant reservation under name of user Y.
    */
   recipients?: UserInfo[]
   /**
@@ -1430,16 +1361,14 @@ export interface LineItem {
    */
   reservation?: ReservationReservationItemExtension
   /**
-   * Deprecated. Use vertical level status instead. For example, for purchases,
-   * use PurchaseOrderExtension.status.
-   * User visible label for the state of this line item.
+   * Deprecated. Use vertical level status instead. For example, for purchases, use
+   * PurchaseOrderExtension.status. User visible label for the state of this line item.
    */
   userVisibleStateLabel?: string
   /**
-   * Deprecated: Use verticals instead.
-   * Required: Semantic Contents of line item based on its type/vertical.
-   * Every vertical should include its own fulfillment details.
-   * Must be either one of the following values:
+   * Deprecated: Use verticals instead. Required: Semantic Contents of line item based on its
+   * type/vertical. Every vertical should include its own fulfillment details. Must be either
+   * one of the following values:
    * google.actions.orders.v3.verticals.purchase.PurchaseItemExtension
    * google.actions.orders.v3.verticals.reservation.ReservationItemExtension
    * google.actions.orders.v3.verticals.ticket.TicketItemExtension
@@ -1472,17 +1401,15 @@ export interface Disclosure {
  */
 export interface DisclosureText {
   /**
-   * Text to display, containing placeholders like "{0}" and "{1}" for each
-   * textlink that should be inserted. Example:
-   * "WARNING: This product can expose you to chemicals which are known to the
-   * State of California to cause cancer. For more information go to {0}."
-   * This disclosure text must not contain any promotional or ad-like content.
+   * Text to display, containing placeholders like "{0}" and "{1}" for each textlink that
+   * should be inserted. Example: "WARNING: This product can expose you to chemicals which are
+   * known to the State of California to cause cancer. For more information go to {0}." This
+   * disclosure text must not contain any promotional or ad-like content.
    */
   template?: string
   /**
-   * Text links that should be substituted into the template. The first one
-   * will be substituted for "{0}" in the template string, and the second one
-   * for "{1}", etc.
+   * Text links that should be substituted into the template. The first one will be
+   * substituted for "{0}" in the template string, and the second one for "{1}", etc.
    */
   textLinks?: TextLink[]
 }
@@ -1508,8 +1435,8 @@ export interface TextLink {
  */
 export interface DisclosurePresentationOptions {
   /**
-   * Whether the content of the disclosure should be initially expanded.
-   * By default, it is initially collapsed.
+   * Whether the content of the disclosure should be initially expanded. By default, it is
+   * initially collapsed.
    */
   initiallyExpanded?: boolean
   /**
@@ -1540,8 +1467,7 @@ export interface Action {
    */
   openUrlAction?: V2UIElementsOpenURLAction
   /**
-   * Title or label of the action, displayed to the user.
-   * Max allowed length is 100 chars.
+   * Title or label of the action, displayed to the user. Max allowed length is 100 chars.
    */
   title?: string
   /**
@@ -1569,13 +1495,13 @@ export interface ActionMetadata {
  */
 export interface V2UIElementsOpenURLAction {
   /**
-   * Information about the Android App if the URL is expected to be
-   * fulfilled by an Android App.
+   * Information about the Android App if the URL is expected to be fulfilled by an Android
+   * App.
    */
   androidApp?: V2DevicesAndroidApp
   /**
-   * The url field which could be any of:
-   * - http/https urls for opening an App-linked App or a webpage
+   * The url field which could be any of: - http/https urls for opening an App-linked App or a
+   * webpage
    */
   url?: string
   /**
@@ -1585,15 +1511,14 @@ export interface V2UIElementsOpenURLAction {
 }
 
 /**
- * Information about the Android App if the URL is expected to be
- * fulfilled by an Android App.
+ * Information about the Android App if the URL is expected to be fulfilled by an Android
+ * App.
  *
  * Specification of the Android App for fulfillment restrictions
  */
 export interface V2DevicesAndroidApp {
   /**
-   * Package name
-   * Package name must be specified when specifing Android Fulfillment.
+   * Package name Package name must be specified when specifing Android Fulfillment.
    */
   packageName?: string
   /**
@@ -1603,19 +1528,15 @@ export interface V2DevicesAndroidApp {
 }
 
 /**
- * VersionFilter should be included if specific version/s of the App are
- * required.
+ * VersionFilter should be included if specific version/s of the App are required.
  */
 export interface V2DevicesVersionFilter {
   /**
-   * Max version code, inclusive.
-   * The range considered is [min_version:max_version].
-   * A null range implies any version.
-   * Examples:
-   * To specify a single version use: [target_version:target_version].
-   * To specify any version leave min_version and max_version unspecified.
-   * To specify all versions until max_version, leave min_version unspecified.
-   * To specify all versions from min_version, leave max_version unspecified.
+   * Max version code, inclusive. The range considered is [min_version:max_version]. A null
+   * range implies any version. Examples: To specify a single version use:
+   * [target_version:target_version]. To specify any version leave min_version and max_version
+   * unspecified. To specify all versions until max_version, leave min_version unspecified. To
+   * specify all versions from min_version, leave max_version unspecified.
    */
   maxVersion?: number
   /**
@@ -1658,10 +1579,8 @@ export enum FollowUpActionType {
  *
  * The image associated with the merchant.
  *
- * URL to a photo of the vehicle.
- * The photo will be displayed at approximately 256x256px.
- * Must be a jpg or png.
- * Optional.
+ * URL to a photo of the vehicle. The photo will be displayed at approximately 256x256px.
+ * Must be a jpg or png. Optional.
  *
  * Performer's images.
  *
@@ -1671,24 +1590,21 @@ export enum FollowUpActionType {
  */
 export interface V2UIElementsImage {
   /**
-   * A text description of the image to be used for accessibility, e.g. screen
-   * readers.
+   * A text description of the image to be used for accessibility, e.g. screen readers.
    * Required.
    */
   accessibilityText?: string
   /**
-   * The height of the image in pixels.
-   * Optional.
+   * The height of the image in pixels. Optional.
    */
   height?: number
   /**
-   * The source url of the image. Images can be JPG, PNG and GIF (animated and
-   * non-animated). For example,`https://www.agentx.com/logo.png`. Required.
+   * The source url of the image. Images can be JPG, PNG and GIF (animated and non-animated).
+   * For example,`https://www.agentx.com/logo.png`. Required.
    */
   url?: string
   /**
-   * The width of the image in pixels.
-   * Optional.
+   * The width of the image in pixels. Optional.
    */
   width?: number
 }
@@ -1706,11 +1622,9 @@ export interface PriceAttribute {
    */
   amount?: Money
   /**
-   * The percentage spec, to 1/1000th of a percent.
-   * Eg: 8.750% is represented as 8750, negative percentages represent
-   * percentage discounts.
-   * Deprecating this field. Can consider adding back when a solid usecase is
-   * required.
+   * The percentage spec, to 1/1000th of a percent. Eg: 8.750% is represented as 8750,
+   * negative percentages represent percentage discounts. Deprecating this field. Can consider
+   * adding back when a solid usecase is required.
    */
   amountMillipercentage?: number
   /**
@@ -1718,8 +1632,8 @@ export interface PriceAttribute {
    */
   id?: string
   /**
-   * Required: User displayed string of the price attribute. This is sent and
-   * localized by merchant.
+   * Required: User displayed string of the price attribute. This is sent and localized by
+   * merchant.
    */
   name?: string
   /**
@@ -1743,8 +1657,7 @@ export interface PriceAttribute {
  */
 export interface Money {
   /**
-   * Amount in micros.
-   * For example, this field should be set as 1990000 for $1.99.
+   * Amount in micros. For example, this field should be set as 1990000 for $1.99.
    */
   amountInMicros?: string
   /**
@@ -1778,13 +1691,13 @@ export enum PriceAttributeType {
 }
 
 /**
- * The provider of the particular line item, if different from the overall
- * order. Example: Expedia Order with line item provider ANA.
+ * The provider of the particular line item, if different from the overall order. Example:
+ * Expedia Order with line item provider ANA.
  *
  * Merchant for the cart/order/line item.
  *
- * Merchant that facilitated the checkout. This could be different from
- * a line item level provider. Example: Expedia Order with line item from ANA.
+ * Merchant that facilitated the checkout. This could be different from a line item level
+ * provider. Example: Expedia Order with line item from ANA.
  */
 export interface Merchant {
   /**
@@ -1822,19 +1735,16 @@ export interface Merchant {
  */
 export interface V2Location {
   /**
-   * City.
-   * Requires the DEVICE_PRECISE_LOCATION or
-   * DEVICE_COARSE_LOCATION permission.
+   * City. Requires the DEVICE_PRECISE_LOCATION or DEVICE_COARSE_LOCATION permission.
    */
   city?: string
   /**
-   * Geo coordinates.
-   * Requires the DEVICE_PRECISE_LOCATION permission.
+   * Geo coordinates. Requires the DEVICE_PRECISE_LOCATION permission.
    */
   coordinates?: LatLng
   /**
-   * Display address, e.g., "1600 Amphitheatre Pkwy, Mountain View, CA 94043".
-   * Requires the DEVICE_PRECISE_LOCATION permission.
+   * Display address, e.g., "1600 Amphitheatre Pkwy, Mountain View, CA 94043". Requires the
+   * DEVICE_PRECISE_LOCATION permission.
    */
   formattedAddress?: string
   /**
@@ -1846,38 +1756,31 @@ export interface V2Location {
    */
   notes?: string
   /**
-   * Phone number of the location, e.g. contact number of business location or
-   * phone number for delivery location.
+   * Phone number of the location, e.g. contact number of business location or phone number
+   * for delivery location.
    */
   phoneNumber?: string
   /**
-   * place_id is used with Places API to fetch details of a place.
-   * See https://developers.google.com/places/web-service/place-id
+   * place_id is used with Places API to fetch details of a place. See
+   * https://developers.google.com/places/web-service/place-id
    */
   placeId?: string
   /**
-   * Postal address.
-   * Requires the DEVICE_PRECISE_LOCATION or
-   * DEVICE_COARSE_LOCATION permission.
+   * Postal address. Requires the DEVICE_PRECISE_LOCATION or DEVICE_COARSE_LOCATION permission.
    */
   postalAddress?: PostalAddress
   /**
-   * Zip code.
-   * Requires the DEVICE_PRECISE_LOCATION or
-   * DEVICE_COARSE_LOCATION permission.
+   * Zip code. Requires the DEVICE_PRECISE_LOCATION or DEVICE_COARSE_LOCATION permission.
    */
   zipCode?: string
 }
 
 /**
- * Geo coordinates.
- * Requires the DEVICE_PRECISE_LOCATION permission.
+ * Geo coordinates. Requires the DEVICE_PRECISE_LOCATION permission.
  *
- * An object representing a latitude/longitude pair. This is expressed as a pair
- * of doubles representing degrees latitude and degrees longitude. Unless
- * specified otherwise, this must conform to the
- * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
- * standard</a>. Values must be within normalized ranges.
+ * An object representing a latitude/longitude pair. This is expressed as a pair of doubles
+ * representing degrees latitude and degrees longitude. Unless specified otherwise, this
+ * must conform to the WGS84 standard. Values must be within normalized ranges.
  */
 export interface LatLng {
   /**
@@ -1891,84 +1794,59 @@ export interface LatLng {
 }
 
 /**
- * Postal address.
- * Requires the DEVICE_PRECISE_LOCATION or
- * DEVICE_COARSE_LOCATION permission.
+ * Postal address. Requires the DEVICE_PRECISE_LOCATION or DEVICE_COARSE_LOCATION
+ * permission.
  *
- * Represents a postal address, e.g. for postal delivery or payments addresses.
- * Given a postal address, a postal service can deliver items to a premise, P.O.
- * Box or similar.
- * It is not intended to model geographical locations (roads, towns,
- * mountains).
- *
- * In typical usage an address would be created via user input or from importing
- * existing data, depending on the type of process.
- *
- * Advice on address input / editing:
- * - Use an i18n-ready address widget such as
- * https://github.com/google/libaddressinput)
- * - Users should not be presented with UI elements for input or editing of
- * fields outside countries where that field is used.
- *
- * For more guidance on how to use this schema, please see:
+ * Represents a postal address, e.g. for postal delivery or payments addresses. Given a
+ * postal address, a postal service can deliver items to a premise, P.O. Box or similar. It
+ * is not intended to model geographical locations (roads, towns, mountains). In typical
+ * usage an address would be created via user input or from importing existing data,
+ * depending on the type of process. Advice on address input / editing: - Use an i18n-ready
+ * address widget such as https://github.com/google/libaddressinput) - Users should not be
+ * presented with UI elements for input or editing of fields outside countries where that
+ * field is used. For more guidance on how to use this schema, please see:
  * https://support.google.com/business/answer/6397478
  */
 export interface PostalAddress {
   /**
-   * Unstructured address lines describing the lower levels of an address.
-   *
-   * Because values in address_lines do not have type information and may
-   * sometimes contain multiple values in a single field (e.g.
-   * "Austin, TX"), it is important that the line order is clear. The order of
-   * address lines should be "envelope order" for the country/region of the
-   * address. In places where this can vary (e.g. Japan), address_language is
-   * used to make it explicit (e.g. "ja" for large-to-small ordering and
-   * "ja-Latn" or "en" for small-to-large). This way, the most specific line of
-   * an address can be selected based on the language.
-   *
-   * The minimum permitted structural representation of an address consists
-   * of a region_code with all remaining information placed in the
-   * address_lines. It would be possible to format such an address very
-   * approximately without geocoding, but no semantic reasoning could be
-   * made about any of the address components until it was at least
-   * partially resolved.
-   *
-   * Creating an address only containing a region_code and address_lines, and
-   * then geocoding is the recommended way to handle completely unstructured
-   * addresses (as opposed to guessing which parts of the address should be
-   * localities or administrative areas).
+   * Unstructured address lines describing the lower levels of an address. Because values in
+   * address_lines do not have type information and may sometimes contain multiple values in a
+   * single field (e.g. "Austin, TX"), it is important that the line order is clear. The order
+   * of address lines should be "envelope order" for the country/region of the address. In
+   * places where this can vary (e.g. Japan), address_language is used to make it explicit
+   * (e.g. "ja" for large-to-small ordering and "ja-Latn" or "en" for small-to-large). This
+   * way, the most specific line of an address can be selected based on the language. The
+   * minimum permitted structural representation of an address consists of a region_code with
+   * all remaining information placed in the address_lines. It would be possible to format
+   * such an address very approximately without geocoding, but no semantic reasoning could be
+   * made about any of the address components until it was at least partially resolved.
+   * Creating an address only containing a region_code and address_lines, and then geocoding
+   * is the recommended way to handle completely unstructured addresses (as opposed to
+   * guessing which parts of the address should be localities or administrative areas).
    */
   addressLines?: string[]
   /**
-   * Optional. Highest administrative subdivision which is used for postal
-   * addresses of a country or region.
-   * For example, this can be a state, a province, an oblast, or a prefecture.
-   * Specifically, for Spain this is the province and not the autonomous
-   * community (e.g. "Barcelona" and not "Catalonia").
-   * Many countries don't use an administrative area in postal addresses. E.g.
-   * in Switzerland this should be left unpopulated.
+   * Optional. Highest administrative subdivision which is used for postal addresses of a
+   * country or region. For example, this can be a state, a province, an oblast, or a
+   * prefecture. Specifically, for Spain this is the province and not the autonomous community
+   * (e.g. "Barcelona" and not "Catalonia"). Many countries don't use an administrative area
+   * in postal addresses. E.g. in Switzerland this should be left unpopulated.
    */
   administrativeArea?: string
   /**
-   * Optional. BCP-47 language code of the contents of this address (if
-   * known). This is often the UI language of the input form or is expected
-   * to match one of the languages used in the address' country/region, or their
-   * transliterated equivalents.
-   * This can affect formatting in certain countries, but is not critical
-   * to the correctness of the data and will never affect any validation or
-   * other non-formatting related operations.
-   *
-   * If this value is not known, it should be omitted (rather than specifying a
-   * possibly incorrect default).
-   *
-   * Examples: "zh-Hant", "ja", "ja-Latn", "en".
+   * Optional. BCP-47 language code of the contents of this address (if known). This is often
+   * the UI language of the input form or is expected to match one of the languages used in
+   * the address' country/region, or their transliterated equivalents. This can affect
+   * formatting in certain countries, but is not critical to the correctness of the data and
+   * will never affect any validation or other non-formatting related operations. If this
+   * value is not known, it should be omitted (rather than specifying a possibly incorrect
+   * default). Examples: "zh-Hant", "ja", "ja-Latn", "en".
    */
   languageCode?: string
   /**
-   * Optional. Generally refers to the city/town portion of the address.
-   * Examples: US city, IT comune, UK post town.
-   * In regions of the world where localities are not well defined or do not fit
-   * into this structure well, leave locality empty and use address_lines.
+   * Optional. Generally refers to the city/town portion of the address. Examples: US city, IT
+   * comune, UK post town. In regions of the world where localities are not well defined or do
+   * not fit into this structure well, leave locality empty and use address_lines.
    */
   locality?: string
   /**
@@ -1976,44 +1854,39 @@ export interface PostalAddress {
    */
   organization?: string
   /**
-   * Optional. Postal code of the address. Not all countries use or require
-   * postal codes to be present, but where they are used, they may trigger
-   * additional validation with other parts of the address (e.g. state/zip
-   * validation in the U.S.A.).
+   * Optional. Postal code of the address. Not all countries use or require postal codes to be
+   * present, but where they are used, they may trigger additional validation with other parts
+   * of the address (e.g. state/zip validation in the U.S.A.).
    */
   postalCode?: string
   /**
-   * Optional. The recipient at the address.
-   * This field may, under certain circumstances, contain multiline information.
-   * For example, it might contain "care of" information.
+   * Optional. The recipient at the address. This field may, under certain circumstances,
+   * contain multiline information. For example, it might contain "care of" information.
    */
   recipients?: string[]
   /**
-   * Required. CLDR region code of the country/region of the address. This
-   * is never inferred and it is up to the user to ensure the value is
-   * correct. See http://cldr.unicode.org/ and
-   * http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
-   * for details. Example: "CH" for Switzerland.
+   * Required. CLDR region code of the country/region of the address. This is never inferred
+   * and it is up to the user to ensure the value is correct. See http://cldr.unicode.org/ and
+   * http://www.unicode.org/cldr/charts/30/supplemental/territory_information.html for
+   * details. Example: "CH" for Switzerland.
    */
   regionCode?: string
   /**
-   * The schema revision of the `PostalAddress`. This must be set to 0, which is
-   * the latest revision.
-   *
-   * All new revisions **must** be backward compatible with old revisions.
+   * The schema revision of the `PostalAddress`. This must be set to 0, which is the latest
+   * revision. All new revisions **must** be backward compatible with old revisions.
    */
   revision?: number
   /**
-   * Optional. Additional, country-specific, sorting code. This is not used
-   * in most regions. Where it is used, the value is either a string like
-   * "CEDEX", optionally followed by a number (e.g. "CEDEX 7"), or just a number
-   * alone, representing the "sector code" (Jamaica), "delivery area indicator"
-   * (Malawi) or "post office indicator" (e.g. Côte d'Ivoire).
+   * Optional. Additional, country-specific, sorting code. This is not used in most regions.
+   * Where it is used, the value is either a string like "CEDEX", optionally followed by a
+   * number (e.g. "CEDEX 7"), or just a number alone, representing the "sector code"
+   * (Jamaica), "delivery area indicator" (Malawi) or "post office indicator" (e.g. Côte
+   * d'Ivoire).
    */
   sortingCode?: string
   /**
-   * Optional. Sublocality of the address.
-   * For example, this can be neighborhoods, boroughs, districts.
+   * Optional. Sublocality of the address. For example, this can be neighborhoods, boroughs,
+   * districts.
    */
   sublocality?: string
 }
@@ -2025,18 +1898,16 @@ export interface PostalAddress {
  */
 export interface PurchasePurchaseItemExtension {
   /**
-   * Any extra fields exchanged between merchant and google.
-   * Note: Use of this extension is highly discouraged. Based on the
-   * use-case/circumstances, consider one of the following:
-   * 1. Define fields in the PurchaseItemExtension if it could be used for other
-   * use-cases (ie. generic capability/functionality).
-   * 2. Use vertical_extension if it is specific to a custom, non-generic
-   * use-case/feature.
+   * Any extra fields exchanged between merchant and google. Note: Use of this extension is
+   * highly discouraged. Based on the use-case/circumstances, consider one of the following:
+   * 1. Define fields in the PurchaseItemExtension if it could be used for other use-cases
+   * (ie. generic capability/functionality). 2. Use vertical_extension if it is specific to a
+   * custom, non-generic use-case/feature.
    */
   extension?: { [key: string]: any }
   /**
-   * Fulfillment info for this line item. If unset, this line item
-   * inherits order level fulfillment info.
+   * Fulfillment info for this line item. If unset, this line item inherits order level
+   * fulfillment info.
    */
   fulfillmentInfo?: PurchasePurchaseFulfillmentInfo
   /**
@@ -2056,8 +1927,8 @@ export interface PurchasePurchaseItemExtension {
    */
   quantity?: number
   /**
-   * Returns info for this line item. If unset, this line item
-   * inherits order level returns info.
+   * Returns info for this line item. If unset, this line item inherits order level returns
+   * info.
    */
   returnsInfo?: PurchasePurchaseReturnsInfo
   /**
@@ -2069,21 +1940,19 @@ export interface PurchasePurchaseItemExtension {
    */
   type?: PurchaseType
   /**
-   * Unit measure.
-   * Specifies the size of the item in chosen units. The size, together with
-   * the active price is used to determine the unit price.
+   * Unit measure. Specifies the size of the item in chosen units. The size, together with the
+   * active price is used to determine the unit price.
    */
   unitMeasure?: PurchaseMerchantUnitMeasure
   /**
-   * Required: User visible label/string for the status.
-   * Max allowed length is 50 chars.
+   * Required: User visible label/string for the status. Max allowed length is 50 chars.
    */
   userVisibleStatusLabel?: string
 }
 
 /**
- * Fulfillment info for this line item. If unset, this line item
- * inherits order level fulfillment info.
+ * Fulfillment info for this line item. If unset, this line item inherits order level
+ * fulfillment info.
  *
  * Fulfillment info associated with a purchase order or a particular line item.
  *
@@ -2091,13 +1960,13 @@ export interface PurchasePurchaseItemExtension {
  */
 export interface PurchasePurchaseFulfillmentInfo {
   /**
-   * A window if a time-range is specified or ETA if single time specified.
-   * Expected delivery or pickup time.
+   * A window if a time-range is specified or ETA if single time specified. Expected delivery
+   * or pickup time.
    */
   expectedFulfillmentTime?: Time
   /**
-   * A window if a time-range is specified or ETA if single time specified.
-   * Expected time to prepare the food. Single-time preferred.
+   * A window if a time-range is specified or ETA if single time specified. Expected time to
+   * prepare the food. Single-time preferred.
    */
   expectedPreparationTime?: Time
   /**
@@ -2121,8 +1990,8 @@ export interface PurchasePurchaseFulfillmentInfo {
    */
   location?: V2Location
   /**
-   * Additional information regarding how order would be picked. This field
-   * would only be applicable when fulfillment type is PICKUP.
+   * Additional information regarding how order would be picked. This field would only be
+   * applicable when fulfillment type is PICKUP.
    */
   pickupInfo?: PurchasePickupInfo
   /**
@@ -2134,31 +2003,30 @@ export interface PurchasePurchaseFulfillmentInfo {
    */
   shippingMethodName?: string
   /**
-   * StoreCode of the location.
-   * Example: Walmart is the merchant and store_code is the walmart store
-   * where fulfillment happened.
+   * StoreCode of the location. Example: Walmart is the merchant and store_code is the walmart
+   * store where fulfillment happened.
    * https://support.google.com/business/answer/3370250?ref_topic=4596653.
    */
   storeCode?: string
 }
 
 /**
- * A window if a time-range is specified or ETA if single time specified.
- * Expected delivery or pickup time.
+ * A window if a time-range is specified or ETA if single time specified. Expected delivery
+ * or pickup time.
  *
- * Time construct to represent time of an event to use when displaying an order
- * to the user.
+ * Time construct to represent time of an event to use when displaying an order to the
+ * user.
  *
- * A window if a time-range is specified or ETA if single time specified.
- * Expected time to prepare the food. Single-time preferred.
+ * A window if a time-range is specified or ETA if single time specified. Expected time to
+ * prepare the food. Single-time preferred.
  *
- * Time when the service/event is scheduled to occur.
- * Can be a time range, a date, or an exact date time.
+ * Time when the service/event is scheduled to occur. Can be a time range, a date, or an
+ * exact date time.
  *
  * Time range that is acceptable to the user.
  *
- * Entry time, which might be different from the event start time. e.g. the
- * event starts at 9am, but entry time is 8:30am.
+ * Entry time, which might be different from the event start time. e.g. the event starts at
+ * 9am, but entry time is 8:30am.
  *
  * End time.
  *
@@ -2166,9 +2034,9 @@ export interface PurchasePurchaseFulfillmentInfo {
  */
 export interface Time {
   /**
-   * Represents an order-event time like reservation time, delivery time and so
-   * on. Could be a duration (start & end time), just the date, date time etc.
-   * Refer https://en.wikipedia.org/wiki/ISO_8601 for all supported formats.
+   * Represents an order-event time like reservation time, delivery time and so on. Could be a
+   * duration (start & end time), just the date, date time etc. Refer
+   * https://en.wikipedia.org/wiki/ISO_8601 for all supported formats.
    */
   timeIso8601?: string
 }
@@ -2183,11 +2051,11 @@ export enum FulfillmentType {
 }
 
 /**
- * Additional information regarding how order would be picked. This field
- * would only be applicable when fulfillment type is PICKUP.
+ * Additional information regarding how order would be picked. This field would only be
+ * applicable when fulfillment type is PICKUP.
  *
- * Details about how an order is picked up. It includes details such as pickup
- * type and additional metadata attached with each type, if any.
+ * Details about how an order is picked up. It includes details such as pickup type and
+ * additional metadata attached with each type, if any.
  */
 export interface PurchasePickupInfo {
   /**
@@ -2195,8 +2063,8 @@ export interface PurchasePickupInfo {
    */
   checkInInfo?: CommonCheckInInfo[]
   /**
-   * Details specific to the curbside information. If pickup_type is not
-   * "CURBSIDE", this field would be ignored.
+   * Details specific to the curbside information. If pickup_type is not "CURBSIDE", this
+   * field would be ignored.
    */
   curbsideInfo?: PurchaseCurbsideInfo
   /**
@@ -2225,16 +2093,15 @@ export enum CheckInType {
 }
 
 /**
- * Details specific to the curbside information. If pickup_type is not
- * "CURBSIDE", this field would be ignored.
+ * Details specific to the curbside information. If pickup_type is not "CURBSIDE", this
+ * field would be ignored.
  *
  * Details about how curbside order would be facilitated.
  */
 export interface PurchaseCurbsideInfo {
   /**
-   * Partners need additional information to facilitate curbside pickup
-   * orders. Depending upon what fulfillment type is chosen, corresponding
-   * details would be collected from the user.
+   * Partners need additional information to facilitate curbside pickup orders. Depending upon
+   * what fulfillment type is chosen, corresponding details would be collected from the user.
    */
   curbsideFulfillmentType?: CurbsideFulfillmentType
   /**
@@ -2244,9 +2111,8 @@ export interface PurchaseCurbsideInfo {
 }
 
 /**
- * Partners need additional information to facilitate curbside pickup
- * orders. Depending upon what fulfillment type is chosen, corresponding
- * details would be collected from the user.
+ * Partners need additional information to facilitate curbside pickup orders. Depending upon
+ * what fulfillment type is chosen, corresponding details would be collected from the user.
  */
 export enum CurbsideFulfillmentType {
   Unspecified = 'UNSPECIFIED',
@@ -2260,31 +2126,25 @@ export enum CurbsideFulfillmentType {
  */
 export interface CommonVehicle {
   /**
-   * Vehicle color name, eg. black
-   * Optional.
+   * Vehicle color name, eg. black Optional.
    */
   colorName?: string
   /**
-   * URL to a photo of the vehicle.
-   * The photo will be displayed at approximately 256x256px.
-   * Must be a jpg or png.
-   * Optional.
+   * URL to a photo of the vehicle. The photo will be displayed at approximately 256x256px.
+   * Must be a jpg or png. Optional.
    */
   image?: V2UIElementsImage
   /**
-   * Vehicle license plate number (e.g. "1ABC234").
-   * Required.
+   * Vehicle license plate number (e.g. "1ABC234"). Required.
    */
   licensePlate?: string
   /**
-   * Vehicle make (e.g. "Honda").
-   * This is displayed to the user and must be localized.
+   * Vehicle make (e.g. "Honda"). This is displayed to the user and must be localized.
    * Required.
    */
   make?: string
   /**
-   * Vehicle model (e.g. "Grom").
-   * This is displayed to the user and must be localized.
+   * Vehicle model (e.g. "Grom"). This is displayed to the user and must be localized.
    * Required.
    */
   model?: string
@@ -2338,20 +2198,19 @@ export interface PurchaseItemOption {
  */
 export interface PurchaseProductDetails {
   /**
-   * Global Trade Item Number of the product.
-   * Useful if offerId is not present in Merchant Center. Optional.
+   * Global Trade Item Number of the product. Useful if offerId is not present in Merchant
+   * Center. Optional.
    */
   gtin?: string
   /**
-   * Price look-up codes, commonly called PLU codes, PLU numbers, PLUs,
-   * produce codes, or produce labels, are a system of numbers that
-   * uniquely identify bulk produce sold in grocery stores and supermarkets.
+   * Price look-up codes, commonly called PLU codes, PLU numbers, PLUs, produce codes, or
+   * produce labels, are a system of numbers that uniquely identify bulk produce sold in
+   * grocery stores and supermarkets.
    */
   plu?: string
   /**
-   * Merchant-provided details about the product,
-   * e.g. { "allergen": "peanut" }.
-   * Useful if offerId is not present in Merchant Center. Optional.
+   * Merchant-provided details about the product, e.g. { "allergen": "peanut" }. Useful if
+   * offerId is not present in Merchant Center. Optional.
    */
   productAttributes?: { [key: string]: any }
   /**
@@ -2359,15 +2218,15 @@ export interface PurchaseProductDetails {
    */
   productId?: string
   /**
-   * Product category defined by the merchant.
-   * E.g. "Home > Grocery > Dairy & Eggs > Milk > Whole Milk"
+   * Product category defined by the merchant. E.g. "Home > Grocery > Dairy & Eggs > Milk >
+   * Whole Milk"
    */
   productType?: string
 }
 
 /**
- * Returns info for this line item. If unset, this line item
- * inherits order level returns info.
+ * Returns info for this line item. If unset, this line item inherits order level returns
+ * info.
  *
  * Returns info associated with an order or a particular line item.
  *
@@ -2420,9 +2279,8 @@ export enum PurchaseType {
 }
 
 /**
- * Unit measure.
- * Specifies the size of the item in chosen units. The size, together with
- * the active price is used to determine the unit price.
+ * Unit measure. Specifies the size of the item in chosen units. The size, together with the
+ * active price is used to determine the unit price.
  *
  * Merchant unit pricing measure.
  */
@@ -2468,13 +2326,12 @@ export interface ReservationReservationItemExtension {
    */
   partySize?: number
   /**
-   * Time when the service/event is scheduled to occur.
-   * Can be a time range, a date, or an exact date time.
+   * Time when the service/event is scheduled to occur. Can be a time range, a date, or an
+   * exact date time.
    */
   reservationTime?: Time
   /**
-   * Staff facilitators who will be servicing the reservation.
-   * Ex. The hairstylist.
+   * Staff facilitators who will be servicing the reservation. Ex. The hairstylist.
    */
   staffFacilitators?: ReservationStaffFacilitator[]
   /**
@@ -2482,8 +2339,7 @@ export interface ReservationReservationItemExtension {
    */
   status?: ReservationStatus
   /**
-   * Type of reservation.
-   * May be unset if none of the type options is applicable.
+   * Type of reservation. May be unset if none of the type options is applicable.
    */
   type?: ReservationType
   /**
@@ -2491,8 +2347,7 @@ export interface ReservationReservationItemExtension {
    */
   userAcceptableTimeRange?: Time
   /**
-   * Required: User visible label/string for the status.
-   * Max allowed length is 50 chars.
+   * Required: User visible label/string for the status. Max allowed length is 50 chars.
    */
   userVisibleStatusLabel?: string
 }
@@ -2525,8 +2380,7 @@ export enum ReservationStatus {
 }
 
 /**
- * Type of reservation.
- * May be unset if none of the type options is applicable.
+ * Type of reservation. May be unset if none of the type options is applicable.
  */
 export enum ReservationType {
   Hairdresser = 'HAIRDRESSER',
@@ -2541,24 +2395,21 @@ export enum ReservationType {
  */
 export interface PaymentData {
   /**
-   * Payment information regarding the order that's useful for user facing
-   * interaction.
+   * Payment information regarding the order that's useful for user facing interaction.
    */
   paymentInfo?: PaymentInfo
   /**
-   * Payment result that's used by integrator for completing a transaction.
-   * This field will be populated by Actions on Google if the checkout
-   * experience is managed by Actions-on-Google.
+   * Payment result that's used by integrator for completing a transaction. This field will be
+   * populated by Actions on Google if the checkout experience is managed by Actions-on-Google.
    */
   paymentResult?: PaymentResult
 }
 
 /**
- * Payment information regarding the order that's useful for user facing
- * interaction.
+ * Payment information regarding the order that's useful for user facing interaction.
  *
- * Payment information regarding the order being made.
- * This proto captures information that's useful for user facing interaction.
+ * Payment information regarding the order being made. This proto captures information
+ * that's useful for user facing interaction.
  */
 export interface PaymentInfo {
   /**
@@ -2566,9 +2417,8 @@ export interface PaymentInfo {
    */
   paymentMethodDisplayInfo?: PaymentMethodDisplayInfo
   /**
-   * Provenance of the payment method used for the transaction.
-   * User may have registered the same payment method with both google and
-   * merchant.
+   * Provenance of the payment method used for the transaction. User may have registered the
+   * same payment method with both google and merchant.
    */
   paymentMethodProvenance?: PaymentMethodProvenance
 }
@@ -2580,20 +2430,16 @@ export interface PaymentInfo {
  */
 export interface PaymentMethodDisplayInfo {
   /**
-   * User visible name of the payment method. For example,
-   * VISA **** 1234
-   * Checking acct **** 5678
+   * User visible name of the payment method. For example, VISA **** 1234 Checking acct ****
+   * 5678
    */
   paymentMethodDisplayName?: string
   /**
-   * Payment method name to be spoken out to the user for voice-only
-   * assistant devices. For example,
-   * "visa ending in one two three four", or
-   * "checking account ending in five six seven eight".
-   * Note: This is the voice-optimized string to be used instead of the
-   * payment_method_display_name for voice-only assistant devices. If this
-   * string is not set, payment_method_display_name will instead be spoken out
-   * to the user.
+   * Payment method name to be spoken out to the user for voice-only assistant devices. For
+   * example, "visa ending in one two three four", or "checking account ending in five six
+   * seven eight". Note: This is the voice-optimized string to be used instead of the
+   * payment_method_display_name for voice-only assistant devices. If this string is not set,
+   * payment_method_display_name will instead be spoken out to the user.
    */
   paymentMethodVoiceName?: string
   /**
@@ -2616,9 +2462,8 @@ export enum PaymentType {
 }
 
 /**
- * Provenance of the payment method used for the transaction.
- * User may have registered the same payment method with both google and
- * merchant.
+ * Provenance of the payment method used for the transaction. User may have registered the
+ * same payment method with both google and merchant.
  */
 export enum PaymentMethodProvenance {
   PaymentMethodProvenanceGoogle = 'PAYMENT_METHOD_PROVENANCE_GOOGLE',
@@ -2627,19 +2472,18 @@ export enum PaymentMethodProvenance {
 }
 
 /**
- * Payment result that's used by integrator for completing a transaction.
- * This field will be populated by Actions on Google if the checkout
- * experience is managed by Actions-on-Google.
+ * Payment result that's used by integrator for completing a transaction. This field will be
+ * populated by Actions on Google if the checkout experience is managed by
+ * Actions-on-Google.
  *
  * Payment result used by integrator for completing a transaction.
  */
 export interface PaymentResult {
   /**
-   * Google provided payment method data.
-   * If your payment processor is listed as Google supported payment processor
-   * here: https://developers.google.com/pay/api/ Navigate to your payment
-   * processor through the link to find out more details.
-   * Otherwise, refer to following documentation for payload details.
+   * Google provided payment method data. If your payment processor is listed as Google
+   * supported payment processor here: https://developers.google.com/pay/api/ Navigate to your
+   * payment processor through the link to find out more details. Otherwise, refer to
+   * following documentation for payload details.
    * https://developers.google.com/pay/api/payment-data-cryptography
    */
   googlePaymentData?: string
@@ -2662,8 +2506,8 @@ export interface Promotion {
 /**
  * Purchase order
  *
- * Order extension for purchase vertical. These properties are applicable to
- * all line items inside order, unless overridden in a line item.
+ * Order extension for purchase vertical. These properties are applicable to all line items
+ * inside order, unless overridden in a line item.
  */
 export interface PurchasePurchaseOrderExtension {
   /**
@@ -2671,13 +2515,11 @@ export interface PurchasePurchaseOrderExtension {
    */
   errors?: PurchasePurchaseError[]
   /**
-   * Any extra fields exchanged between merchant and google.
-   * Note: Use of this extension is highly discouraged. Based on the
-   * use-case/circumstances, consider one of the following:
-   * 1. Define fields in the PurchaseOrderExtension if it could be used for
-   * other use-cases (ie. generic capability/functionality).
-   * 2. Use vertical_extension if it is specific to a custom, non-generic
-   * use-case/feature.
+   * Any extra fields exchanged between merchant and google. Note: Use of this extension is
+   * highly discouraged. Based on the use-case/circumstances, consider one of the following:
+   * 1. Define fields in the PurchaseOrderExtension if it could be used for other use-cases
+   * (ie. generic capability/functionality). 2. Use vertical_extension if it is specific to a
+   * custom, non-generic use-case/feature.
    */
   extension?: { [key: string]: any }
   /**
@@ -2701,8 +2543,7 @@ export interface PurchasePurchaseOrderExtension {
    */
   type?: PurchaseType
   /**
-   * User visible label/string for the status.
-   * Max allowed length is 50 chars.
+   * User visible label/string for the status. Max allowed length is 50 chars.
    */
   userVisibleStatusLabel?: string
 }
@@ -2720,13 +2561,12 @@ export interface PurchasePurchaseError {
    */
   description?: string
   /**
-   * Entity Id that corresponds to the error. Example this can correspond to
-   * LineItemId / ItemOptionId.
+   * Entity Id that corresponds to the error. Example this can correspond to LineItemId /
+   * ItemOptionId.
    */
   entityId?: string
   /**
-   * Required: This represents the granular reason why an order gets rejected by
-   * the merchant.
+   * Required: This represents the granular reason why an order gets rejected by the merchant.
    */
   type?: ErrorType
   /**
@@ -2736,8 +2576,7 @@ export interface PurchasePurchaseError {
 }
 
 /**
- * Required: This represents the granular reason why an order gets rejected by
- * the merchant.
+ * Required: This represents the granular reason why an order gets rejected by the merchant.
  */
 export enum ErrorType {
   AccountLinkingFailed = 'ACCOUNT_LINKING_FAILED',
@@ -2750,6 +2589,7 @@ export enum ErrorType {
   Invalid = 'INVALID',
   MerchantUnreachable = 'MERCHANT_UNREACHABLE',
   NoCapacity = 'NO_CAPACITY',
+  NoCourierAvailable = 'NO_COURIER_AVAILABLE',
   NotFound = 'NOT_FOUND',
   OutOfServiceArea = 'OUT_OF_SERVICE_AREA',
   PaymentDeclined = 'PAYMENT_DECLINED',
@@ -2796,8 +2636,8 @@ export interface TicketTicketEvent {
    */
   description?: string
   /**
-   * Entry time, which might be different from the event start time. e.g. the
-   * event starts at 9am, but entry time is 8:30am.
+   * Entry time, which might be different from the event start time. e.g. the event starts at
+   * 9am, but entry time is 8:30am.
    */
   doorTime?: Time
   /**
@@ -2805,8 +2645,8 @@ export interface TicketTicketEvent {
    */
   endDate?: Time
   /**
-   * The characters related to this event. It can be directors or actors of a
-   * movie event, or performers of a concert, etc.
+   * The characters related to this event. It can be directors or actors of a movie event, or
+   * performers of a concert, etc.
    */
   eventCharacters?: TicketEventCharacter[]
   /**
@@ -2814,8 +2654,8 @@ export interface TicketTicketEvent {
    */
   location?: V2Location
   /**
-   * Required: Name of the event. For example, if the event is a movie, this
-   * should be the movie name.
+   * Required: Name of the event. For example, if the event is a movie, this should be the
+   * movie name.
    */
   name?: string
   /**
@@ -2872,14 +2712,12 @@ export enum TicketEventType {
 }
 
 /**
- * Deprecated: Use OrderUpdate.update_mask instead.
- * If type = SNAPSHOT, OrderUpdate.order should be the entire order.
- * If type = ORDER_STATUS, this is the order level status change. Only
- * order.last_update_time and this vertical status are picked up.
- * Note: type.ORDER_STATUS only supports PurcahaseOrderExtension status
- * updates and there is no plan to extend this support. Instead, we recommend
- * using update_mask as it is more generic, extensible and can be used for all
- * verticals.
+ * Deprecated: Use OrderUpdate.update_mask instead. If type = SNAPSHOT, OrderUpdate.order
+ * should be the entire order. If type = ORDER_STATUS, this is the order level status
+ * change. Only order.last_update_time and this vertical status are picked up. Note:
+ * type.ORDER_STATUS only supports PurcahaseOrderExtension status updates and there is no
+ * plan to extend this support. Instead, we recommend using update_mask as it is more
+ * generic, extensible and can be used for all verticals.
  */
 export enum OrderUpdateType {
   OrderStatus = 'ORDER_STATUS',
@@ -2888,31 +2726,28 @@ export enum OrderUpdateType {
 }
 
 /**
- * If specified, displays a notification to the user with the specified
- * title and text. Specifying a notification is a suggestion to
- * notify and is not guaranteed to result in a notification.
+ * If specified, displays a notification to the user with the specified title and text.
+ * Specifying a notification is a suggestion to notify and is not guaranteed to result in a
+ * notification.
  *
  * Optional user notification to display as part of the Order update.
  */
 export interface UserNotification {
   /**
-   * The contents of the notification.
-   * Max allowed length is 100 chars.
+   * The contents of the notification. Max allowed length is 100 chars.
    */
   text?: string
   /**
-   * The title for the user notification.
-   * Max allowed length is 30 chars.
+   * The title for the user notification. Max allowed length is 30 chars.
    */
   title?: string
 }
 
 export interface Suggestion {
   /**
-   * Required. The text shown in the suggestion chip. When tapped, this text will be
-   * posted back to the conversation verbatim as if the user had typed it.
-   * Each title must be unique among the set of suggestion chips.
-   * Max 25 chars
+   * Required. The text shown in the suggestion chip. When tapped, this text will be posted
+   * back to the conversation verbatim as if the user had typed it. Each title must be unique
+   * among the set of suggestion chips. Max 25 chars
    */
   title?: string
 }

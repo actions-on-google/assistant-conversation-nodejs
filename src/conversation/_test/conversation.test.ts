@@ -964,3 +964,59 @@ test('media progress is parsed correctly', async (t) => {
     },
   })
 })
+
+test('canvas state is parsed correctly', async (t) => {
+  const app = conversation()
+  let invoked = false
+  let state = {}
+
+  const handler = (conv: ConversationV3) => {
+    invoked = true
+    state = conv.context.canvas?.state!
+    conv.add('hello')
+  }
+  app.handle(HANDLE_NAME, handler)
+  const result = await app.handler({
+    handler: {
+      name: HANDLE_NAME,
+    },
+    scene: {
+      name: CURRENT_SCENE,
+    },
+    session: {
+      id: SESSION_ID,
+    },
+    user:{
+      locale: LOCALE,
+    },
+    context: {
+      canvas: {
+        state: {
+          foo: 'bar',
+        },
+      },
+    },
+    device: {
+      capabilities: CAPABILITIES,
+    },
+  }, {})
+  t.log(JSON.stringify(result.body))
+  t.true(invoked)
+  t.deepEqual(state, {
+    foo: 'bar',
+  })
+  t.is(result.status, 200)
+  t.deepEqual(result.body, {
+    session: {
+      id: '5485438717547546495',
+      params: {},
+    },
+    prompt: {
+      override: false,
+      firstSimple: {
+        speech: 'hello',
+        text: '',
+      },
+    },
+  })
+})
