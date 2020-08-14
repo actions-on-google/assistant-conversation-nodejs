@@ -1020,3 +1020,8 @@ test('canvas state is parsed correctly', async (t) => {
     },
   })
 })
+
+test('conversation function parses clientId from options', async (t) => {
+  const app = conversation({ clientId: 'test' })
+  t.is(app.clientId, 'test')
+})

@@ -119,7 +119,7 @@ export interface ConversationV3App<TConversation extends ConversationV3> extends
 
 export interface Conversation {
   /** @public */
-  <ConversationApp extends ConversationV3 = ConversationV3>():
+  <ConversationApp extends ConversationV3 = ConversationV3>(options?: ConversationV3Options):
     AppHandler & ConversationV3App<ConversationApp>
 }
 
