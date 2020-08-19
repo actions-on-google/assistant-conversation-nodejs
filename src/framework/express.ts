@@ -20,7 +20,7 @@
 
 import { Framework, StandardHandler } from './framework'
 import { Request, Response } from 'express'
-import * as common from '../common'
+import { getLogger } from '../logger'
 
 export interface ExpressHandler {
   /** @public */
@@ -43,6 +43,7 @@ export class Express implements Framework<ExpressHandler> {
         request,
         response,
       }
+      const logger = getLogger()
       standard(request.body, request.headers, { express: metadata })
       .then(({ status, body, headers }) => {
         if (headers) {
@@ -53,7 +54,7 @@ export class Express implements Framework<ExpressHandler> {
         response.status(status).send(body)
       })
       .catch((e: Error) => {
-        common.error(e.stack || e)
+        logger.error(e?.stack || e)
         response.status(500).send({ error: e.message || e })
       })
     }

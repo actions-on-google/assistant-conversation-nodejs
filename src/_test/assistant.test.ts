@@ -17,11 +17,11 @@
 import ava, { TestInterface } from 'ava'
 import * as sinon from 'sinon'
 
-import * as common from '../common'
 import { JsonObject } from '../common'
 
 import { attach, AppHandler } from '../assistant'
 import { Headers, StandardResponse, BuiltinFrameworkMetadata } from '../framework'
+import { getLogger } from '../logger'
 
 interface AvaContext {
   app: AppHandler
@@ -168,9 +168,9 @@ test('app is callable as a StandardHandler when debug is true', async t => {
     debug: true,
   })
   t.is(typeof app, 'function')
-  const stub = sinon.stub(common, 'info')
+  const stub = sinon.stub(getLogger(), 'debug')
   const res = await app(body, headers)
-  t.true(stub.called)
+  t.true(stub.called, 'Nothing was logged')
   stub.restore()
   t.is(res.status, 123)
   t.is(res.body.body, body)

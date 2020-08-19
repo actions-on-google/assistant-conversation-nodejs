@@ -27,6 +27,7 @@ import {
 } from '../..'
 import * as Schema from '../../api/schema'
 import { clone } from '../../common'
+import { setLogger } from '../../logger'
 
 const HANDLE_NAME = 'function name'
 const CURRENT_SCENE = 'current page'
@@ -1024,4 +1025,143 @@ test('canvas state is parsed correctly', async (t) => {
 test('conversation function parses clientId from options', async (t) => {
   const app = conversation({ clientId: 'test' })
   t.is(app.clientId, 'test')
+})
+
+test('default logger works', async (t) => {
+  const app = conversation({ debug: true })
+  const handler = (conv: ConversationV3) => {
+    conv.add('hello')
+  }
+  app.handle(HANDLE_NAME, handler)
+
+  await app.handler({
+    handler: {
+      name: HANDLE_NAME,
+    },
+    scene: {
+      name: CURRENT_SCENE,
+    },
+    session: {
+      id: SESSION_ID,
+    },
+    user:{
+      locale: LOCALE,
+    },
+    device: {
+      capabilities: CAPABILITIES,
+    },
+  }, {})
+
+  // Verify data is added to buffer
+  t.pass('Logging occurs without failing')
+})
+
+test('alternative loggers work', async (t) => {
+  // tslint:disable-next-line:no-any store any value in array
+  const logBuffer: any[] = []
+  const logger = {
+    // tslint:disable-next-line:no-any store any value in array
+    debug: (...values: any[]) => {
+      logBuffer.push(...values)
+    },
+    // tslint:disable-next-line:no-any store any value in array
+    info: (...values: any[]) => {
+      logBuffer.push(...values)
+    },
+    // tslint:disable-next-line:no-any store any value in array
+    log: (...values: any[]) => {
+      logBuffer.push(...values)
+    },
+    // tslint:disable-next-line:no-any store any value in array
+    warn: (...values: any[]) => {
+      logBuffer.push(...values)
+    },
+    // tslint:disable-next-line:no-any store any value in array
+    error: (...values: any[]) => {
+      logBuffer.push(...values)
+    },
+  }
+
+  const app = conversation({ debug: true, logger })
+  const handler = (conv: ConversationV3) => {
+    conv.add('hello')
+  }
+  app.handle(HANDLE_NAME, handler)
+
+  await app.handler({
+    handler: {
+      name: HANDLE_NAME,
+    },
+    scene: {
+      name: CURRENT_SCENE,
+    },
+    session: {
+      id: SESSION_ID,
+    },
+    user:{
+      locale: LOCALE,
+    },
+    device: {
+      capabilities: CAPABILITIES,
+    },
+  }, {})
+
+  // Verify data is added to buffer
+  t.is(logBuffer.length, 8)
+})
+
+test('reset logger if undefined', async (t) => {
+  // tslint:disable-next-line:no-any store any value in array
+  const logBuffer: any[] = []
+  const logger = {
+    // tslint:disable-next-line:no-any store any value in array
+    debug: (...values: any[]) => {
+      logBuffer.push(...values)
+    },
+    // tslint:disable-next-line:no-any store any value in array
+    info: (...values: any[]) => {
+      logBuffer.push(...values)
+    },
+    // tslint:disable-next-line:no-any store any value in array
+    log: (...values: any[]) => {
+      logBuffer.push(...values)
+    },
+    // tslint:disable-next-line:no-any store any value in array
+    warn: (...values: any[]) => {
+      logBuffer.push(...values)
+    },
+    // tslint:disable-next-line:no-any store any value in array
+    error: (...values: any[]) => {
+      logBuffer.push(...values)
+    },
+  }
+
+  const app = conversation({ debug: true, logger })
+  // Change logger to `undefined`, setting it back to default
+  setLogger()
+  const handler = (conv: ConversationV3) => {
+    conv.add('hello')
+  }
+  app.handle(HANDLE_NAME, handler)
+
+  await app.handler({
+    handler: {
+      name: HANDLE_NAME,
+    },
+    scene: {
+      name: CURRENT_SCENE,
+    },
+    session: {
+      id: SESSION_ID,
+    },
+    user:{
+      locale: LOCALE,
+    },
+    device: {
+      capabilities: CAPABILITIES,
+    },
+  }, {})
+
+  // Verify data is added to buffer
+  t.is(logBuffer.length, 0)
 })

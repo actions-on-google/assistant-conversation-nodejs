@@ -17,11 +17,11 @@
 import ava, { TestInterface } from 'ava'
 import * as sinon from 'sinon'
 
-import * as common from '../../common'
 import { JsonObject } from '../../common'
 
 import { Lambda } from '../lambda'
 import { StandardResponse } from '../framework'
+import { getLogger } from '../../logger'
 
 interface AvaContext {
   lambda: Lambda
@@ -140,7 +140,7 @@ test.serial('handles error', async t => {
   }
   let receivedError: Error | null = null
   let promise: Promise<StandardResponse> | null = null
-  const stub = sinon.stub(common, 'error')
+  const stub = sinon.stub(getLogger(), 'error')
   t.context.lambda.handle((body, headers) => {
     t.deepEqual(body, sentBody)
     t.deepEqual(headers, sentHeaders)
@@ -173,7 +173,7 @@ test.serial('handles string error', async t => {
   }
   let receivedError: string | null = null
   let promise: Promise<StandardResponse> | null = null
-  const stub = sinon.stub(common, 'error')
+  const stub = sinon.stub(getLogger(), 'error')
   t.context.lambda.handle((body, headers) => {
     t.deepEqual(body, sentBody)
     t.deepEqual(headers, sentHeaders)
