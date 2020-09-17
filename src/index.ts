@@ -43,6 +43,7 @@ export {
   Suggestion,
   Card,
   Collection,
+  CollectionBrowse,
   Image,
   Link,
   List,

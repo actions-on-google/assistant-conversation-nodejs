@@ -14,14 +14,25 @@
  * limitations under the License.
  */
 
-export * from './content'
+import * as Schema from '../../../api/schema'
 
-export * from './card'
-export * from './collection'
-export * from './collectionBrowse'
-export * from './image'
-export * from './link'
-export * from './list'
-export * from './media'
-export * from './table'
-export * from './order'
+export class CollectionBrowse implements Schema.CollectionBrowse {
+  /**
+   * How the image backgrounds of collection items will be filled. Optional.
+   */
+  imageFill: Schema.ImageFill
+  /**
+   * min: 2 max: 10
+   */
+  items: Schema.CollectionBrowseItem[]
+  /** @hidden */
+  constructor(input: Schema.CollectionBrowse = {}) {
+    const {
+      imageFill = Schema.ImageFill.Unspecified,
+      items = [],
+    } = input
+    this.imageFill = imageFill
+    this.items = items
+  }
+
+}

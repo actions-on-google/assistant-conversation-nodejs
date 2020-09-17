@@ -411,6 +411,8 @@ export interface EntryDisplay {
  *
  * A hero image for the card. The height is fixed to 192dp. Optional.
  *
+ * Image for the collection item.
+ *
  * An image.
  *
  * A small image icon displayed on the right from the title. It's resized to 36x36 dp.
@@ -444,6 +446,8 @@ export interface Image {
  * URL of document associated with browsing carousel item. Required for browsing carousel.
  *
  * What happens when a user opens the link
+ *
+ * Required. URI to open if the item selected.
  */
 export interface OpenURL {
   /**
@@ -734,6 +738,8 @@ export interface Prompt {
  * conjunction with the "first_simple" field in the containing prompt to speak to the user
  * in addition to displaying a interactive canvas response. The maximum size of the response
  * is 50k bytes.
+ *
+ * A response to be used for interactive canvas experience.
  */
 export interface Canvas {
   /**
@@ -765,6 +771,10 @@ export interface Content {
    * A card presenting a collection of options to select from.
    */
   collection?: Collection
+  /**
+   * A card presenting a collection of web pages to open.
+   */
+  collectionBrowse?: CollectionBrowse
   /**
    * An image.
    */
@@ -839,6 +849,8 @@ export interface Link {
  * How the image background will be filled. Optional.
  *
  * How the image backgrounds of collection items will be filled. Optional.
+ *
+ * Type of image display option.
  */
 export enum ImageFill {
   Cropped = 'CROPPED',
@@ -879,6 +891,50 @@ export interface CollectionItem {
    * Required. The NLU key that matches the entry key name in the associated Type.
    */
   key?: string
+}
+
+/**
+ * A card presenting a collection of web pages to open.
+ *
+ * Presents a set of web documents as a collection of large-tile items. Items may be
+ * selected to launch their associated web document in a web viewer.
+ */
+export interface CollectionBrowse {
+  /**
+   * Type of image display option.
+   */
+  imageFill?: ImageFill
+  /**
+   * Min: 2. Max: 10.
+   */
+  items?: CollectionBrowseItem[]
+}
+
+/**
+ * Item in the collection.
+ */
+export interface CollectionBrowseItem {
+  /**
+   * Description of the collection item.
+   */
+  description?: string
+  /**
+   * Footer text for the collection item, displayed below the description. Single line of
+   * text, truncated with an ellipsis.
+   */
+  footer?: string
+  /**
+   * Image for the collection item.
+   */
+  image?: Image
+  /**
+   * Required. URI to open if the item selected.
+   */
+  openUriAction?: OpenURL
+  /**
+   * Required. Title of the collection item.
+   */
+  title?: string
 }
 
 /**

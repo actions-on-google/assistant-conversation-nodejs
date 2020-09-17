@@ -15,7 +15,7 @@
  */
 
 import test from 'ava'
-import { Prompt, OrderUpdate } from '..'
+import { Prompt, OrderUpdate, CollectionBrowse } from '..'
 import * as common from '../../../common'
 import * as Schema from '../../../api/schema'
 
@@ -26,6 +26,45 @@ test('orderUpdate is added to prompt', t => {
     override: false,
     orderUpdate: {
       reason: 'test',
+    },
+  })
+})
+
+test('collectionBrowse is added to prompt', t => {
+  const prompt = new Prompt()
+  const collectionBrowseParams = {
+    imageFill: Schema.ImageFill.White,
+    items:
+      [
+        {
+          title: 'Item #1',
+          description: 'Description of Item #1',
+          footer: 'Footer of Item #1',
+          image: {
+            url: 'https://developers.google.com/assistant/assistant_96.png',
+          },
+          openUriAction: {
+            url: 'https://www.example.com',
+          },
+        },
+        {
+          title: 'Item #2',
+          description: 'Description of Item #2',
+          footer: 'Footer of Item #2',
+          image: {
+            url: 'https://developers.google.com/assistant/assistant_96.png',
+          },
+          openUriAction: {
+            url: 'https://www.example.com',
+          },
+        },
+      ],
+  }
+  prompt.add(new CollectionBrowse(collectionBrowseParams))
+  t.deepEqual(common.clone(prompt) as Schema.Prompt, {
+    override: false,
+    content: {
+      collectionBrowse: collectionBrowseParams,
     },
   })
 })

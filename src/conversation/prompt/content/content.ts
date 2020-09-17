@@ -17,6 +17,7 @@
 import * as Schema from '../../../api/schema'
 import { Card } from './card'
 import { Collection } from './collection'
+import { CollectionBrowse } from './collectionBrowse'
 import { Image } from './image'
 import { List } from './list'
 import { Media } from './media'
@@ -25,6 +26,7 @@ import { Table } from './table'
 export type PromptContent =
   Card |
   Collection |
+  CollectionBrowse |
   Image |
   List |
   Media |
@@ -39,6 +41,10 @@ export class Content {
    * A collection.
    */
   collection?: Schema.Collection | undefined
+  /**
+   * A card presenting a collection of web pages to open.
+   */
+  collectionBrowse?: Schema.CollectionBrowse | undefined
   /**
    * An image.
    */
@@ -60,6 +66,7 @@ export class Content {
     const {
       card = null,
       collection = null,
+      collectionBrowse = null,
       image = null,
       list = null,
       media = null,
@@ -71,6 +78,9 @@ export class Content {
     }
     if (collection) {
       this.collection = collection
+    }
+    if (collectionBrowse) {
+      this.collectionBrowse = collectionBrowse
     }
     if (image) {
       this.image = image

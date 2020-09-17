@@ -23,6 +23,7 @@ import { Link } from './content/link'
 import { Content } from './content/content'
 import { Card } from './content/card'
 import { Collection } from './content/collection'
+import { CollectionBrowse } from './content/collectionBrowse'
 import { Image } from './content/image'
 import { List } from './content/list'
 import { Media } from './content/media'
@@ -33,6 +34,14 @@ export type PromptItem =
   string |
   Simple |
   Content |
+  Card |
+  Collection |
+  CollectionBrowse |
+  Canvas |
+  Image |
+  List |
+  Media |
+  Table |
   Link |
   Suggestion |
   Canvas |
@@ -153,6 +162,13 @@ export class Prompt implements Schema.Prompt {
           this.content = new Content({})
         }
         this.content.collection = item
+        continue
+      }
+      if (item instanceof CollectionBrowse) {
+        if (!this.content) {
+          this.content = new Content({})
+        }
+        this.content.collectionBrowse = item
         continue
       }
       if (item instanceof Canvas) {

@@ -24,6 +24,7 @@ import {
   Image,
   Link,
   Canvas,
+  CollectionBrowse,
 } from '../..'
 import * as Schema from '../../api/schema'
 import { clone } from '../../common'
@@ -345,6 +346,58 @@ test('Canvas response sent', async t => {
           tint: 'GREEN',
         }],
         suppressMic: true,
+      },
+    },
+  })
+})
+
+test('CollectionBrowse response sent', async t => {
+  const handlerName = 'handlerName'
+  const app = conversation()
+  const collectionBrowseParams = {
+    imageFill: Schema.ImageFill.White,
+    items:
+      [
+        {
+          title: 'Item #1',
+          description: 'Description of Item #1',
+          footer: 'Footer of Item #1',
+          image: {
+            url: 'https://developers.google.com/assistant/assistant_96.png',
+          },
+          openUriAction: {
+            url: 'https://www.example.com',
+          },
+        },
+        {
+          title: 'Item #2',
+          description: 'Description of Item #2',
+          footer: 'Footer of Item #2',
+          image: {
+            url: 'https://developers.google.com/assistant/assistant_96.png',
+          },
+          openUriAction: {
+            url: 'https://www.example.com',
+          },
+        },
+      ],
+  }
+  app.handle(handlerName, conv => {
+    conv.add(new CollectionBrowse(collectionBrowseParams))
+  })
+  const res = await app.handler(
+    requestBuilder(handlerName, {}) as Schema.HandlerRequest, {})
+  t.is(res.status, 200)
+  t.log(JSON.stringify(clone(res.body)))
+  t.deepEqual(clone(res.body), {
+    session: {
+      id: '7250447207398852357',
+      params: {},
+    },
+    prompt: {
+      override: false,
+      content: {
+        collectionBrowse: collectionBrowseParams,
       },
     },
   })
