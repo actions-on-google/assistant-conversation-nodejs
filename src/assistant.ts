@@ -16,6 +16,7 @@
 
 import { OmniHandler, StandardHandler, BuiltinFrameworks, builtin } from './framework'
 import * as common from './common'
+import { getLogger } from './logger'
 
 /** @public */
 export type AppHandler = OmniHandler & BaseApp
@@ -87,15 +88,15 @@ export const attach = <TService>(
   app = Object.assign(omni, app)
   const handler: typeof app.handler = app.handler.bind(app)
   const standard: StandardHandler = async (body, headers, metadata) => {
-    const log = app.debug ? common.info : common.debug
-    log('Request', common.stringify(body))
-    log('Headers', common.stringify(headers))
+    const logger = getLogger()
+    logger.debug('Request', common.stringify(body))
+    logger.debug('Headers', common.stringify(headers))
     const response = await handler(body, headers, metadata)
     if (!response.headers) {
       response.headers = {}
     }
     response.headers['content-type'] = 'application/json;charset=utf-8'
-    log('Response', common.stringify(response))
+    logger.debug('Response', common.stringify(response))
     return response
   }
   app.handler = standard

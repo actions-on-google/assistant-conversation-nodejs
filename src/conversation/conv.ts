@@ -20,6 +20,7 @@ import { Prompt, PromptItem } from './prompt'
 import { JsonObject, clone, isJsonEqual } from '../common'
 import { Handler, Intent, Scene, Session, User, Device, Home, Expected } from './handler'
 import { Context } from './handler/context'
+import { ILogger } from '../logger'
 
 /** @hidden */
 export interface ConversationV3Options {
@@ -31,6 +32,8 @@ export interface ConversationV3Options {
   clientId?: string
   /** @public */
   debug?: boolean
+  /** @public */
+  logger?: ILogger
 }
 
 /** @hidden */

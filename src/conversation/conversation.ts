@@ -21,6 +21,7 @@ import * as common from '../common'
 import { BuiltinFrameworkMetadata } from '../framework'
 import { ServiceBaseApp } from '../assistant'
 import { AuthHeaderProcessor } from '../auth'
+import { setLogger, getLogger, debugLogger } from '../logger'
 
 /**
  * Throw an UnauthorizedError in an intent handler that requires an access token if the token is
@@ -144,6 +145,12 @@ export interface Conversation {
 export const conversation: Conversation = <
   TConversation extends ConversationV3
 >(options: ConversationV3Options = {}) => {
+  if (options.debug && !options.logger) {
+    // Use special logger where `debug` messages are now `info` level
+    setLogger(debugLogger)
+  } else {
+    setLogger(options.logger)
+  }
   const app = attach<ConversationV3App<TConversation>>({
     _internal: {
       handlers: {
@@ -181,7 +188,7 @@ export const conversation: Conversation = <
       headers,
       metadata = {},
     ) {
-      const { debug, clientId } = this
+      const { clientId } = this
       let conv = new ConversationV3({
         body,
         headers,
@@ -197,9 +204,7 @@ export const conversation: Conversation = <
           ConversationV3
         )
       }
-
-      const log = debug ? common.info : common.debug
-      log('ConversationV3', common.stringify(conv, 'request', 'headers', 'body'))
+      getLogger().debug('ConversationV3', common.stringify(conv, 'request', 'headers', 'body'))
       const handlerName = conv.handler.name as string
       const handler = this._internal.handlers.handles[handlerName]
       if (typeof handler === 'undefined') {

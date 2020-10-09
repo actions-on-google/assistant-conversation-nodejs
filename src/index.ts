@@ -54,3 +54,8 @@ export {
   OrderUpdate,
   Prompt,
 } from './conversation/prompt'
+
+export {
+  getLogger,
+  setLogger,
+} from './logger'
