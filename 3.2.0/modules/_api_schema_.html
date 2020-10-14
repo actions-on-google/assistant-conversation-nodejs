@@ -1,0 +1,634 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>api/schema | @assistant/conversation</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<ul class="results-priority" style="display:none">
+						<li data-name="conversation/prompt.*" data-subtitle="Prompt"></li>
+					</ul>
+					<a href="../index.html" class="title">@assistant/conversation</a>
+					&emsp;<a href="https://developers.google.com/assistant/conversational/overview" class="title">Guides</a>
+					&emsp;<a href="https://developers.google.com/assistant/codelabs" class="title">Codelabs</a>
+					&emsp;<a href="https://developers.google.com/assistant/actions/samples" class="title">Samples</a>
+					&emsp;<a href="https://developers.google.com/assistant/actions/glossary" class="title">Glossary</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="_api_schema_.html">api/schema</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-3 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation outline primary">
+				<a style="margin-left:0em" href="../globals.html">Globals</a>
+				<ul style="display:none">
+					{&quot;Conversation builder&quot;:{&quot;Overview&quot;:&quot;modules/_conversation_conversation_&quot;,&quot;Conversation&quot;:&quot;classes/_conversation_conv_.conversationv3&quot;,&quot;api/schema&quot;:&quot;modules/_api_schema_&quot;}}
+				</ul>
+			</nav>
+		</div>
+		<div class="col-7 offset-3 col-content">
+			<h1>Module api/schema</h1>
+			<section class="tsd-panel tsd-comment"><div class="tsd-comment tsd-typography tsd-comment-shorttext">
+					<div class="lead">
+						<p>Copyright 2020 Google LLC</p>
+					</div>
+					</div><div class="tsd-comment tsd-typography tsd-comment-text">
+					<p>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+						you may not use this file except in compliance with the License.
+					You may obtain a copy of the License at</p>
+					<p>   <a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+					<p>Unless required by applicable law or agreed to in writing, software
+						distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+						WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+						See the License for the specific language governing permissions and
+					limitations under the License.</p>
+			</div></section>
+			<section class="tsd-panel-group tsd-index-group">
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.accountlinkingstatus.html" class="tsd-kind-icon">AccountLinkingStatus</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.align.html" class="tsd-kind-icon">Align</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.capability.html" class="tsd-kind-icon">Capability</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.checkintype.html" class="tsd-kind-icon">CheckInType</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.curbsidefulfillmenttype.html" class="tsd-kind-icon">CurbsideFulfillmentType</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.errortype.html" class="tsd-kind-icon">ErrorType</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.eventcharactertype.html" class="tsd-kind-icon">EventCharacterType</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.followupactiontype.html" class="tsd-kind-icon">FollowUpActionType</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.fulfillmenttype.html" class="tsd-kind-icon">FulfillmentType</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.hint.html" class="tsd-kind-icon">Hint</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.imagefill.html" class="tsd-kind-icon">ImageFill</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.mediatype.html" class="tsd-kind-icon">MediaType</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.mode.html" class="tsd-kind-icon">Mode</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.optionalmediacontrol.html" class="tsd-kind-icon">OptionalMediaControl</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.orderupdatetype.html" class="tsd-kind-icon">OrderUpdateType</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.paymentmethodprovenance.html" class="tsd-kind-icon">PaymentMethodProvenance</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.paymenttype.html" class="tsd-kind-icon">PaymentType</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.pickuptype.html" class="tsd-kind-icon">PickupType</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.presentationrequirement.html" class="tsd-kind-icon">PresentationRequirement</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.priceattributetype.html" class="tsd-kind-icon">PriceAttributeType</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.purchaselocationtype.html" class="tsd-kind-icon">PurchaseLocationType</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.purchasestatus.html" class="tsd-kind-icon">PurchaseStatus</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.purchasetype.html" class="tsd-kind-icon">PurchaseType</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.reservationstatus.html" class="tsd-kind-icon">ReservationStatus</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.reservationtype.html" class="tsd-kind-icon">ReservationType</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.skutype.html" class="tsd-kind-icon">SkuType</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.slotfillingstatus.html" class="tsd-kind-icon">SlotFillingStatus</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.slotmode.html" class="tsd-kind-icon">SlotMode</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.slotstatus.html" class="tsd-kind-icon">SlotStatus</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.state.html" class="tsd-kind-icon">State</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.ticketeventtype.html" class="tsd-kind-icon">TicketEventType</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.urltypehint.html" class="tsd-kind-icon">URLTypeHint</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.unit.html" class="tsd-kind-icon">Unit</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_api_schema_.verificationstatus.html" class="tsd-kind-icon">VerificationStatus</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.action.html" class="tsd-kind-icon">Action</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.actionmetadata.html" class="tsd-kind-icon">ActionMetadata</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.canvas.html" class="tsd-kind-icon">Canvas</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.canvascontext.html" class="tsd-kind-icon">CanvasContext</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.card.html" class="tsd-kind-icon">Card</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.collection.html" class="tsd-kind-icon">Collection</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.collectionbrowse.html" class="tsd-kind-icon">CollectionBrowse</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.collectionbrowseitem.html" class="tsd-kind-icon">CollectionBrowseItem</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.collectionitem.html" class="tsd-kind-icon">CollectionItem</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.commoncheckininfo.html" class="tsd-kind-icon">CommonCheckInInfo</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.commonvehicle.html" class="tsd-kind-icon">CommonVehicle</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.content.html" class="tsd-kind-icon">Content</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.contents.html" class="tsd-kind-icon">Contents</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.context.html" class="tsd-kind-icon">Context</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.device.html" class="tsd-kind-icon">Device</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.disclosure.html" class="tsd-kind-icon">Disclosure</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.disclosurepresentationoptions.html" class="tsd-kind-icon">DisclosurePresentationOptions</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.disclosuretext.html" class="tsd-kind-icon">DisclosureText</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.engagement.html" class="tsd-kind-icon">Engagement</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.entitlement.html" class="tsd-kind-icon">Entitlement</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.entry.html" class="tsd-kind-icon">Entry</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.entrydisplay.html" class="tsd-kind-icon">EntryDisplay</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.expected.html" class="tsd-kind-icon">Expected</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.handler.html" class="tsd-kind-icon">Handler</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.handlerrequest.html" class="tsd-kind-icon">HandlerRequest</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.handlerresponse.html" class="tsd-kind-icon">HandlerResponse</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.home.html" class="tsd-kind-icon">Home</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.image.html" class="tsd-kind-icon">Image</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.intent.html" class="tsd-kind-icon">Intent</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.intentparametervalue.html" class="tsd-kind-icon">IntentParameterValue</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.intentsubscription.html" class="tsd-kind-icon">IntentSubscription</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.latlng.html" class="tsd-kind-icon">LatLng</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.lineitem.html" class="tsd-kind-icon">LineItem</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.link.html" class="tsd-kind-icon">Link</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.list.html" class="tsd-kind-icon">List</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.listitem.html" class="tsd-kind-icon">ListItem</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.media.html" class="tsd-kind-icon">Media</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.mediacontext.html" class="tsd-kind-icon">MediaContext</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.mediaimage.html" class="tsd-kind-icon">MediaImage</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.mediaobject.html" class="tsd-kind-icon">MediaObject</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.merchant.html" class="tsd-kind-icon">Merchant</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.money.html" class="tsd-kind-icon">Money</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.nextscene.html" class="tsd-kind-icon">NextScene</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.openurl.html" class="tsd-kind-icon">OpenURL</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.order.html" class="tsd-kind-icon">Order</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.orderupdate.html" class="tsd-kind-icon">OrderUpdate</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.packageentitlements.html" class="tsd-kind-icon">PackageEntitlements</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.paymentdata.html" class="tsd-kind-icon">PaymentData</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.paymentinfo.html" class="tsd-kind-icon">PaymentInfo</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.paymentmethoddisplayinfo.html" class="tsd-kind-icon">PaymentMethodDisplayInfo</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.paymentresult.html" class="tsd-kind-icon">PaymentResult</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.phonenumber.html" class="tsd-kind-icon">PhoneNumber</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.postaladdress.html" class="tsd-kind-icon">PostalAddress</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.priceattribute.html" class="tsd-kind-icon">PriceAttribute</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.promotion.html" class="tsd-kind-icon">Promotion</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.prompt.html" class="tsd-kind-icon">Prompt</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.purchasecurbsideinfo.html" class="tsd-kind-icon">PurchaseCurbsideInfo</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.purchaseitemoption.html" class="tsd-kind-icon">PurchaseItemOption</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.purchasemerchantunitmeasure.html" class="tsd-kind-icon">PurchaseMerchantUnitMeasure</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.purchasepickupinfo.html" class="tsd-kind-icon">PurchasePickupInfo</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.purchaseproductdetails.html" class="tsd-kind-icon">PurchaseProductDetails</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.purchasepurchaseerror.html" class="tsd-kind-icon">PurchasePurchaseError</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.purchasepurchasefulfillmentinfo.html" class="tsd-kind-icon">PurchasePurchaseFulfillmentInfo</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.purchasepurchaseitemextension.html" class="tsd-kind-icon">PurchasePurchaseItemExtension</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.purchasepurchaseorderextension.html" class="tsd-kind-icon">PurchasePurchaseOrderExtension</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.purchasepurchasereturnsinfo.html" class="tsd-kind-icon">PurchasePurchaseReturnsInfo</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.reservationreservationitemextension.html" class="tsd-kind-icon">ReservationReservationItemExtension</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.reservationstafffacilitator.html" class="tsd-kind-icon">ReservationStaffFacilitator</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.scene.html" class="tsd-kind-icon">Scene</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.session.html" class="tsd-kind-icon">Session</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.signeddata.html" class="tsd-kind-icon">SignedData</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.simple.html" class="tsd-kind-icon">Simple</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.slot.html" class="tsd-kind-icon">Slot</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.suggestion.html" class="tsd-kind-icon">Suggestion</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.synonymtype.html" class="tsd-kind-icon">SynonymType</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.table.html" class="tsd-kind-icon">Table</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.tablecell.html" class="tsd-kind-icon">TableCell</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.tablecolumn.html" class="tsd-kind-icon">TableColumn</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.tablerow.html" class="tsd-kind-icon">TableRow</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.textlink.html" class="tsd-kind-icon">TextLink</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.ticketeventcharacter.html" class="tsd-kind-icon">TicketEventCharacter</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.ticketticketevent.html" class="tsd-kind-icon">TicketTicketEvent</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.ticketticketorderextension.html" class="tsd-kind-icon">TicketTicketOrderExtension</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.time.html" class="tsd-kind-icon">Time</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.typeoverride.html" class="tsd-kind-icon">TypeOverride</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.user.html" class="tsd-kind-icon">User</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.userinfo.html" class="tsd-kind-icon">UserInfo</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.usernotification.html" class="tsd-kind-icon">UserNotification</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.v2devicesandroidapp.html" class="tsd-kind-icon">V2DevicesAndroidApp</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.v2devicesversionfilter.html" class="tsd-kind-icon">V2DevicesVersionFilter</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.v2location.html" class="tsd-kind-icon">V2Location</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.v2uielementsimage.html" class="tsd-kind-icon">V2UIElementsImage</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_api_schema_.v2uielementsopenurlaction.html" class="tsd-kind-icon">V2UIElementsOpenURLAction</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<!--{&quot;options&quot;:&quot;typedoc.json&quot;,&quot;tsconfig&quot;:&quot;/Users/taycaldwell/regen-docs/conversation-nodejs&quot;,&quot;inputFiles&quot;:[&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/assistant.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/auth.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/common.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/index.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/logger.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/_test/assistant.test.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/_test/auth.test.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/_test/common.test.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/api/schema.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/conv.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/conversation.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/index.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/_test/conversation.test.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/handler/context.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/handler/device.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/handler/expected.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/handler/handler.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/handler/home.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/handler/index.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/handler/intent.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/handler/scene.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/handler/session.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/handler/user.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/handler/_test/scene.test.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/handler/_test/user.test.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/prompt/canvas.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/prompt/index.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/prompt/prompt.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/prompt/simple.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/prompt/suggestion.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/prompt/_test/prompt.test.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/prompt/content/card.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/prompt/content/collection.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/prompt/content/collectionBrowse.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/prompt/content/content.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/prompt/content/image.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/prompt/content/index.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/prompt/content/link.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/prompt/content/list.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/prompt/content/media.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/prompt/content/order.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/prompt/content/table.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/conversation/prompt/content/_test/card.test.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/framework/express.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/framework/framework.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/framework/index.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/framework/lambda.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/framework/_test/express.test.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/framework/_test/framework.test.ts&quot;,&quot;/Users/taycaldwell/regen-docs/conversation-nodejs/src/framework/_test/lambda.test.ts&quot;],&quot;mode&quot;:1,&quot;includeDeclarations&quot;:false,&quot;entryPoint&quot;:&quot;&quot;,&quot;exclude&quot;:[&quot;**/_test/**/*.*&quot;,&quot;**/index.ts&quot;,&quot;**/common.ts&quot;],&quot;externalPattern&quot;:[],&quot;excludeExternals&quot;:true,&quot;excludeNotExported&quot;:true,&quot;excludeNotDocumented&quot;:false,&quot;excludePrivate&quot;:true,&quot;excludeProtected&quot;:false,&quot;ignoreCompilerErrors&quot;:true,&quot;disableSources&quot;:false,&quot;includes&quot;:&quot;&quot;,&quot;media&quot;:&quot;&quot;,&quot;out&quot;:&quot;docs&quot;,&quot;json&quot;:&quot;&quot;,&quot;theme&quot;:&quot;node_modules/typedoc-neo-theme/bin/default&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:false,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:false,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:true,&quot;help&quot;:false,&quot;version&quot;:false,&quot;plugin&quot;:[],&quot;logger&quot;:&quot;console&quot;,&quot;listInvalidSymbolLinks&quot;:false,&quot;links&quot;:[{&quot;label&quot;:&quot;Guides&quot;,&quot;url&quot;:&quot;https://developers.google.com/assistant/conversational/overview&quot;},{&quot;label&quot;:&quot;Codelabs&quot;,&quot;url&quot;:&quot;https://developers.google.com/assistant/codelabs&quot;},{&quot;label&quot;:&quot;Samples&quot;,&quot;url&quot;:&quot;https://developers.google.com/assistant/actions/samples&quot;},{&quot;label&quot;:&quot;Glossary&quot;,&quot;url&quot;:&quot;https://developers.google.com/assistant/actions/glossary&quot;}],&quot;outline&quot;:[{&quot;Conversation builder&quot;:{&quot;Overview&quot;:&quot;modules/_conversation_conversation_&quot;,&quot;Conversation&quot;:&quot;classes/_conversation_conv_.conversationv3&quot;,&quot;api/schema&quot;:&quot;modules/_api_schema_&quot;}}],&quot;search&quot;:[{&quot;name&quot;:&quot;conversation/prompt.*&quot;,&quot;subtitle&quot;:&quot;Prompt&quot;}],&quot;source&quot;:[{&quot;path&quot;:&quot;https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/&quot;,&quot;line&quot;:&quot;L&quot;}]}-->
+		</div>
+		<div class="col-2 col-menu secondary-menu">
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.accountlinkingstatus.html" class="tsd-kind-icon">Account<wbr>Linking<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.align.html" class="tsd-kind-icon">Align</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.capability.html" class="tsd-kind-icon">Capability</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.checkintype.html" class="tsd-kind-icon">Check<wbr>InType</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.curbsidefulfillmenttype.html" class="tsd-kind-icon">Curbside<wbr>Fulfillment<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.errortype.html" class="tsd-kind-icon">Error<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.eventcharactertype.html" class="tsd-kind-icon">Event<wbr>Character<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.followupactiontype.html" class="tsd-kind-icon">Follow<wbr>UpAction<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.fulfillmenttype.html" class="tsd-kind-icon">Fulfillment<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.hint.html" class="tsd-kind-icon">Hint</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.imagefill.html" class="tsd-kind-icon">Image<wbr>Fill</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.mediatype.html" class="tsd-kind-icon">Media<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.mode.html" class="tsd-kind-icon">Mode</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.optionalmediacontrol.html" class="tsd-kind-icon">Optional<wbr>Media<wbr>Control</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.orderupdatetype.html" class="tsd-kind-icon">Order<wbr>Update<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.paymentmethodprovenance.html" class="tsd-kind-icon">Payment<wbr>Method<wbr>Provenance</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.paymenttype.html" class="tsd-kind-icon">Payment<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.pickuptype.html" class="tsd-kind-icon">Pickup<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.presentationrequirement.html" class="tsd-kind-icon">Presentation<wbr>Requirement</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.priceattributetype.html" class="tsd-kind-icon">Price<wbr>Attribute<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.purchaselocationtype.html" class="tsd-kind-icon">Purchase<wbr>Location<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.purchasestatus.html" class="tsd-kind-icon">Purchase<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.purchasetype.html" class="tsd-kind-icon">Purchase<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.reservationstatus.html" class="tsd-kind-icon">Reservation<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.reservationtype.html" class="tsd-kind-icon">Reservation<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.skutype.html" class="tsd-kind-icon">Sku<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.slotfillingstatus.html" class="tsd-kind-icon">Slot<wbr>Filling<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.slotmode.html" class="tsd-kind-icon">Slot<wbr>Mode</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.slotstatus.html" class="tsd-kind-icon">Slot<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.state.html" class="tsd-kind-icon">State</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.ticketeventtype.html" class="tsd-kind-icon">Ticket<wbr>Event<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.urltypehint.html" class="tsd-kind-icon">URLType<wbr>Hint</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.unit.html" class="tsd-kind-icon">Unit</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/_api_schema_.verificationstatus.html" class="tsd-kind-icon">Verification<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.action.html" class="tsd-kind-icon">Action</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.actionmetadata.html" class="tsd-kind-icon">Action<wbr>Metadata</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.canvas.html" class="tsd-kind-icon">Canvas</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.canvascontext.html" class="tsd-kind-icon">Canvas<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.card.html" class="tsd-kind-icon">Card</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.collection.html" class="tsd-kind-icon">Collection</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.collectionbrowse.html" class="tsd-kind-icon">Collection<wbr>Browse</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.collectionbrowseitem.html" class="tsd-kind-icon">Collection<wbr>Browse<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.collectionitem.html" class="tsd-kind-icon">Collection<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.commoncheckininfo.html" class="tsd-kind-icon">Common<wbr>Check<wbr>InInfo</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.commonvehicle.html" class="tsd-kind-icon">Common<wbr>Vehicle</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.content.html" class="tsd-kind-icon">Content</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.contents.html" class="tsd-kind-icon">Contents</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.context.html" class="tsd-kind-icon">Context</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.device.html" class="tsd-kind-icon">Device</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.disclosure.html" class="tsd-kind-icon">Disclosure</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.disclosurepresentationoptions.html" class="tsd-kind-icon">Disclosure<wbr>Presentation<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.disclosuretext.html" class="tsd-kind-icon">Disclosure<wbr>Text</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.engagement.html" class="tsd-kind-icon">Engagement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.entitlement.html" class="tsd-kind-icon">Entitlement</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.entry.html" class="tsd-kind-icon">Entry</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.entrydisplay.html" class="tsd-kind-icon">Entry<wbr>Display</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.expected.html" class="tsd-kind-icon">Expected</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.handler.html" class="tsd-kind-icon">Handler</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.handlerrequest.html" class="tsd-kind-icon">Handler<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.handlerresponse.html" class="tsd-kind-icon">Handler<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.home.html" class="tsd-kind-icon">Home</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.image.html" class="tsd-kind-icon">Image</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.intent.html" class="tsd-kind-icon">Intent</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.intentparametervalue.html" class="tsd-kind-icon">Intent<wbr>Parameter<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.intentsubscription.html" class="tsd-kind-icon">Intent<wbr>Subscription</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.latlng.html" class="tsd-kind-icon">Lat<wbr>Lng</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.lineitem.html" class="tsd-kind-icon">Line<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.link.html" class="tsd-kind-icon">Link</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.list.html" class="tsd-kind-icon">List</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.listitem.html" class="tsd-kind-icon">List<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.media.html" class="tsd-kind-icon">Media</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.mediacontext.html" class="tsd-kind-icon">Media<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.mediaimage.html" class="tsd-kind-icon">Media<wbr>Image</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.mediaobject.html" class="tsd-kind-icon">Media<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.merchant.html" class="tsd-kind-icon">Merchant</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.money.html" class="tsd-kind-icon">Money</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.nextscene.html" class="tsd-kind-icon">Next<wbr>Scene</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.openurl.html" class="tsd-kind-icon">OpenURL</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.order.html" class="tsd-kind-icon">Order</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.orderupdate.html" class="tsd-kind-icon">Order<wbr>Update</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.packageentitlements.html" class="tsd-kind-icon">Package<wbr>Entitlements</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.paymentdata.html" class="tsd-kind-icon">Payment<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.paymentinfo.html" class="tsd-kind-icon">Payment<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.paymentmethoddisplayinfo.html" class="tsd-kind-icon">Payment<wbr>Method<wbr>Display<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.paymentresult.html" class="tsd-kind-icon">Payment<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.phonenumber.html" class="tsd-kind-icon">Phone<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.postaladdress.html" class="tsd-kind-icon">Postal<wbr>Address</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.priceattribute.html" class="tsd-kind-icon">Price<wbr>Attribute</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.promotion.html" class="tsd-kind-icon">Promotion</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.prompt.html" class="tsd-kind-icon">Prompt</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.purchasecurbsideinfo.html" class="tsd-kind-icon">Purchase<wbr>Curbside<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.purchaseitemoption.html" class="tsd-kind-icon">Purchase<wbr>Item<wbr>Option</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.purchasemerchantunitmeasure.html" class="tsd-kind-icon">Purchase<wbr>Merchant<wbr>Unit<wbr>Measure</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.purchasepickupinfo.html" class="tsd-kind-icon">Purchase<wbr>Pickup<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.purchaseproductdetails.html" class="tsd-kind-icon">Purchase<wbr>Product<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.purchasepurchaseerror.html" class="tsd-kind-icon">Purchase<wbr>Purchase<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.purchasepurchasefulfillmentinfo.html" class="tsd-kind-icon">Purchase<wbr>Purchase<wbr>Fulfillment<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.purchasepurchaseitemextension.html" class="tsd-kind-icon">Purchase<wbr>Purchase<wbr>Item<wbr>Extension</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.purchasepurchaseorderextension.html" class="tsd-kind-icon">Purchase<wbr>Purchase<wbr>Order<wbr>Extension</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.purchasepurchasereturnsinfo.html" class="tsd-kind-icon">Purchase<wbr>Purchase<wbr>Returns<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.reservationreservationitemextension.html" class="tsd-kind-icon">Reservation<wbr>Reservation<wbr>Item<wbr>Extension</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.reservationstafffacilitator.html" class="tsd-kind-icon">Reservation<wbr>Staff<wbr>Facilitator</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.scene.html" class="tsd-kind-icon">Scene</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.session.html" class="tsd-kind-icon">Session</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.signeddata.html" class="tsd-kind-icon">Signed<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.simple.html" class="tsd-kind-icon">Simple</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.slot.html" class="tsd-kind-icon">Slot</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.suggestion.html" class="tsd-kind-icon">Suggestion</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.synonymtype.html" class="tsd-kind-icon">Synonym<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.table.html" class="tsd-kind-icon">Table</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.tablecell.html" class="tsd-kind-icon">Table<wbr>Cell</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.tablecolumn.html" class="tsd-kind-icon">Table<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.tablerow.html" class="tsd-kind-icon">Table<wbr>Row</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.textlink.html" class="tsd-kind-icon">Text<wbr>Link</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.ticketeventcharacter.html" class="tsd-kind-icon">Ticket<wbr>Event<wbr>Character</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.ticketticketevent.html" class="tsd-kind-icon">Ticket<wbr>Ticket<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.ticketticketorderextension.html" class="tsd-kind-icon">Ticket<wbr>Ticket<wbr>Order<wbr>Extension</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.time.html" class="tsd-kind-icon">Time</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.typeoverride.html" class="tsd-kind-icon">Type<wbr>Override</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.user.html" class="tsd-kind-icon">User</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.userinfo.html" class="tsd-kind-icon">User<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.usernotification.html" class="tsd-kind-icon">User<wbr>Notification</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.v2devicesandroidapp.html" class="tsd-kind-icon">V2<wbr>Devices<wbr>Android<wbr>App</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.v2devicesversionfilter.html" class="tsd-kind-icon">V2<wbr>Devices<wbr>Version<wbr>Filter</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.v2location.html" class="tsd-kind-icon">V2<wbr>Location</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.v2uielementsimage.html" class="tsd-kind-icon">V2UIElements<wbr>Image</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/_api_schema_.v2uielementsopenurlaction.html" class="tsd-kind-icon">V2UIElements<wbr>OpenURLAction</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
