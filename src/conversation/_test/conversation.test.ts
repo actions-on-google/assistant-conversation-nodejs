@@ -89,6 +89,27 @@ function requestBuilder(handlerName: string, slots: Record<string, Schema.Slot>)
         'WEB_LINK',
         'LONG_FORM_AUDIO',
       ],
+      currentLocation: {
+        coordinates: {
+          latitude: 35.366393699999996,
+          longitude: -128.02403039999999,
+        },
+        postalAddress: {
+          revision: 0,
+          regionCode: 'US',
+          languageCode: '',
+          postalCode: '94086',
+          sortingCode: '',
+          administrativeArea: 'California',
+          locality: 'Mountain View',
+          sublocality: '',
+          addressLines: [
+            '123 South Fair Oaks Avenue',
+          ],
+          recipients: [],
+          organization: '',
+        },
+      },
     },
   }
 }
@@ -157,6 +178,16 @@ test('handle, scene, intent & name passed to conv', async t => {
     t.is(conv.handler.name, handlerName)
     t.is(conv.intent.name, webhookRequest.intent.name)
     t.is(conv.scene.name, webhookRequest.scene.name)
+  })
+  await app.handler(webhookRequest as Schema.HandlerRequest, {})
+})
+
+test('device passed to conv', async t => {
+  const handlerName = 'handlerName'
+  const webhookRequest = requestBuilder(handlerName, {})
+  const app = conversation()
+  app.handle(handlerName, conv => {
+    t.deepEqual(JSON.stringify(clone(conv.device)), JSON.stringify(clone(webhookRequest.device)))
   })
   await app.handler(webhookRequest as Schema.HandlerRequest, {})
 })

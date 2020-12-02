@@ -32,9 +32,18 @@ export class Device {
    */
   capabilities: Schema.Capability[]
 
+  /**
+   * Optional. The device location of the user. Note, this is only populated after location
+   * permissions are granted by the end user. See the location message for more details on
+   * which fields are set depending on coarse vs. fine grained permission.
+   */
+  currentLocation: Schema.Location
+
   /** @hidden */
   constructor(input: Schema.Device = {}) {
-    const { capabilities = [] } = input
+    const { capabilities = [], currentLocation = {} } = input
     this.capabilities = capabilities
+    this.currentLocation = currentLocation
   }
+
 }

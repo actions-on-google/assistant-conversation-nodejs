@@ -117,6 +117,12 @@ export interface Device {
    * Required. the capabilities of the device making a request to the Action.
    */
   capabilities?: Capability[]
+  /**
+   * Optional. The device location of the user. Note, this is only populated after location
+   * permissions are granted by the end user. See the location message for more details on
+   * which fields are set depending on coarse vs. fine grained permission.
+   */
+  currentLocation?: Location
 }
 
 export enum Capability {
@@ -126,6 +132,27 @@ export enum Capability {
   Speech = 'SPEECH',
   Unspecified = 'UNSPECIFIED',
   WebLink = 'WEB_LINK',
+}
+
+/**
+ * Optional. The device location of the user. Note, this is only populated after location
+ * permissions are granted by the end user. See the location message for more details on
+ * which fields are set depending on coarse vs. fine grained permission.
+ *
+ * Container that represents a location.
+ */
+export interface Location {
+  /**
+   * Geo coordinates. Requires the [DEVICE_PRECISE_LOCATION] permission.
+   */
+  coordinates?: LatLng
+  /**
+   * Postal address. Requires the [DEVICE_PRECISE_LOCATION] or [DEVICE_COARSE_LOCATION]
+   * permission. When the coarse location permission is granted, only the 'postal_code' and
+   * 'locality' fields are expected to be populated. Precise location permission will populate
+   * additional fields like 'administrative_area' and 'address_lines'.
+   */
+  postalAddress?: PostalAddress
 }
 
 /**
@@ -509,6 +536,10 @@ export interface User {
    */
   params?: { [key: string]: any }
   /**
+   * Contains permissions granted by user to this Action.
+   */
+  permissions?: Permission[]
+  /**
    * Indicates the verification status of the user.
    */
   verificationStatus?: VerificationStatus
@@ -614,6 +645,13 @@ export enum SkuType {
   InApp = 'IN_APP',
   SkuTypeUnspecified = 'SKU_TYPE_UNSPECIFIED',
   Subscription = 'SUBSCRIPTION',
+}
+
+export enum Permission {
+  DeviceCoarseLocation = 'DEVICE_COARSE_LOCATION',
+  DevicePreciseLocation = 'DEVICE_PRECISE_LOCATION',
+  PermissionUnspecified = 'PERMISSION_UNSPECIFIED',
+  Update = 'UPDATE',
 }
 
 /**
