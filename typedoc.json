@@ -2,14 +2,11 @@
   "out": "docs",
   "exclude": [
     "**/_test/**/*.*",
-    "**/index.ts",
-    "**/common.ts"
+    "node_modules/"
   ],
-  "ignoreCompilerErrors": true,
   "disableOutputCheck": true,
   "excludeExternals": true,
   "excludePrivate": true,
-  "excludeNotExported": true,
   "links": [{
     "label": "Guides",
     "url": "https://developers.google.com/assistant/conversational/overview"
@@ -25,9 +22,9 @@
   }],
   "outline": [{
     "Conversation builder": {
-      "Overview": "modules/_conversation_conversation_",
-      "Conversation": "classes/_conversation_conv_.conversationv3",
-      "api/schema": "modules/_api_schema_"
+      "Overview": "modules/conversation_conversation",
+      "Conversation": "classes/conversation_conv.conversationv3",
+      "api/schema": "modules/api_schema"
     }
   }],
   "search": [{
@@ -35,7 +32,7 @@
     "subtitle": "Prompt"
   }],
   "source": [{
-    "path": "https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/",
+    "path": "https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/",
     "line": "L"
   }]
 }
