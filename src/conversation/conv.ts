@@ -34,6 +34,22 @@ export interface ConversationV3Options {
   debug?: boolean
   /** @public */
   logger?: ILogger
+  /**
+   * Validates whether request is from Google through signature verification.
+   * Uses Google-Auth-Library to verify authorization token against given Google Cloud Project ID.
+   * Auth token is given in request header with key, "authorization".
+   *
+   * HTTP Code 403 will be thrown by default on verification error.
+   *
+   * @example
+   * ```javascript
+   *
+   * const app = conversation({ verification: 'nodejs-cloud-test-project-1234' })
+   * ```
+   *
+   * @public
+   */
+  verification?: ConversationVerification | string
 }
 
 /** @hidden */
@@ -43,6 +59,30 @@ export interface ConversationOptions {
 
   /** @public */
   headers?: Headers
+}
+
+/** @public */
+export interface ConversationVerification {
+  /**
+   * Google Cloud Project ID for the Assistant app.
+   * @public
+   */
+  project: string
+
+  /**
+   * Custom status code to return on verification error.
+   * @public
+   */
+  status?: number
+
+  /**
+   * Custom error message as a string or a function that returns a string
+   * given the original error message set by the library.
+   *
+   * The message will get sent back in the JSON top level `error` property.
+   * @public
+   */
+  error?: string | ((error: string) => string)
 }
 
 /** @public */

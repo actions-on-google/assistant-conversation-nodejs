@@ -16,12 +16,13 @@
 
 import * as Schema from '../api/schema'
 import { AppHandler, attach } from '../assistant'
-import { ConversationV3, ExceptionHandler, ConversationV3Options } from './conv'
+import { ConversationV3, ExceptionHandler, ConversationV3Options, ConversationVerification } from './conv'
 import * as common from '../common'
 import { BuiltinFrameworkMetadata } from '../framework'
 import { ServiceBaseApp } from '../assistant'
 import { AuthHeaderProcessor } from '../auth'
 import { setLogger, getLogger, debugLogger } from '../logger'
+import { OAuth2Client } from 'google-auth-library'
 
 /**
  * Throw an UnauthorizedError in an intent handler that requires an access token if the token is
@@ -114,6 +115,12 @@ export interface ConversationV3App<TConversation extends ConversationV3> extends
     handlers: ConversationV3AppHandlers<TConversation>
     middlewares: ConversationV3Middleware<ConversationV3>[],
   }
+
+  /** @public */
+  verification?: ConversationVerification | string
+
+  /** @hidden */
+  _client?: OAuth2Client
 }
 
 /** @public */
@@ -182,13 +189,38 @@ export const conversation: Conversation = <
       this._internal.middlewares.push(middleware)
       return this
     },
+    verification: options.verification,
+    _client: (options.verification || options.clientId) ?
+      new OAuth2Client(options.clientId) : undefined,
     async handler(
       this: AppHandler & ConversationV3App<TConversation>,
       body: Schema.HandlerRequest,
       headers,
       metadata = {},
     ) {
-      const { clientId } = this
+      const { clientId, verification } = this
+      if (verification) {
+        const {
+          project,
+          status = 403,
+          error = (e: string) => e,
+        } = typeof verification === 'string' ? { project: verification } : verification
+        const token = headers['google-assistant-signature'] as string
+        try {
+          await this._client!.verifyIdToken({
+            idToken: token,
+            audience: project,
+          })
+        } catch (e) {
+          return {
+            status,
+            body: {
+              error: typeof error === 'string' ? error :
+                error(`ID token verification failed: ${e.stack || e.message || e}`),
+            },
+          }
+        }
+      }
       let conv = new ConversationV3({
         body,
         headers,
