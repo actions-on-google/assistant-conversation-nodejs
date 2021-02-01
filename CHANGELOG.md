@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.3.0] - 2021-02-01
+### Added
+- Add request verification
+
+### Changed
+- Update library Typedoc settings based on breaking changes
+
 ## [3.2.0] - 2020-10-09
 ### Added
 - Support for Collection Browse.
