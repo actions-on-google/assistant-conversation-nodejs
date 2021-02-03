@@ -20,7 +20,7 @@ VERSION=$(node -e "console.log(require('./package.json').version)")
 
 # Copy docs/ to assistant-conversation-nodejs-docs/VERSION
 mkdir assistant-conversation-nodejs-docs/${VERSION}
-cp -r docs/ assistant-conversation-nodejs-docs/${VERSION}
+cp -r docs/* assistant-conversation-nodejs-docs/${VERSION}
 
 # Update index.html to replace the `refresh` meta tag
 sed -i "s/refresh.*\/index.html/refresh\" content=\"0;url=${VERSION}\/index.html/" assistant-conversation-nodejs-docs/index.html
