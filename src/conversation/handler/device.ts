@@ -31,6 +31,11 @@ export class Device {
    * @public
    */
   capabilities: Schema.Capability[]
+  /**
+   * Optional. Timezone associated with the request used to resolve datetime values. If not
+   * set, "UTC" is used.
+   */
+  timeZone?: Schema.TimeZone
 
   /**
    * Optional. The device location of the user. Note, this is only populated after location
@@ -41,9 +46,10 @@ export class Device {
 
   /** @hidden */
   constructor(input: Schema.Device = {}) {
-    const { capabilities = [], currentLocation = {} } = input
+    const { capabilities = [], currentLocation = {}, timeZone = {} } = input
     this.capabilities = capabilities
     this.currentLocation = currentLocation
+    this.timeZone = timeZone
   }
 
 }

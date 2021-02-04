@@ -110,6 +110,10 @@ function requestBuilder(handlerName: string, slots: Record<string, Schema.Slot>)
           organization: '',
         },
       },
+      timeZone: {
+        id: 'America/New_York',
+        version: '2019a',
+      }
     },
   }
 }
@@ -187,7 +191,7 @@ test('device passed to conv', async t => {
   const webhookRequest = requestBuilder(handlerName, {})
   const app = conversation()
   app.handle(handlerName, conv => {
-    t.deepEqual(JSON.stringify(clone(conv.device)), JSON.stringify(clone(webhookRequest.device)))
+    t.deepEqual(clone(conv.device), clone(webhookRequest.device as Schema.Device))
   })
   await app.handler(webhookRequest as Schema.HandlerRequest, {})
 })

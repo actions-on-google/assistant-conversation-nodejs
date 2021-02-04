@@ -123,6 +123,11 @@ export interface Device {
    * which fields are set depending on coarse vs. fine grained permission.
    */
   currentLocation?: Location
+  /**
+   * Optional. Timezone associated with the request used to resolve datetime values. If not
+   * set, "UTC" is used.
+   */
+  timeZone?: TimeZone
 }
 
 export enum Capability {
@@ -153,6 +158,24 @@ export interface Location {
    * additional fields like 'administrative_area' and 'address_lines'.
    */
   postalAddress?: PostalAddress
+}
+
+/**
+ * Optional. Timezone associated with the request used to resolve datetime values. If not
+ * set, "UTC" is used.
+ *
+ * Represents a time zone from the [IANA Time Zone
+ * Database](https://www.iana.org/time-zones).
+ */
+export interface TimeZone {
+  /**
+   * IANA Time Zone Database time zone, e.g. "America/New_York".
+   */
+  id?: string
+  /**
+   * Optional. IANA Time Zone Database version number, e.g. "2019a".
+   */
+  version?: string
 }
 
 /**
