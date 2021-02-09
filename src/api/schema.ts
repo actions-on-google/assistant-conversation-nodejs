@@ -975,6 +975,11 @@ export interface ListItem {
  */
 export interface Media {
   /**
+   * 0-based index of the first Media Object in media_objects to play. If unspecified, zero or
+   * out-of-bounds, playback starts at the first media object in media_objects.
+   */
+  firstMediaObjectIndex?: number
+  /**
    * List of Media Objects
    */
   mediaObjects?: MediaObject[]
@@ -985,6 +990,10 @@ export interface Media {
    * two default control type, FINISHED and FAILED.
    */
   optionalMediaControls?: OptionalMediaControl[]
+  /**
+   * Repeat mode for the list of Media Objects.
+   */
+  repeatMode?: RepeatMode
   /**
    * Start offset of the first media object.
    */
@@ -1037,6 +1046,15 @@ export enum OptionalMediaControl {
   OptionalMediaControlsUnspecified = 'OPTIONAL_MEDIA_CONTROLS_UNSPECIFIED',
   Paused = 'PAUSED',
   Stopped = 'STOPPED',
+}
+
+/**
+ * Repeat mode for the list of Media Objects.
+ */
+export enum RepeatMode {
+  All = 'ALL',
+  Off = 'OFF',
+  RepeatModeUnspecified = 'REPEAT_MODE_UNSPECIFIED',
 }
 
 /**
