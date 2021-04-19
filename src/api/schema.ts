@@ -95,6 +95,11 @@ export interface CanvasContext {
  */
 export interface MediaContext {
   /**
+   * 0-based index of the current active media file in the list of media files in the media
+   * response.
+   */
+  index?: number
+  /**
    * Media progress of current active media file.
    */
   progress?: string
