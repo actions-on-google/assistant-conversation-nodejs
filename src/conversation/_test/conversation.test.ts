@@ -113,7 +113,7 @@ function requestBuilder(handlerName: string, slots: Record<string, Schema.Slot>)
       timeZone: {
         id: 'America/New_York',
         version: '2019a',
-      }
+      },
     },
   }
 }
