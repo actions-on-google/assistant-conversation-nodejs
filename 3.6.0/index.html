@@ -1,0 +1,209 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@assistant/conversation</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<ul class="results-priority" style="display:none">
+						<li data-name="conversation/prompt.*" data-subtitle="Prompt"></li>
+					</ul>
+					<a href="index.html" class="title">@assistant/conversation</a>
+					&emsp;<a href="https://developers.google.com/assistant/conversational/overview" class="title">Guides</a>
+					&emsp;<a href="https://developers.google.com/assistant/codelabs" class="title">Codelabs</a>
+					&emsp;<a href="https://developers.google.com/assistant/actions/samples" class="title">Samples</a>
+					&emsp;<a href="https://developers.google.com/assistant/actions/glossary" class="title">Glossary</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+			</ul>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-3 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation outline primary">
+				<a style="margin-left:0em" href="globals.html">Globals</a>
+				<ul style="display:none">
+					{&quot;Conversation builder&quot;:{&quot;Overview&quot;:&quot;modules/conversation_conversation&quot;,&quot;Conversation&quot;:&quot;classes/conversation_conv.conversationv3&quot;,&quot;api/schema&quot;:&quot;modules/api_schema&quot;}}
+				</ul>
+			</nav>
+		</div>
+		<div class="col-7 offset-3 col-content">
+			<h1>@assistant/conversation</h1>
+			<div class="tsd-panel tsd-typography">
+				<a href="#actions-sdk-nodejs-fulfillment-library" id="actions-sdk-nodejs-fulfillment-library" style="color: inherit; text-decoration: none;">
+					<h1>Actions SDK Node.js Fulfillment Library</h1>
+				</a>
+				<p>This fulfillment library exposes a developer friendly way to fulfill Actions SDK handlers for the Google Assistant.</p>
+				<ul>
+					<li><a href="https://github.com/actions-on-google/assistant-conversation-nodejs">Fulfillment Library GitHub repo</a></li>
+					<li><a href="https://actions-on-google.github.io/assistant-conversation-nodejs/">Fulfillment Library reference docs</a></li>
+					<li><a href="https://developers.google.com/assistant">Actions on Google docs</a></li>
+					<li><a href="https://developers.google.com/assistant/actions/samples">Actions on Google samples</a></li>
+				</ul>
+				<p><a href="https://www.npmjs.org/package/@assistant/conversation"><img src="https://img.shields.io/npm/v/@assistant/conversation.svg" alt="NPM Version"></a>
+				<a href="https://travis-ci.org/actions-on-google/assistant-conversation-nodejs"><img src="https://travis-ci.org/actions-on-google/assistant-conversation-nodejs.svg?branch=master" alt="Build Status"></a></p>
+				<a href="#setup-instructions" id="setup-instructions" style="color: inherit; text-decoration: none;">
+					<h2>Setup Instructions</h2>
+				</a>
+				<p>Make sure Node.js &gt;=10.18.0 is installed.</p>
+				<p>Install the library with either <code>npm install @assistant/conversation</code> or <code>yarn add @assistant/conversation</code> if you use yarn.</p>
+				<a href="#example-usage" id="example-usage" style="color: inherit; text-decoration: none;">
+					<h3>Example Usage</h3>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #008000">// Import the appropriate service and chosen wrappers</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #0070C1">conversation</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #0070C1">Image</span><span style="color: #000000">,</span>
+<span style="color: #000000">} = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;@assistant/conversation&#039;</span><span style="color: #000000">)</span>
+
+<span style="color: #008000">// Create an app instance</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">app</span><span style="color: #000000"> = </span><span style="color: #795E26">conversation</span><span style="color: #000000">()</span>
+
+<span style="color: #008000">// Register handlers for Actions SDK</span>
+
+<span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">handle</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;&lt;YOUR HANDLER NAME&gt;&#039;</span><span style="color: #000000">, </span><span style="color: #001080">conv</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">conv</span><span style="color: #000000">.</span><span style="color: #795E26">add</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Hi, how is it going?&#039;</span><span style="color: #000000">)</span>
+<span style="color: #000000">  </span><span style="color: #001080">conv</span><span style="color: #000000">.</span><span style="color: #795E26">add</span><span style="color: #000000">(</span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Image</span><span style="color: #000000">({</span>
+<span style="color: #000000">    </span><span style="color: #001080">url:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/imgs/160204193356-01-cat-500.jpg&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">alt:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;A cat&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  }))</span>
+<span style="color: #000000">})</span>
+</code></pre>
+				<a href="#frameworks" id="frameworks" style="color: inherit; text-decoration: none;">
+					<h3>Frameworks</h3>
+				</a>
+				<p>Export or run for your appropriate framework:</p>
+				<a href="#firebase-functions" id="firebase-functions" style="color: inherit; text-decoration: none;">
+					<h4>Firebase Functions</h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">functions</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;firebase-functions&#039;</span><span style="color: #000000">)</span>
+
+<span style="color: #008000">// ... app code here</span>
+
+<span style="color: #267F99">exports</span><span style="color: #000000">.</span><span style="color: #001080">fulfillment</span><span style="color: #000000"> = </span><span style="color: #001080">functions</span><span style="color: #000000">.</span><span style="color: #001080">https</span><span style="color: #000000">.</span><span style="color: #795E26">onRequest</span><span style="color: #000000">(</span><span style="color: #001080">app</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#actions-console-inline-editor" id="actions-console-inline-editor" style="color: inherit; text-decoration: none;">
+					<h4>Actions Console Inline Editor</h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">functions</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;firebase-functions&#039;</span><span style="color: #000000">)</span>
+
+<span style="color: #008000">// ... app code here</span>
+
+<span style="color: #008000">// name has to be `ActionsOnGoogleFulfillment`</span>
+<span style="color: #267F99">exports</span><span style="color: #000000">.</span><span style="color: #001080">ActionsOnGoogleFulfillment</span><span style="color: #000000"> = </span><span style="color: #001080">functions</span><span style="color: #000000">.</span><span style="color: #001080">https</span><span style="color: #000000">.</span><span style="color: #795E26">onRequest</span><span style="color: #000000">(</span><span style="color: #001080">app</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#self-hosted-express-server" id="self-hosted-express-server" style="color: inherit; text-decoration: none;">
+					<h4>Self Hosted Express Server</h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">express</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;express&#039;</span><span style="color: #000000">)</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">bodyParser</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;body-parser&#039;</span><span style="color: #000000">)</span>
+
+<span style="color: #008000">// ... app code here</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">expressApp</span><span style="color: #000000"> = </span><span style="color: #795E26">express</span><span style="color: #000000">().</span><span style="color: #795E26">use</span><span style="color: #000000">(</span><span style="color: #001080">bodyParser</span><span style="color: #000000">.</span><span style="color: #795E26">json</span><span style="color: #000000">())</span>
+
+<span style="color: #001080">expressApp</span><span style="color: #000000">.</span><span style="color: #795E26">post</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;/fulfillment&#039;</span><span style="color: #000000">, </span><span style="color: #001080">app</span><span style="color: #000000">)</span>
+
+<span style="color: #001080">expressApp</span><span style="color: #000000">.</span><span style="color: #795E26">listen</span><span style="color: #000000">(</span><span style="color: #098658">3000</span><span style="color: #000000">)</span>
+</code></pre>
+				<a href="#aws-lambda-api-gateway-http-proxy-integration" id="aws-lambda-api-gateway-http-proxy-integration" style="color: inherit; text-decoration: none;">
+					<h4>AWS Lambda API Gateway HTTP proxy integration</h4>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #008000">// ... app code here</span>
+
+<span style="color: #267F99">exports</span><span style="color: #000000">.</span><span style="color: #001080">fulfillment</span><span style="color: #000000"> = </span><span style="color: #001080">app</span>
+</code></pre>
+				<a href="#next-steps" id="next-steps" style="color: inherit; text-decoration: none;">
+					<h3>Next Steps</h3>
+				</a>
+				<p>Take a look at the docs and samples linked at the top to get to know the platform and supported functionalities.</p>
+				<a href="#library-development-instructions" id="library-development-instructions" style="color: inherit; text-decoration: none;">
+					<h2>Library Development Instructions</h2>
+				</a>
+				<p>This library uses <code>yarn</code> to run commands. Install yarn using instructions from <a href="https://yarnpkg.com/en/docs/install">https://yarnpkg.com/en/docs/install</a> or with npm: <code>npm i -g yarn</code>.</p>
+				<p>Install the library dependencies with <code>yarn</code>. If you want to run any of the sample apps, follow the instructions in the sample README.</p>
+				<a href="#functionality" id="functionality" style="color: inherit; text-decoration: none;">
+					<h2>Functionality</h2>
+				</a>
+				<p>Public interfaces, classes, functions, objects, and properties are labeled with the JSDoc <code>@public</code> tag and exported at the top level. Everything that is not labeled <code>@public</code> and exported at the top level is considered internal and may be changed.</p>
+				<a href="#references-amp-issues" id="references-amp-issues" style="color: inherit; text-decoration: none;">
+					<h2>References &amp; Issues</h2>
+				</a>
+				<ul>
+					<li>Questions? Go to <a href="https://stackoverflow.com/questions/tagged/actions-on-google">StackOverflow</a> or <a href="https://www.reddit.com/r/GoogleAssistantDev/">Assistant Developer Community on Reddit</a>.</li>
+					<li>For bugs, please report an issue on Github.</li>
+					<li>Actions on Google <a href="https://developers.google.com/assistant">Documentation</a></li>
+					<li>Actions on Google <a href="https://codelabs.developers.google.com/?cat=Assistant">Codelabs</a>.</li>
+				</ul>
+				<a href="#make-contributions" id="make-contributions" style="color: inherit; text-decoration: none;">
+					<h2>Make Contributions</h2>
+				</a>
+				<p>Please read and follow the steps in the <a href="CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+					<h2>License</h2>
+				</a>
+				<p>See <a href="LICENSE">LICENSE</a>.</p>
+			</div>
+			<!--{&quot;options&quot;:&quot;typedoc.json&quot;,&quot;tsconfig&quot;:&quot;/usr/local/google/home/fleker/samples/conversation-nodejs&quot;,&quot;entryPoints&quot;:[&quot;src/&quot;],&quot;exclude&quot;:[&quot;**/_test/**/*.*&quot;,&quot;node_modules/&quot;],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:true,&quot;excludeNotDocumented&quot;:false,&quot;excludePrivate&quot;:true,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:false,&quot;includes&quot;:&quot;&quot;,&quot;media&quot;:&quot;&quot;,&quot;out&quot;:&quot;docs&quot;,&quot;json&quot;:&quot;&quot;,&quot;theme&quot;:&quot;node_modules/typedoc-neo-theme/bin/default&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:false,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:false,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:true,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false,&quot;links&quot;:[{&quot;label&quot;:&quot;Guides&quot;,&quot;url&quot;:&quot;https://developers.google.com/assistant/conversational/overview&quot;},{&quot;label&quot;:&quot;Codelabs&quot;,&quot;url&quot;:&quot;https://developers.google.com/assistant/codelabs&quot;},{&quot;label&quot;:&quot;Samples&quot;,&quot;url&quot;:&quot;https://developers.google.com/assistant/actions/samples&quot;},{&quot;label&quot;:&quot;Glossary&quot;,&quot;url&quot;:&quot;https://developers.google.com/assistant/actions/glossary&quot;}],&quot;outline&quot;:[{&quot;Conversation builder&quot;:{&quot;Overview&quot;:&quot;modules/conversation_conversation&quot;,&quot;Conversation&quot;:&quot;classes/conversation_conv.conversationv3&quot;,&quot;api/schema&quot;:&quot;modules/api_schema&quot;}}],&quot;search&quot;:[{&quot;name&quot;:&quot;conversation/prompt.*&quot;,&quot;subtitle&quot;:&quot;Prompt&quot;}],&quot;source&quot;:[{&quot;path&quot;:&quot;https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/&quot;,&quot;line&quot;:&quot;L&quot;}]}-->
+		</div>
+		<div class="col-2 col-menu secondary-menu">
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
