@@ -17,6 +17,12 @@
 import * as Schema from '../../../api/schema'
 
 export interface OrderUpdate extends Schema.OrderUpdate { }
+
+/**
+ * Represents an asynchronous order to physical orders.
+ *
+ * @see {@link https://developers.google.com/assistant/transactions/physical/dev-guide-physical-custom?hl=en | Physical Goods Transactions Documentation}
+ */
 export class OrderUpdate implements Schema.OrderUpdate {
   /** @hidden */
   constructor(input: Schema.OrderUpdate = {}) {

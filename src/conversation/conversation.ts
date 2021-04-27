@@ -86,7 +86,23 @@ export interface ConversationV3Middleware<
     Promise<void>
 }
 
-/** @public */
+/**
+ * Represents the app instance which on new requests,
+ * creates a way to interact with the conversation API directly from Assistant,
+ * providing implementation for all the methods available in the API.
+ *
+ * @example
+ * ```javascript
+ *
+ * const app = conversation()
+ *
+ * app.handler('handler name', conv => {
+ *   conv.add('How are you?')
+ * })
+ * ```
+ *
+ * @public
+ */
 export interface ConversationV3App<TConversation extends ConversationV3> extends ServiceBaseApp {
   /**
    * Sets the Handler to be executed when the fulfillment is called

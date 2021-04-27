@@ -16,6 +16,11 @@
 
 import * as Schema from '../../../api/schema'
 
+/**
+ * Represents an additional suggestion chip that can link out to the associated
+ * app or site. The chip will be rendered with the title "Open X".
+ * Max 20 chars.
+ */
 export class Link implements Schema.Link {
   /**
    * Name of the link

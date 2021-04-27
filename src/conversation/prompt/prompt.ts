@@ -30,6 +30,16 @@ import { Media } from './content/media'
 import { Table } from './content/table'
 import { OrderUpdate } from './content/order'
 
+/**
+ * Prompts define how your Action renders responses to users and how your
+ * Action prompts them to continue. As you build your Action, you can add
+ * prompts to invocations and to various places within scenes. Prompts can be
+ * as simple as a text or speech response, or can be more complex and contain
+ * rich content like cards, images, and tables.
+ *
+ * @see {@link https://developers.google.com/assistant/conversational/prompts | Developer Documentation}
+ * @see {@link https://github.com/actions-on-google/actions-builder-conversation-components-nodejs/ | Conversation Components code sample}
+ */
 export type PromptItem =
   string |
   Simple |
@@ -44,7 +54,6 @@ export type PromptItem =
   Table |
   Link |
   Suggestion |
-  Canvas |
   OrderUpdate
 
 const addSimple = (prompt: Prompt, simple: Simple) => {

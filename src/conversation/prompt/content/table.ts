@@ -16,6 +16,60 @@
 
 import * as Schema from '../../../api/schema'
 
+/**
+ * Table cards allow you to display tabular data in your response (for example,
+ * sports standings, election results, and flights). You can define columns
+ * and rows (up to 3 each) that Assistant shows in your table card. You can
+ * also define additional columns and rows, along with their prioritization.
+ *
+ * @example
+ * ```javascript
+ * app.handle('Table', conv => {
+ *   conv.add('This is a table.');
+ *   conv.add(new Table({
+ *     "title": "Table Title",
+ *     "subtitle": "Table Subtitle",
+ *     "image": new Image({
+ *       url: 'https://developers.google.com/assistant/assistant_96.png',
+ *       alt: 'Google Assistant logo'
+ *     }),
+ *     "columns": [{
+ *       "header": "Column A"
+ *     }, {
+ *       "header": "Column B"
+ *     }, {
+ *       "header": "Column C"
+ *     }],
+ *     "rows": [{
+ *       "cells": [{
+ *         "text": "A1"
+ *       }, {
+ *         "text": "B1"
+ *       }, {
+ *         "text": "C1"
+ *       }]
+ *     }, {
+ *       "cells": [{
+ *         "text": "A2"
+ *       }, {
+ *         "text": "B2"
+ *       }, {
+ *         "text": "C2"
+ *       }]
+ *     }, {
+ *       "cells": [{
+ *         "text": "A3"
+ *       }, {
+ *         "text": "B3"
+ *       }, {
+ *         "text": "C3"
+ *       }]
+ *     }]
+ *   }));
+ * });
+ * ```
+ * @see {@link https://developers.google.com/assistant/conversational/prompts-rich#table_cards | Developer Documentation}
+ */
 export class Table implements Schema.Table, Schema.Content {
   /**
    * Button.

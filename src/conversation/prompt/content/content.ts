@@ -32,6 +32,12 @@ export type PromptContent =
   Media |
   Table
 
+/**
+ * Rich responses add visual elements to enhance user interactions with your
+ * Action.
+ *
+ * @see {@link https://developers.google.com/assistant/conversational/prompts-rich | Developer Documentation}
+ */
 export class Content {
   /**
    * A basic card.

@@ -17,6 +17,24 @@
 import * as Schema from '../../api/schema'
 import { JsonObject } from '../../common'
 
+/**
+ * Represents a response that starts or continues an Interactive Canvas
+ * session.
+ *
+ * @example
+ * ```javascript
+ * app.handle('welcome', (conv) => {
+ *   conv.add('Welcome! Do you want me to change color or pause spinning? ' +
+ *     'You can also tell me to ask you later.');
+ *   conv.add(new Canvas({
+ *     url: `https://your-web-app.com`,
+ *   }));
+ * });
+ * ```
+ *
+ * @see {@link https://developers.google.com/assistant/interactivecanvas/prompts#check_surface_capability | Developer Documentation}
+ * to learn more about Interactive Canvas.
+ */
 export class Canvas implements Schema.Canvas {
   /**
    * Optional. JSON data to be passed through to the immersive experience
@@ -24,6 +42,19 @@ export class Canvas implements Schema.Canvas {
    * If the \"override\" field in the containing prompt is \"false\" data values
    * defined in this Canvas prompt will be added after data values defined in
    * previous Canvas prompts.
+   *
+   * @example
+   * ```javascript
+   * app.handle('start_spin', (conv) => {
+   *   conv.add(`Ok, I'm spinning. What else?`);
+   *   conv.add(new Canvas({
+   *     data: {
+   *       command: 'SPIN',
+   *       spin: true,
+   *     },
+   *   }));
+   * });
+   * ```
    */
   data?: JsonObject[]
   /**

@@ -22,17 +22,42 @@ import { Handler, Intent, Scene, Session, User, Device, Home, Expected } from '.
 import { Context } from './handler/context'
 import { ILogger } from '../logger'
 
-/** @hidden */
+/**
+ * Options used when constructing app object.
+ *
+ * @example
+ * ```javascript
+ * const {conversation} = require('@assistant/conversation');
+ *
+ * const app = conversation({verification: 'nodejs-cloud-test-project-1234'});
+ * ```
+ *
+ * @public
+ */
 export interface ConversationV3Options {
   /** @public */
   body?: Schema.HandlerRequest
   /** @public */
   headers?: Headers
-  /** @public */
+  /**
+   * Represents the client ID given in the Actions Console to use for
+   * authorizing users when performing Google Sign-In.
+   *
+   * @see {@link https://developers.google.com/assistant/identity/gsi-concept-guide | Google Sign-In documentation}
+   * @public
+   */
   clientId?: string
-  /** @public */
+  /**
+   * When set to true, requests and responses will be automatically logged using `logger`.
+   * @public
+   */
   debug?: boolean
-  /** @public */
+  /**
+   * Represents an object with methods for each logging level. By default the
+   * logger binds to `console` methods.
+   * @see {@link debugLogger | Default logger implementation}
+   * @public
+   */
   logger?: ILogger
   /**
    * Validates whether request is from Google through signature verification.
@@ -47,6 +72,7 @@ export interface ConversationV3Options {
    * const app = conversation({ verification: 'nodejs-cloud-test-project-1234' })
    * ```
    *
+   * @see {@link https://developers.google.com/assistant/conversational/reference/rest/v1/verify-requests | Verify Requests documentation}
    * @public
    */
   verification?: ConversationVerification | string
@@ -61,7 +87,11 @@ export interface ConversationOptions {
   headers?: Headers
 }
 
-/** @public */
+/**
+ * Represents details of action to verify requests are coming from Google.
+ * @see {@link https://developers.google.com/assistant/conversational/reference/rest/v1/verify-requests | Verify Requests documentation}
+ * @public
+ */
 export interface ConversationVerification {
   /**
    * Google Cloud Project ID for the Assistant app.
@@ -85,7 +115,11 @@ export interface ConversationVerification {
   error?: string | ((error: string) => string)
 }
 
-/** @public */
+/**
+ * Represents a turn of the conversation. This is provided as `conv` in an
+ * intent handler.
+ * @public
+ */
 export class ConversationV3 {
   /** @public */
   request: Schema.HandlerRequest
@@ -108,31 +142,121 @@ export class ConversationV3 {
    */
   handler: Schema.Handler
 
-  /** @public */
+  /**
+   * Represents the last matched intent.
+   * @public
+   */
   intent: Schema.Intent
 
-  /** @public */
+  /**
+   * Info on the current and next scene when the function was called. Will be filled
+   * when the fulfillment call is made within the scope of a scene.
+   *
+   * Represent a scene. Scenes can call fulfillment, add prompts, and collect slot values from
+   * the user. Scenes are triggered by events or intents and can trigger events and match
+   * intents to transition to other scenes.
+   *
+   * Represents the current and next scene. If `Scene.next` is set the runtime will
+   * immediately transition to the specified scene.
+   * @public
+   */
   scene: Schema.Scene
 
-  /** @public */
+  /**
+   * Holds session data like the session id and session parameters.
+   *
+   * Contains information on the current conversation session
+   *
+   * Describes data for the current session, session parameters can be created,
+   * updated, or removed by the fulfillment.
+   *
+   * @example
+   * ```javascript
+   * // Assign color to session storage
+   * app.handle('storeColor', conv => {
+   *   let color = 'red';
+   *   conv.session.params.exampleColor = color;
+   * });
+   *
+   * // Retrieve color from session storage
+   * app.handle('getStoredColor', conv => {
+   *   let color = conv.session.params.exampleColor;
+   * });
+   * ```
+   * 
+   * @see {@link https://developers.google.com/assistant/conversational/storage-session | Session Storage documentation}
+   * @public
+   */
   session: Schema.Session
 
-  /** @public */
+  /**
+   * Represents the user making a request to the Action.
+   *
+   * @example
+   * ```javascript
+   * // Assign color to user storage
+   * app.handle('storeColor', conv => {
+   *   let color = 'red';
+   *   conv.user.params.exampleColor = color;
+   * });
+   * 
+   * // Retrieve color from user storage
+   * app.handle('getStoredColor', conv => {
+   *   let color = conv.user.params.exampleColor;
+   * });
+   * ```
+   * @see {@link https://developers.google.com/assistant/conversational/storage-user | User Storage documentation}
+   * @public
+   */
   user: User
 
-  /** @public */
+  /**
+   * Represents the device the user is using to make a request to the Action.
+   * @see {@link https://developers.google.com/assistant/conversational/permissions | Permissions documentation}
+   * @public
+   */
   device: Schema.Device
 
-  /** @public */
+  /**
+   * Represents the HomeGraph structure that the user's target device belongs
+   * to.
+   *
+   * @example
+   * ```javascript
+   * // Assign color to home storage
+   * app.handle('storeColor', conv => {
+   *   let color = 'red';
+   *   conv.home.params.exampleColor = color;
+   * });
+   *     
+   * // Retrieve color from home storage
+   * app.handle('getStoredColor', conv => {
+   *   let color = conv.home.params.exampleColor;
+   * });
+   * ```
+   * @see {@link https://developers.google.com/assistant/conversational/storage-home | Home Storage documentation}
+   * @public
+   */
   home: Home
 
-  /** @public */
+  /**
+   * Describes the expectations for the next dialog turn.
+   * @public
+   */
   expected: Expected
 
-  /** @public */
+  /**
+   * Contains context information when user makes query. Such context includes but not limited
+   * to info about active media session, state of canvas web app, etc.
+   * @public
+   */
   context: Schema.Context
 
-  /** @public */
+  /**
+   * Represents the prompts to be sent to the user, these prompts will be appended
+   * to previously added messages unless explicitly overwritten.
+   * @public
+   */
   prompt: Prompt
 
   /** @public */
@@ -141,7 +265,10 @@ export class ConversationV3 {
   /** @public */
   digested = false
 
-  /** @public */
+  /**
+   * Represents a request sent to a developer's fulfillment by Google.
+   * @public
+   */
   body: Schema.HandlerRequest
 
   /** @hidden */
@@ -156,7 +283,11 @@ export class ConversationV3 {
     },
   }
 
-  /** @hidden */
+  /**
+   * Initializes conversational application.
+   * @param options A set of options that apply to the application.
+   * @public
+   */
   constructor(options: ConversationV3Options = {}) {
     const { headers = {}, body = {} } = options
 
@@ -186,7 +317,10 @@ export class ConversationV3 {
     }
   }
 
-  /** @public */
+  /**
+   * Manually sets response JSON.
+   * @public
+   */
   json<T = JsonObject>(json: T) {
     this._internal.raw = json
     return this
@@ -216,7 +350,6 @@ export class ConversationV3 {
    * @param promptItems A response fragment for the library to construct a single complete response
    * @public
    */
-  /** @public */
   add(...promptItems: PromptItem[]) {
     if (this.digested) {
       throw new Error('Response has already been sent. ' +
@@ -247,7 +380,6 @@ export class ConversationV3 {
    * @param speech A speech string to be appended
    * @public
    */
-  /** @public */
   append(speech: string) {
     if (this.digested) {
       throw new Error('Response has already been sent. ' +
@@ -259,7 +391,13 @@ export class ConversationV3 {
     return this
   }
 
-  /** @public */
+  /**
+   * Returns generated JSON response.
+   *
+   * Note this method sets the `digested` field to `true` and can only be
+   * called once.
+   * @public
+   */
   response(): Schema.HandlerResponse {
     if (this.digested) {
       throw new Error('Response has already been digested')
@@ -311,7 +449,13 @@ export class ConversationV3 {
     return clone(response)
   }
 
-  /** @public */
+  /**
+   * Returns manually set JSON response or generates a response.
+   *
+   * If the response has to be generated, it sets the `digested` field to
+   * `true`.
+   * @public
+   */
   serialize(): Schema.HandlerResponse {
     if (this._internal.raw) {
       return this._internal.raw

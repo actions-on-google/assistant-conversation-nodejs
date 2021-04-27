@@ -16,6 +16,24 @@
 
 import * as Schema from '../../../api/schema'
 
+/**
+ * Image cards are designed to be a simpler alternative to a basic card that
+ * also contains an image. Use an image card when you want to present an image,
+ * and have no need for supporting text or interactive components.
+ *
+ * @example
+ * ```javascript
+ * app.handle('Image', conv => {
+ *   conv.add("This is an image prompt!");
+ *   conv.add(new Image({
+ *       url: 'https://developers.google.com/assistant/assistant_96.png',
+ *       alt: 'Google Assistant logo'
+ *   }));
+ * });
+ * ```
+ *
+ * @see {@link https://developers.google.com/assistant/conversational/prompts-rich#image-cards | Developer Documentation}
+ */
 export class Image implements Schema.Image {
   /**
    * A text description of the image to be used for accessibility, e.g. screen

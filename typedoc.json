@@ -23,9 +23,30 @@
   "outline": [{
     "Conversation builder": {
       "Overview": "modules/conversation_conversation",
-      "Conversation": "classes/conversation_conv.conversationv3",
-      "api/schema": "modules/api_schema"
-    }
+      "App": "interfaces/conversation_conversation.conversationv3app",
+      "Options": "interfaces/conversation_conv.conversationv3options",
+      "Conversation": "classes/conversation_conv.conversationv3"
+    },
+    "Prompt Items": {
+      "Overview": "modules/conversation_prompt_prompt",
+      "Simple": "classes/conversation_prompt_simple.simple",
+      "Card": "classes/conversation_prompt_content_card.card",
+      "Collection": "classes/conversation_prompt_content_collection.collection",
+      "CollectionBrowse": "classes/conversation_prompt_content_collectionbrowse.collectionbrowse",
+      "Canvas": "classes/conversation_prompt_canvas.canvas",
+      "Image": "classes/conversation_prompt_content_image.image",
+      "List": "classes/conversation_prompt_content_list.list",
+      "Media": "classes/conversation_prompt_content_media.media",
+      "Table": "classes/conversation_prompt_content_table.table",
+      "Link": "classes/conversation_prompt_content_link.link",
+      "Suggestion": "classes/conversation_prompt_suggestion.suggestion",
+      "OrderUpdate": "classes/conversation_prompt_content_order.orderupdate"
+    },
+    "Highlighted Features": {
+      "Engagement": "interfaces/api_schema.engagement",
+      "Package Entitlements": "interfaces/api_schema.packageentitlements"
+    },
+    "api/schema": "modules/api_schema"
   }],
   "search": [{
     "name": "conversation/prompt.*",

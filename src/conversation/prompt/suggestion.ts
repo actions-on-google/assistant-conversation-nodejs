@@ -16,6 +16,18 @@
 
 import * as Schema from '../../api/schema'
 
+/**
+ * Suggestions provide users on display-capable devices with suggestion chips
+ * when Assistant displays the prompt. Use suggestion chips to hint at user
+ * responses to continue or pivot the conversation. When tapped, a suggestion
+ * chip returns the displayed text to the conversation verbatim, as if the user
+ * had typed it.
+ *
+ * You may have a maximum of 8 suggestions in a single prompt, each with a
+ * maximum length of 25 plaintext characters.
+ *
+ * @see {@link https://developers.google.com/assistant/conversational/prompts#suggestions | Developer Documentation}
+ */
 export class Suggestion {
   /**
    * Overall title of the card.

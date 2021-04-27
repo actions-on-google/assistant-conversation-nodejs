@@ -16,6 +16,33 @@
 
 import * as Schema from '../../../api/schema'
 
+/**
+ * Basic cards are designed to be concise, to present key (or summary)
+ * information to users, and to allow users to learn more if you choose (using
+ * a web link).
+ *
+ * Use basic cards mainly for display purposes, as they have no interaction
+ * capabilities without a button. To link a button to the web, a surface must
+ * also have the `WEB_LINK` capability.
+ *
+ * @example
+ * ```javascript
+ * app.handle('Card', conv => {
+ *   conv.add('This is a card.');
+ *   conv.add(new Card({
+ *     "title": "Card Title",
+ *     "subtitle": "Card Subtitle",
+ *     "text": "Card Content",
+ *     "image": new Image({
+ *       url: 'https://developers.google.com/assistant/assistant_96.png',
+ *       alt: 'Google Assistant logo'
+ *     })
+ *   }));
+ * });
+ * ```
+ *
+ * @see {@link https://developers.google.com/assistant/conversational/prompts-rich#basic_card | Developer Documentation}
+ */
 export class Card implements Schema.Card {
   /**
    * Button.
