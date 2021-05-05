@@ -32,10 +32,7 @@ import { setLogger } from '../../logger'
 
 const HANDLE_NAME = 'function name'
 const CURRENT_SCENE = 'current page'
-// const NEXT_SCENE = 'next page'
 const SESSION_ID = '5485438717547546495'
-// const PARAM_NAME = 'parameter-name'
-// const PARAM_VALUE = 'parameter value'
 const LOCALE = 'en-US'
 const CAPABILITIES = ['SPEECH', 'RICH_RESPONSE']
 
@@ -153,7 +150,6 @@ test('app gets simple prompt string when using app.handler', async t => {
   const handlerName = 'handlerName'
   const response = 'abcdefg1234567'
   const app = conversation()
-  // const session = 'abcdefghijk'
   app.handle(handlerName, conv => conv.add(response))
   const res = await app.handler(
     requestBuilder(handlerName, {}) as Schema.HandlerRequest, {})
@@ -324,7 +320,6 @@ test('conv.append appends response', async t => {
   const handlerName = 'handlerName'
   const response = 'abcdefg1234567'
   const app = conversation()
-  // const session = 'abcdefghijk'
   app.handle(handlerName, conv => {
     conv.append(response)
     conv.append(response)
@@ -351,7 +346,6 @@ test('conv.append appends response', async t => {
 test('Canvas response sent', async t => {
   const handlerName = 'handlerName'
   const app = conversation()
-  // const session = 'abcdefghijk'
   app.handle(handlerName, conv => {
     conv.add(new Canvas({
       url: 'https://studio-eap.firebaseapp.com',
@@ -361,6 +355,7 @@ test('Canvas response sent', async t => {
         tint: 'GREEN',
       }],
       suppressMic: true,
+      enableFullScreen: true,
     }))
   })
   const res = await app.handler(
@@ -382,6 +377,7 @@ test('Canvas response sent', async t => {
           tint: 'GREEN',
         }],
         suppressMic: true,
+        enableFullScreen: true,
       },
     },
   })

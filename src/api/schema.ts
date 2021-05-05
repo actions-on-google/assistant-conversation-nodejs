@@ -815,6 +815,13 @@ export interface Canvas {
    */
   data?: any[]
   /**
+   * If `true` the canvas application occupies the full screen and won't
+   * have a header at the top. A toast message will also be displayed on the
+   * loading screen that includes the Action's display name, the developer's
+   * name, and instructions for exiting the Action. Default value: `false`.
+   */
+  enableFullScreen?: boolean
+  /**
    * Optional. Default value: false.
    */
   suppressMic?: boolean

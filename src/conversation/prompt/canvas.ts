@@ -34,6 +34,13 @@ export class Canvas implements Schema.Canvas {
    * Required. URL of the web view to load.
    */
   url: string
+  /**
+   * If `true` the canvas application occupies the full screen and won't
+   * have a header at the top. A toast message will also be displayed on the
+   * loading screen that includes the Action's display name, the developer's
+   * name, and instructions for exiting the Action. Default value: `false`.
+   */
+  enableFullScreen?: boolean
 
   /** @hidden */
   constructor(input: Schema.Canvas = {}) {
@@ -41,9 +48,11 @@ export class Canvas implements Schema.Canvas {
       data = [],
       suppressMic = false,
       url = '',
+      enableFullScreen = false,
     } = input
     this.data = data
     this.suppressMic = suppressMic
     this.url = url
+    this.enableFullScreen = enableFullScreen
   }
 }
