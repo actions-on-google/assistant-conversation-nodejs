@@ -1,0 +1,334 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Collection | @assistant/conversation</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<ul class="results-priority" style="display:none">
+						<li data-name="conversation/prompt.*" data-subtitle="Prompt"></li>
+					</ul>
+					<a href="../index.html" class="title">@assistant/conversation</a>
+					&emsp;<a href="https://developers.google.com/assistant/conversational/overview" class="title">Guides</a>
+					&emsp;<a href="https://developers.google.com/assistant/codelabs" class="title">Codelabs</a>
+					&emsp;<a href="https://developers.google.com/assistant/actions/samples" class="title">Samples</a>
+					&emsp;<a href="https://developers.google.com/assistant/actions/glossary" class="title">Glossary</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules/conversation_prompt_content_collection.html">conversation/prompt/content/collection</a>
+				</li>
+				<li>
+					<a href="conversation_prompt_content_collection.collection.html">Collection</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-3 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation outline primary">
+				<a style="margin-left:0em" href="../modules.html">Modules</a>
+				<ul style="display:none">
+					{&quot;Conversation builder&quot;:{&quot;Overview&quot;:&quot;modules/conversation_conversation&quot;,&quot;App&quot;:&quot;interfaces/conversation_conversation.conversationv3app&quot;,&quot;Options&quot;:&quot;interfaces/conversation_conv.conversationv3options&quot;,&quot;Conversation&quot;:&quot;classes/conversation_conv.conversationv3&quot;},&quot;Prompt Items&quot;:{&quot;Overview&quot;:&quot;modules/conversation_prompt_prompt&quot;,&quot;Simple&quot;:&quot;classes/conversation_prompt_simple.simple&quot;,&quot;Card&quot;:&quot;classes/conversation_prompt_content_card.card&quot;,&quot;Collection&quot;:&quot;classes/conversation_prompt_content_collection.collection&quot;,&quot;CollectionBrowse&quot;:&quot;classes/conversation_prompt_content_collectionbrowse.collectionbrowse&quot;,&quot;Canvas&quot;:&quot;classes/conversation_prompt_canvas.canvas&quot;,&quot;Image&quot;:&quot;classes/conversation_prompt_content_image.image&quot;,&quot;List&quot;:&quot;classes/conversation_prompt_content_list.list&quot;,&quot;Media&quot;:&quot;classes/conversation_prompt_content_media.media&quot;,&quot;Table&quot;:&quot;classes/conversation_prompt_content_table.table&quot;,&quot;Link&quot;:&quot;classes/conversation_prompt_content_link.link&quot;,&quot;Suggestion&quot;:&quot;classes/conversation_prompt_suggestion.suggestion&quot;,&quot;OrderUpdate&quot;:&quot;classes/conversation_prompt_content_order.orderupdate&quot;},&quot;Highlighted Features&quot;:{&quot;Engagement&quot;:&quot;interfaces/api_schema.engagement&quot;,&quot;Package Entitlements&quot;:&quot;interfaces/api_schema.packageentitlements&quot;},&quot;api/schema&quot;:&quot;modules/api_schema&quot;}
+				</ul>
+			</nav>
+		</div>
+		<div class="col-7 offset-3 col-content">
+			<h1>Class Collection</h1>
+			<section class="tsd-panel tsd-comment"><div class="tsd-comment tsd-typography tsd-comment-shorttext">
+					<div class="lead">
+						<p>A collection scrolls horizontally and allows users to select one item by
+							touch or voice input. Compared to lists, collections have large tiles and
+							allow for richer content. The tiles that make up a collection are similar
+							to the basic card with image. When users select an item from a collection,
+							Assistant generates a user query (chat bubble) containing the title of the
+						item.</p>
+					</div>
+					</div><div class="tsd-comment tsd-typography tsd-comment-text">
+					<p>Collections are good when various options are presented to the user, but a
+						direct comparison is not required among them (versus lists). In general,
+						prefer lists to collections because lists are easier to visually scan and
+					to interact with by voice.</p>
+					<p>Collections must contain a minimum of 2 and a maximum of 10 tiles. On
+						display-capable devices, users can swipe left or right to scroll through
+					cards in a collection before selecting an item.</p>
+					</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+					<dl class="tsd-comment-tags"><dt>example</dt>
+						<dd><pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ASSISTANT_LOGO_IMAGE</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Image</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">url:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;https://developers.google.com/assistant/assistant_96.png&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">alt:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Google Assistant logo&#039;</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">handle</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Collection&#039;</span><span style="color: #000000">, </span><span style="color: #001080">conv</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">conv</span><span style="color: #000000">.</span><span style="color: #795E26">add</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;This is a collection.&quot;</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">  </span><span style="color: #008000">// Override type based on slot &#039;prompt_option&#039;</span>
+<span style="color: #000000">  </span><span style="color: #001080">conv</span><span style="color: #000000">.</span><span style="color: #001080">session</span><span style="color: #000000">.</span><span style="color: #001080">typeOverrides</span><span style="color: #000000"> = [{</span>
+<span style="color: #000000">    </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;prompt_option&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">mode:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;TYPE_REPLACE&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">synonym:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">      </span><span style="color: #001080">entries:</span><span style="color: #000000"> [</span>
+<span style="color: #000000">        {</span>
+<span style="color: #000000">          </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;ITEM_1&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">          </span><span style="color: #001080">synonyms:</span><span style="color: #000000"> [</span><span style="color: #A31515">&#039;Item 1&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;First item&#039;</span><span style="color: #000000">],</span>
+<span style="color: #000000">          </span><span style="color: #001080">display:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">             </span><span style="color: #001080">title:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Item #1&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">             </span><span style="color: #001080">description:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Description of Item #1&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">             </span><span style="color: #001080">image:</span><span style="color: #000000"> </span><span style="color: #0070C1">ASSISTANT_LOGO_IMAGE</span><span style="color: #000000">,</span>
+<span style="color: #000000">                }</span>
+<span style="color: #000000">        },</span>
+<span style="color: #000000">        {</span>
+<span style="color: #000000">          </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;ITEM_2&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">          </span><span style="color: #001080">synonyms:</span><span style="color: #000000"> [</span><span style="color: #A31515">&#039;Item 2&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Second item&#039;</span><span style="color: #000000">],</span>
+<span style="color: #000000">          </span><span style="color: #001080">display:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">             </span><span style="color: #001080">title:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Item #2&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">             </span><span style="color: #001080">description:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Description of Item #2&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">             </span><span style="color: #001080">image:</span><span style="color: #000000"> </span><span style="color: #0070C1">ASSISTANT_LOGO_IMAGE</span><span style="color: #000000">,</span>
+<span style="color: #000000">                }</span>
+<span style="color: #000000">        },</span>
+<span style="color: #000000">        {</span>
+<span style="color: #000000">          </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;ITEM_3&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">          </span><span style="color: #001080">synonyms:</span><span style="color: #000000"> [</span><span style="color: #A31515">&#039;Item 3&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Third item&#039;</span><span style="color: #000000">],</span>
+<span style="color: #000000">          </span><span style="color: #001080">display:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">             </span><span style="color: #001080">title:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Item #3&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">             </span><span style="color: #001080">description:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Description of Item #3&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">             </span><span style="color: #001080">image:</span><span style="color: #000000"> </span><span style="color: #0070C1">ASSISTANT_LOGO_IMAGE</span><span style="color: #000000">,</span>
+<span style="color: #000000">                }</span>
+<span style="color: #000000">        },</span>
+<span style="color: #000000">        {</span>
+<span style="color: #000000">          </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;ITEM_4&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">          </span><span style="color: #001080">synonyms:</span><span style="color: #000000"> [</span><span style="color: #A31515">&#039;Item 4&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Fourth item&#039;</span><span style="color: #000000">],</span>
+<span style="color: #000000">          </span><span style="color: #001080">display:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">             </span><span style="color: #001080">title:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Item #4&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">             </span><span style="color: #001080">description:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Description of Item #4&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">             </span><span style="color: #001080">image:</span><span style="color: #000000"> </span><span style="color: #0070C1">ASSISTANT_LOGO_IMAGE</span><span style="color: #000000">,</span>
+<span style="color: #000000">                }</span>
+<span style="color: #000000">        },</span>
+<span style="color: #000000">        ]</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">  }];</span>
+
+<span style="color: #000000">  </span><span style="color: #008000">// Define prompt content using keys</span>
+<span style="color: #000000">  </span><span style="color: #001080">conv</span><span style="color: #000000">.</span><span style="color: #795E26">add</span><span style="color: #000000">(</span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Collection</span><span style="color: #000000">({</span>
+<span style="color: #000000">    </span><span style="color: #001080">title:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Collection Title&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">subtitle:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Collection subtitle&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">items:</span><span style="color: #000000"> [</span>
+<span style="color: #000000">      {</span>
+<span style="color: #000000">        </span><span style="color: #001080">key:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;ITEM_1&#039;</span>
+<span style="color: #000000">      },</span>
+<span style="color: #000000">      {</span>
+<span style="color: #000000">        </span><span style="color: #001080">key:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;ITEM_2&#039;</span>
+<span style="color: #000000">      },</span>
+<span style="color: #000000">      {</span>
+<span style="color: #000000">        </span><span style="color: #001080">key:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;ITEM_3&#039;</span>
+<span style="color: #000000">      },</span>
+<span style="color: #000000">      {</span>
+<span style="color: #000000">        </span><span style="color: #001080">key:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;ITEM_4&#039;</span>
+<span style="color: #000000">      }</span>
+<span style="color: #000000">    ],</span>
+<span style="color: #000000">  }));</span>
+<span style="color: #000000">});</span>
+</code></pre>
+						</dd><dt>see</dt>
+						<dd><p><a href="https://developers.google.com/assistant/conversational/prompts-selection#collection" class="external">Developer Documentation</a></p>
+					</dd></dl>
+			</div></section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Collection</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/api_schema.collection.html" class="tsd-signature-type">Collection</a></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_prompt_content_collection.collection.html#imagefill" class="tsd-kind-icon">image<wbr>Fill</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_prompt_content_collection.collection.html#items" class="tsd-kind-icon">items</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_prompt_content_collection.collection.html#subtitle" class="tsd-kind-icon">subtitle</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_prompt_content_collection.collection.html#title" class="tsd-kind-icon">title</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="imagefill" class="tsd-anchor"></a>
+					<h3>image<wbr>Fill</h3>
+					<div class="tsd-signature tsd-kind-icon">image<wbr>Fill<span class="tsd-signature-symbol">:</span> <a href="../enums/api_schema.imagefill.html" class="tsd-signature-type">ImageFill</a></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/api_schema.collection.html">Collection</a>.<a href="../interfaces/api_schema.collection.html#imagefill">imageFill</a></p>
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/prompt/content/collection.ts#L120">
+									src/conversation/prompt/content/collection.ts:120
+								</a>
+							</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>How the image backgrounds of collection items will be filled. Optional.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="items" class="tsd-anchor"></a>
+					<h3>items</h3>
+					<div class="tsd-signature tsd-kind-icon">items<span class="tsd-signature-symbol">:</span> <a href="../interfaces/api_schema.collectionitem.html" class="tsd-signature-type">CollectionItem</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/api_schema.collection.html">Collection</a>.<a href="../interfaces/api_schema.collection.html#items">items</a></p>
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/prompt/content/collection.ts#L124">
+									src/conversation/prompt/content/collection.ts:124
+								</a>
+							</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>min: 2 max: 10</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="subtitle" class="tsd-anchor"></a>
+					<h3>subtitle</h3>
+					<div class="tsd-signature tsd-kind-icon">subtitle<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/api_schema.collection.html">Collection</a>.<a href="../interfaces/api_schema.collection.html#subtitle">subtitle</a></p>
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/prompt/content/collection.ts#L129">
+									src/conversation/prompt/content/collection.ts:129
+								</a>
+							</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>Subtitle of the collection.
+							Optional.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="title" class="tsd-anchor"></a>
+					<h3>title</h3>
+					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/api_schema.collection.html">Collection</a>.<a href="../interfaces/api_schema.collection.html#title">title</a></p>
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/prompt/content/collection.ts#L134">
+									src/conversation/prompt/content/collection.ts:134
+								</a>
+							</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>Overall title of the collection.
+							Optional.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<!--{&quot;options&quot;:&quot;typedoc.json&quot;,&quot;tsconfig&quot;:&quot;/Users/taycaldwell/push-stuh/conversation-nodejs&quot;,&quot;entryPoints&quot;:[&quot;src/&quot;],&quot;exclude&quot;:[&quot;**/_test/**/*.*&quot;,&quot;node_modules/&quot;],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:true,&quot;excludeNotDocumented&quot;:false,&quot;excludeInternal&quot;:false,&quot;excludePrivate&quot;:true,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:false,&quot;includes&quot;:&quot;&quot;,&quot;media&quot;:&quot;&quot;,&quot;watch&quot;:false,&quot;preserveWatchOutput&quot;:false,&quot;emit&quot;:false,&quot;out&quot;:&quot;docs&quot;,&quot;json&quot;:&quot;&quot;,&quot;pretty&quot;:true,&quot;theme&quot;:&quot;node_modules/typedoc-neo-theme/bin/default&quot;,&quot;highlightTheme&quot;:&quot;light-plus&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:false,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:false,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:true,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false,&quot;links&quot;:[{&quot;label&quot;:&quot;Guides&quot;,&quot;url&quot;:&quot;https://developers.google.com/assistant/conversational/overview&quot;},{&quot;label&quot;:&quot;Codelabs&quot;,&quot;url&quot;:&quot;https://developers.google.com/assistant/codelabs&quot;},{&quot;label&quot;:&quot;Samples&quot;,&quot;url&quot;:&quot;https://developers.google.com/assistant/actions/samples&quot;},{&quot;label&quot;:&quot;Glossary&quot;,&quot;url&quot;:&quot;https://developers.google.com/assistant/actions/glossary&quot;}],&quot;outline&quot;:[{&quot;Conversation builder&quot;:{&quot;Overview&quot;:&quot;modules/conversation_conversation&quot;,&quot;App&quot;:&quot;interfaces/conversation_conversation.conversationv3app&quot;,&quot;Options&quot;:&quot;interfaces/conversation_conv.conversationv3options&quot;,&quot;Conversation&quot;:&quot;classes/conversation_conv.conversationv3&quot;},&quot;Prompt Items&quot;:{&quot;Overview&quot;:&quot;modules/conversation_prompt_prompt&quot;,&quot;Simple&quot;:&quot;classes/conversation_prompt_simple.simple&quot;,&quot;Card&quot;:&quot;classes/conversation_prompt_content_card.card&quot;,&quot;Collection&quot;:&quot;classes/conversation_prompt_content_collection.collection&quot;,&quot;CollectionBrowse&quot;:&quot;classes/conversation_prompt_content_collectionbrowse.collectionbrowse&quot;,&quot;Canvas&quot;:&quot;classes/conversation_prompt_canvas.canvas&quot;,&quot;Image&quot;:&quot;classes/conversation_prompt_content_image.image&quot;,&quot;List&quot;:&quot;classes/conversation_prompt_content_list.list&quot;,&quot;Media&quot;:&quot;classes/conversation_prompt_content_media.media&quot;,&quot;Table&quot;:&quot;classes/conversation_prompt_content_table.table&quot;,&quot;Link&quot;:&quot;classes/conversation_prompt_content_link.link&quot;,&quot;Suggestion&quot;:&quot;classes/conversation_prompt_suggestion.suggestion&quot;,&quot;OrderUpdate&quot;:&quot;classes/conversation_prompt_content_order.orderupdate&quot;},&quot;Highlighted Features&quot;:{&quot;Engagement&quot;:&quot;interfaces/api_schema.engagement&quot;,&quot;Package Entitlements&quot;:&quot;interfaces/api_schema.packageentitlements&quot;},&quot;api/schema&quot;:&quot;modules/api_schema&quot;}],&quot;search&quot;:[{&quot;name&quot;:&quot;conversation/prompt.*&quot;,&quot;subtitle&quot;:&quot;Prompt&quot;}],&quot;source&quot;:[{&quot;path&quot;:&quot;https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/&quot;,&quot;line&quot;:&quot;L&quot;}]}-->
+		</div>
+		<div class="col-2 col-menu secondary-menu">
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module root">
+						<a href="conversation_prompt_content_collection.collection.html" class="tsd-kind-icon">Collection</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_prompt_content_collection.collection.html#imagefill" class="tsd-kind-icon">image<wbr>Fill</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_prompt_content_collection.collection.html#items" class="tsd-kind-icon">items</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_prompt_content_collection.collection.html#subtitle" class="tsd-kind-icon">subtitle</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_prompt_content_collection.collection.html#title" class="tsd-kind-icon">title</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
