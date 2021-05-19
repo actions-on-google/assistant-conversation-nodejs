@@ -132,7 +132,10 @@
     "no-console": true,
     "max-line-length": [
       true,
-      100
+      {
+        "limit": 100,
+        "ignore-pattern": "\\* @see"
+      }
     ],
     "eofline": true
   }

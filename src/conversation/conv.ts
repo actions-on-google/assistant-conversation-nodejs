@@ -183,7 +183,7 @@ export class ConversationV3 {
    *   let color = conv.session.params.exampleColor;
    * });
    * ```
-   * 
+   *
    * @see {@link https://developers.google.com/assistant/conversational/storage-session | Session Storage documentation}
    * @public
    */
@@ -199,7 +199,7 @@ export class ConversationV3 {
    *   let color = 'red';
    *   conv.user.params.exampleColor = color;
    * });
-   * 
+   *
    * // Retrieve color from user storage
    * app.handle('getStoredColor', conv => {
    *   let color = conv.user.params.exampleColor;
@@ -228,7 +228,7 @@ export class ConversationV3 {
    *   let color = 'red';
    *   conv.home.params.exampleColor = color;
    * });
-   *     
+   *
    * // Retrieve color from home storage
    * app.handle('getStoredColor', conv => {
    *   let color = conv.home.params.exampleColor;

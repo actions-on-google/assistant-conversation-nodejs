@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.7.1]
+### Changed
+- Fixed linting errors
+
 ## [3.7.0]
 ### Added
 - Add enableFullScreen to Canvas, allowing the canvas application to occupy the full screen, and not have a header at the top.
