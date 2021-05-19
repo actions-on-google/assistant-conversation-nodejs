@@ -1,0 +1,259 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Image | @assistant/conversation</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<ul class="results-priority" style="display:none">
+						<li data-name="conversation/prompt.*" data-subtitle="Prompt"></li>
+					</ul>
+					<a href="../index.html" class="title">@assistant/conversation</a>
+					&emsp;<a href="https://developers.google.com/assistant/conversational/overview" class="title">Guides</a>
+					&emsp;<a href="https://developers.google.com/assistant/codelabs" class="title">Codelabs</a>
+					&emsp;<a href="https://developers.google.com/assistant/actions/samples" class="title">Samples</a>
+					&emsp;<a href="https://developers.google.com/assistant/actions/glossary" class="title">Glossary</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules/conversation_prompt_content_image.html">conversation/prompt/content/image</a>
+				</li>
+				<li>
+					<a href="conversation_prompt_content_image.image.html">Image</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-3 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation outline primary">
+				<a style="margin-left:0em" href="../modules.html">Modules</a>
+				<ul style="display:none">
+					{&quot;Conversation builder&quot;:{&quot;Overview&quot;:&quot;modules/conversation_conversation&quot;,&quot;App&quot;:&quot;interfaces/conversation_conversation.conversationv3app&quot;,&quot;Options&quot;:&quot;interfaces/conversation_conv.conversationv3options&quot;,&quot;Conversation&quot;:&quot;classes/conversation_conv.conversationv3&quot;},&quot;Prompt Items&quot;:{&quot;Overview&quot;:&quot;modules/conversation_prompt_prompt&quot;,&quot;Simple&quot;:&quot;classes/conversation_prompt_simple.simple&quot;,&quot;Card&quot;:&quot;classes/conversation_prompt_content_card.card&quot;,&quot;Collection&quot;:&quot;classes/conversation_prompt_content_collection.collection&quot;,&quot;CollectionBrowse&quot;:&quot;classes/conversation_prompt_content_collectionbrowse.collectionbrowse&quot;,&quot;Canvas&quot;:&quot;classes/conversation_prompt_canvas.canvas&quot;,&quot;Image&quot;:&quot;classes/conversation_prompt_content_image.image&quot;,&quot;List&quot;:&quot;classes/conversation_prompt_content_list.list&quot;,&quot;Media&quot;:&quot;classes/conversation_prompt_content_media.media&quot;,&quot;Table&quot;:&quot;classes/conversation_prompt_content_table.table&quot;,&quot;Link&quot;:&quot;classes/conversation_prompt_content_link.link&quot;,&quot;Suggestion&quot;:&quot;classes/conversation_prompt_suggestion.suggestion&quot;,&quot;OrderUpdate&quot;:&quot;classes/conversation_prompt_content_order.orderupdate&quot;},&quot;Highlighted Features&quot;:{&quot;Engagement&quot;:&quot;interfaces/api_schema.engagement&quot;,&quot;Package Entitlements&quot;:&quot;interfaces/api_schema.packageentitlements&quot;},&quot;api/schema&quot;:&quot;modules/api_schema&quot;}
+				</ul>
+			</nav>
+		</div>
+		<div class="col-7 offset-3 col-content">
+			<h1>Class Image</h1>
+			<section class="tsd-panel tsd-comment"><div class="tsd-comment tsd-typography tsd-comment-shorttext">
+					<div class="lead">
+						<p>Image cards are designed to be a simpler alternative to a basic card that
+							also contains an image. Use an image card when you want to present an image,
+						and have no need for supporting text or interactive components.</p>
+					</div>
+					</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+					<dl class="tsd-comment-tags"><dt>example</dt>
+						<dd><pre><code class="language-javascript"><span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">handle</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Image&#039;</span><span style="color: #000000">, </span><span style="color: #001080">conv</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">conv</span><span style="color: #000000">.</span><span style="color: #795E26">add</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;This is an image prompt!&quot;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">conv</span><span style="color: #000000">.</span><span style="color: #795E26">add</span><span style="color: #000000">(</span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Image</span><span style="color: #000000">({</span>
+<span style="color: #000000">      </span><span style="color: #001080">url:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;https://developers.google.com/assistant/assistant_96.png&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #001080">alt:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Google Assistant logo&#039;</span>
+<span style="color: #000000">  }));</span>
+<span style="color: #000000">});</span>
+</code></pre>
+						</dd><dt>see</dt>
+						<dd><p><a href="https://developers.google.com/assistant/conversational/prompts-rich#image-cards" class="external">Developer Documentation</a></p>
+					</dd></dl>
+			</div></section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Image</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/api_schema.image.html" class="tsd-signature-type">Image</a></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_prompt_content_image.image.html#alt" class="tsd-kind-icon">alt</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_prompt_content_image.image.html#height" class="tsd-kind-icon">height</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_prompt_content_image.image.html#url" class="tsd-kind-icon">url</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_prompt_content_image.image.html#width" class="tsd-kind-icon">width</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="alt" class="tsd-anchor"></a>
+					<h3>alt</h3>
+					<div class="tsd-signature tsd-kind-icon">alt<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/api_schema.image.html">Image</a>.<a href="../interfaces/api_schema.image.html#alt">alt</a></p>
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/prompt/content/image.ts#L43">
+									src/conversation/prompt/content/image.ts:43
+								</a>
+							</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>A text description of the image to be used for accessibility, e.g. screen
+								readers.
+							Required.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="height" class="tsd-anchor"></a>
+					<h3>height</h3>
+					<div class="tsd-signature tsd-kind-icon">height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/api_schema.image.html">Image</a>.<a href="../interfaces/api_schema.image.html#height">height</a></p>
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/prompt/content/image.ts#L48">
+									src/conversation/prompt/content/image.ts:48
+								</a>
+							</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>The height of the image in pixels.
+							Optional.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="url" class="tsd-anchor"></a>
+					<h3>url</h3>
+					<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/api_schema.image.html">Image</a>.<a href="../interfaces/api_schema.image.html#url">url</a></p>
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/prompt/content/image.ts#L53">
+									src/conversation/prompt/content/image.ts:53
+								</a>
+							</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>The source url of the image. Images can be JPG, PNG and GIF (animated and
+							non-animated). For example,<code>https://www.agentx.com/logo.png</code>. Required.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="width" class="tsd-anchor"></a>
+					<h3>width</h3>
+					<div class="tsd-signature tsd-kind-icon">width<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/api_schema.image.html">Image</a>.<a href="../interfaces/api_schema.image.html#width">width</a></p>
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/prompt/content/image.ts#L58">
+									src/conversation/prompt/content/image.ts:58
+								</a>
+							</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>The width of the image in pixels.
+							Optional.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<!--{&quot;options&quot;:&quot;typedoc.json&quot;,&quot;tsconfig&quot;:&quot;/Users/taycaldwell/debug/conversation-nodejs&quot;,&quot;entryPoints&quot;:[&quot;src/&quot;],&quot;exclude&quot;:[&quot;**/_test/**/*.*&quot;,&quot;node_modules/&quot;],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:true,&quot;excludeNotDocumented&quot;:false,&quot;excludeInternal&quot;:false,&quot;excludePrivate&quot;:true,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:false,&quot;includes&quot;:&quot;&quot;,&quot;media&quot;:&quot;&quot;,&quot;watch&quot;:false,&quot;preserveWatchOutput&quot;:false,&quot;emit&quot;:false,&quot;out&quot;:&quot;docs&quot;,&quot;json&quot;:&quot;&quot;,&quot;pretty&quot;:true,&quot;theme&quot;:&quot;node_modules/typedoc-neo-theme/bin/default&quot;,&quot;highlightTheme&quot;:&quot;light-plus&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:false,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:false,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:true,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false,&quot;links&quot;:[{&quot;label&quot;:&quot;Guides&quot;,&quot;url&quot;:&quot;https://developers.google.com/assistant/conversational/overview&quot;},{&quot;label&quot;:&quot;Codelabs&quot;,&quot;url&quot;:&quot;https://developers.google.com/assistant/codelabs&quot;},{&quot;label&quot;:&quot;Samples&quot;,&quot;url&quot;:&quot;https://developers.google.com/assistant/actions/samples&quot;},{&quot;label&quot;:&quot;Glossary&quot;,&quot;url&quot;:&quot;https://developers.google.com/assistant/actions/glossary&quot;}],&quot;outline&quot;:[{&quot;Conversation builder&quot;:{&quot;Overview&quot;:&quot;modules/conversation_conversation&quot;,&quot;App&quot;:&quot;interfaces/conversation_conversation.conversationv3app&quot;,&quot;Options&quot;:&quot;interfaces/conversation_conv.conversationv3options&quot;,&quot;Conversation&quot;:&quot;classes/conversation_conv.conversationv3&quot;},&quot;Prompt Items&quot;:{&quot;Overview&quot;:&quot;modules/conversation_prompt_prompt&quot;,&quot;Simple&quot;:&quot;classes/conversation_prompt_simple.simple&quot;,&quot;Card&quot;:&quot;classes/conversation_prompt_content_card.card&quot;,&quot;Collection&quot;:&quot;classes/conversation_prompt_content_collection.collection&quot;,&quot;CollectionBrowse&quot;:&quot;classes/conversation_prompt_content_collectionbrowse.collectionbrowse&quot;,&quot;Canvas&quot;:&quot;classes/conversation_prompt_canvas.canvas&quot;,&quot;Image&quot;:&quot;classes/conversation_prompt_content_image.image&quot;,&quot;List&quot;:&quot;classes/conversation_prompt_content_list.list&quot;,&quot;Media&quot;:&quot;classes/conversation_prompt_content_media.media&quot;,&quot;Table&quot;:&quot;classes/conversation_prompt_content_table.table&quot;,&quot;Link&quot;:&quot;classes/conversation_prompt_content_link.link&quot;,&quot;Suggestion&quot;:&quot;classes/conversation_prompt_suggestion.suggestion&quot;,&quot;OrderUpdate&quot;:&quot;classes/conversation_prompt_content_order.orderupdate&quot;},&quot;Highlighted Features&quot;:{&quot;Engagement&quot;:&quot;interfaces/api_schema.engagement&quot;,&quot;Package Entitlements&quot;:&quot;interfaces/api_schema.packageentitlements&quot;},&quot;api/schema&quot;:&quot;modules/api_schema&quot;}],&quot;search&quot;:[{&quot;name&quot;:&quot;conversation/prompt.*&quot;,&quot;subtitle&quot;:&quot;Prompt&quot;}],&quot;source&quot;:[{&quot;path&quot;:&quot;https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/&quot;,&quot;line&quot;:&quot;L&quot;}]}-->
+		</div>
+		<div class="col-2 col-menu secondary-menu">
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module root">
+						<a href="conversation_prompt_content_image.image.html" class="tsd-kind-icon">Image</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_prompt_content_image.image.html#alt" class="tsd-kind-icon">alt</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_prompt_content_image.image.html#height" class="tsd-kind-icon">height</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_prompt_content_image.image.html#url" class="tsd-kind-icon">url</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_prompt_content_image.image.html#width" class="tsd-kind-icon">width</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
