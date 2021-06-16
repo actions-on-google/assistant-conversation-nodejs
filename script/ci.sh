@@ -68,8 +68,10 @@ cd ${GIT_PRESUBMIT_LINTER}
 git pull origin master
 cd ../
 
+set +e
 # Check that CHANGELOG.md was updated (unless explicitly turned off)
 git log -1 | grep "DISABLE_CHANGELOG_CHECK"
+set -e
 DISABLE_CHANGELOG_CHECK=$?
 if [ $DISABLE_CHANGELOG_CHECK -ne 0 ]; then
     git diff HEAD~1 --name-only | ${RULES}/has-pattern.sh "CHANGELOG.md"
