@@ -822,6 +822,11 @@ export interface Canvas {
    */
   enableFullScreen?: boolean
   /**
+   * If `true`, screen taps will not stop TTS for the entire canvas session.
+   * Default value: `false`.
+   */
+   continueTtsDuringTouch?: boolean
+  /**
    * Optional. Default value: false.
    */
   suppressMic?: boolean

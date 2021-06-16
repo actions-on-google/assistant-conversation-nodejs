@@ -72,6 +72,11 @@ export class Canvas implements Schema.Canvas {
    * name, and instructions for exiting the Action. Default value: `false`.
    */
   enableFullScreen?: boolean
+  /**
+   * If `true`, screen taps will not stop TTS for the entire canvas session.
+   * Default value: `false`.
+   */
+  continueTtsDuringTouch?: boolean
 
   /** @hidden */
   constructor(input: Schema.Canvas = {}) {
@@ -80,10 +85,12 @@ export class Canvas implements Schema.Canvas {
       suppressMic = false,
       url = '',
       enableFullScreen = false,
+      continueTtsDuringTouch = false,
     } = input
     this.data = data
     this.suppressMic = suppressMic
     this.url = url
     this.enableFullScreen = enableFullScreen
+    this.continueTtsDuringTouch = continueTtsDuringTouch
   }
 }

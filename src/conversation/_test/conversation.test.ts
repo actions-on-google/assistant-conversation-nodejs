@@ -356,6 +356,7 @@ test('Canvas response sent', async t => {
       }],
       suppressMic: true,
       enableFullScreen: true,
+      continueTtsDuringTouch: true,
     }))
   })
   const res = await app.handler(
@@ -378,6 +379,7 @@ test('Canvas response sent', async t => {
         }],
         suppressMic: true,
         enableFullScreen: true,
+        continueTtsDuringTouch: true,
       },
     },
   })
