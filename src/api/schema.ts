@@ -137,6 +137,7 @@ export enum Capability {
   Speech = 'SPEECH',
   Unspecified = 'UNSPECIFIED',
   WebLink = 'WEB_LINK',
+  HomeStorage = 'HOME_STORAGE',
 }
 
 /**
