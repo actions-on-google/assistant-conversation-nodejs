@@ -1,0 +1,818 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ConversationV3 | @assistant/conversation</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<ul class="results-priority" style="display:none">
+						<li data-name="conversation/prompt.*" data-subtitle="Prompt"></li>
+					</ul>
+					<a href="../index.html" class="title">@assistant/conversation</a>
+					&emsp;<a href="https://developers.google.com/assistant/conversational/overview" class="title">Guides</a>
+					&emsp;<a href="https://developers.google.com/assistant/codelabs" class="title">Codelabs</a>
+					&emsp;<a href="https://developers.google.com/assistant/actions/samples" class="title">Samples</a>
+					&emsp;<a href="https://developers.google.com/assistant/actions/glossary" class="title">Glossary</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules/conversation_conv.html">conversation/conv</a>
+				</li>
+				<li>
+					<a href="conversation_conv.conversationv3.html">ConversationV3</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-3 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation outline primary">
+				<a style="margin-left:0em" href="../modules.html">Modules</a>
+				<ul style="display:none">
+					{&quot;Conversation builder&quot;:{&quot;Overview&quot;:&quot;modules/conversation_conversation&quot;,&quot;App&quot;:&quot;interfaces/conversation_conversation.conversationv3app&quot;,&quot;Options&quot;:&quot;interfaces/conversation_conv.conversationv3options&quot;,&quot;Conversation&quot;:&quot;classes/conversation_conv.conversationv3&quot;},&quot;Prompt Items&quot;:{&quot;Overview&quot;:&quot;modules/conversation_prompt_prompt&quot;,&quot;Simple&quot;:&quot;classes/conversation_prompt_simple.simple&quot;,&quot;Card&quot;:&quot;classes/conversation_prompt_content_card.card&quot;,&quot;Collection&quot;:&quot;classes/conversation_prompt_content_collection.collection&quot;,&quot;CollectionBrowse&quot;:&quot;classes/conversation_prompt_content_collectionbrowse.collectionbrowse&quot;,&quot;Canvas&quot;:&quot;classes/conversation_prompt_canvas.canvas&quot;,&quot;Image&quot;:&quot;classes/conversation_prompt_content_image.image&quot;,&quot;List&quot;:&quot;classes/conversation_prompt_content_list.list&quot;,&quot;Media&quot;:&quot;classes/conversation_prompt_content_media.media&quot;,&quot;Table&quot;:&quot;classes/conversation_prompt_content_table.table&quot;,&quot;Link&quot;:&quot;classes/conversation_prompt_content_link.link&quot;,&quot;Suggestion&quot;:&quot;classes/conversation_prompt_suggestion.suggestion&quot;,&quot;OrderUpdate&quot;:&quot;classes/conversation_prompt_content_order.orderupdate&quot;},&quot;Highlighted Features&quot;:{&quot;Engagement&quot;:&quot;interfaces/api_schema.engagement&quot;,&quot;Package Entitlements&quot;:&quot;interfaces/api_schema.packageentitlements&quot;},&quot;api/schema&quot;:&quot;modules/api_schema&quot;}
+				</ul>
+			</nav>
+		</div>
+		<div class="col-7 offset-3 col-content">
+			<h1>Class ConversationV3</h1>
+			<section class="tsd-panel tsd-comment"><div class="tsd-comment tsd-typography tsd-comment-shorttext">
+					<div class="lead">
+						<p>Represents a turn of the conversation. This is provided as <code>conv</code> in an
+						intent handler.</p>
+					</div>
+			</div></section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">ConversationV3</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="conversation_conv.conversationv3.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_conv.conversationv3.html#body" class="tsd-kind-icon">body</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_conv.conversationv3.html#context" class="tsd-kind-icon">context</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_conv.conversationv3.html#device" class="tsd-kind-icon">device</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_conv.conversationv3.html#digested" class="tsd-kind-icon">digested</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_conv.conversationv3.html#expected" class="tsd-kind-icon">expected</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_conv.conversationv3.html#handler" class="tsd-kind-icon">handler</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_conv.conversationv3.html#headers" class="tsd-kind-icon">headers</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_conv.conversationv3.html#home" class="tsd-kind-icon">home</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_conv.conversationv3.html#intent" class="tsd-kind-icon">intent</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_conv.conversationv3.html#overwrite" class="tsd-kind-icon">overwrite</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_conv.conversationv3.html#prompt" class="tsd-kind-icon">prompt</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_conv.conversationv3.html#request" class="tsd-kind-icon">request</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_conv.conversationv3.html#scene" class="tsd-kind-icon">scene</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_conv.conversationv3.html#session" class="tsd-kind-icon">session</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="conversation_conv.conversationv3.html#user" class="tsd-kind-icon">user</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="conversation_conv.conversationv3.html#add" class="tsd-kind-icon">add</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="conversation_conv.conversationv3.html#append" class="tsd-kind-icon">append</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="conversation_conv.conversationv3.html#json" class="tsd-kind-icon">json</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="conversation_conv.conversationv3.html#response" class="tsd-kind-icon">response</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="conversation_conv.conversationv3.html#serialize" class="tsd-kind-icon">serialize</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Conversation<wbr>V3<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/conversation_conv.conversationv3options.html" class="tsd-signature-type">ConversationV3Options</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="conversation_conv.conversationv3.html" class="tsd-signature-type">ConversationV3</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in
+										<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/conv.ts#L284">
+											src/conversation/conv.ts:284
+										</a>
+									</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Initializes conversational application.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="../interfaces/conversation_conv.conversationv3options.html" class="tsd-signature-type">ConversationV3Options</a><span class="tsd-signature-symbol"> = {}</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>A set of options that apply to the application.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="conversation_conv.conversationv3.html" class="tsd-signature-type">ConversationV3</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="body" class="tsd-anchor"></a>
+					<h3>body</h3>
+					<div class="tsd-signature tsd-kind-icon">body<span class="tsd-signature-symbol">:</span> <a href="../interfaces/api_schema.handlerrequest.html" class="tsd-signature-type">HandlerRequest</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/conv.ts#L272">
+									src/conversation/conv.ts:272
+								</a>
+							</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>Represents a request sent to a developer&#39;s fulfillment by Google.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="context" class="tsd-anchor"></a>
+					<h3>context</h3>
+					<div class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">:</span> <a href="../interfaces/api_schema.context.html" class="tsd-signature-type">Context</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/conv.ts#L253">
+									src/conversation/conv.ts:253
+								</a>
+							</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>Contains context information when user makes query. Such context includes but not limited
+							to info about active media session, state of canvas web app, etc.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="device" class="tsd-anchor"></a>
+					<h3>device</h3>
+					<div class="tsd-signature tsd-kind-icon">device<span class="tsd-signature-symbol">:</span> <a href="../interfaces/api_schema.device.html" class="tsd-signature-type">Device</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/conv.ts#L218">
+									src/conversation/conv.ts:218
+								</a>
+							</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>Represents the device the user is using to make a request to the Action.</p>
+						</div>
+						</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+						<dl class="tsd-comment-tags"><dt>see</dt>
+							<dd><p><a href="https://developers.google.com/assistant/conversational/permissions" class="external">Permissions documentation</a></p>
+						</dd></dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="digested" class="tsd-anchor"></a>
+					<h3>digested</h3>
+					<div class="tsd-signature tsd-kind-icon">digested<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/conv.ts#L266">
+									src/conversation/conv.ts:266
+								</a>
+							</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="expected" class="tsd-anchor"></a>
+					<h3>expected</h3>
+					<div class="tsd-signature tsd-kind-icon">expected<span class="tsd-signature-symbol">:</span> <a href="conversation_handler_expected.expected.html" class="tsd-signature-type">Expected</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/conv.ts#L246">
+									src/conversation/conv.ts:246
+								</a>
+							</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>Describes the expectations for the next dialog turn.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="handler" class="tsd-anchor"></a>
+					<h3>handler</h3>
+					<div class="tsd-signature tsd-kind-icon">handler<span class="tsd-signature-symbol">:</span> <a href="../interfaces/api_schema.handler.html" class="tsd-signature-type">Handler</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/conv.ts#L143">
+									src/conversation/conv.ts:143
+								</a>
+							</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>Get the current handler information like handler name.</p>
+						</div>
+						</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+						<dl class="tsd-comment-tags"><dt>example</dt>
+							<dd><pre><code class="language-javascript">
+<span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">handle</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;handler name&#039;</span><span style="color: #000000">, </span><span style="color: #001080">conv</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">handlerName</span><span style="color: #000000"> = </span><span style="color: #001080">conv</span><span style="color: #000000">.</span><span style="color: #001080">handler</span><span style="color: #000000">.</span><span style="color: #001080">name</span>
+<span style="color: #000000">})</span>
+</code></pre>
+						</dd></dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="headers" class="tsd-anchor"></a>
+					<h3>headers</h3>
+					<div class="tsd-signature tsd-kind-icon">headers<span class="tsd-signature-symbol">:</span> <a href="../interfaces/framework_framework.headers.html" class="tsd-signature-type">Headers</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/conv.ts#L128">
+									src/conversation/conv.ts:128
+								</a>
+							</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="home" class="tsd-anchor"></a>
+					<h3>home</h3>
+					<div class="tsd-signature tsd-kind-icon">home<span class="tsd-signature-symbol">:</span> <a href="conversation_handler_home.home.html" class="tsd-signature-type">Home</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/conv.ts#L240">
+									src/conversation/conv.ts:240
+								</a>
+							</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>Represents the HomeGraph structure that the user&#39;s target device belongs
+							to.</p>
+						</div>
+						</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+						<dl class="tsd-comment-tags"><dt>example</dt>
+							<dd><pre><code class="language-javascript"><span style="color: #008000">// Assign color to home storage</span>
+<span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">handle</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;storeColor&#039;</span><span style="color: #000000">, </span><span style="color: #001080">conv</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">color</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;red&#039;</span><span style="color: #000000">;</span>
+<span style="color: #000000">  </span><span style="color: #001080">conv</span><span style="color: #000000">.</span><span style="color: #001080">home</span><span style="color: #000000">.</span><span style="color: #001080">params</span><span style="color: #000000">.</span><span style="color: #001080">exampleColor</span><span style="color: #000000"> = </span><span style="color: #001080">color</span><span style="color: #000000">;</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #008000">// Retrieve color from home storage</span>
+<span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">handle</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;getStoredColor&#039;</span><span style="color: #000000">, </span><span style="color: #001080">conv</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">color</span><span style="color: #000000"> = </span><span style="color: #001080">conv</span><span style="color: #000000">.</span><span style="color: #001080">home</span><span style="color: #000000">.</span><span style="color: #001080">params</span><span style="color: #000000">.</span><span style="color: #001080">exampleColor</span><span style="color: #000000">;</span>
+<span style="color: #000000">});</span>
+</code></pre>
+							</dd><dt>see</dt>
+							<dd><p><a href="https://developers.google.com/assistant/conversational/storage-home" class="external">Home Storage documentation</a></p>
+						</dd></dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="intent" class="tsd-anchor"></a>
+					<h3>intent</h3>
+					<div class="tsd-signature tsd-kind-icon">intent<span class="tsd-signature-symbol">:</span> <a href="../interfaces/api_schema.intent.html" class="tsd-signature-type">Intent</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/conv.ts#L149">
+									src/conversation/conv.ts:149
+								</a>
+							</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>Represents the last matched intent.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="overwrite" class="tsd-anchor"></a>
+					<h3>overwrite</h3>
+					<div class="tsd-signature tsd-kind-icon">overwrite<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/conv.ts#L263">
+									src/conversation/conv.ts:263
+								</a>
+							</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="prompt" class="tsd-anchor"></a>
+					<h3>prompt</h3>
+					<div class="tsd-signature tsd-kind-icon">prompt<span class="tsd-signature-symbol">:</span> <a href="conversation_prompt_prompt.prompt.html" class="tsd-signature-type">Prompt</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/conv.ts#L260">
+									src/conversation/conv.ts:260
+								</a>
+							</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>Represents the prompts to be sent to the user, these prompts will be appended
+							to previously added messages unless explicitly overwritten.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="request" class="tsd-anchor"></a>
+					<h3>request</h3>
+					<div class="tsd-signature tsd-kind-icon">request<span class="tsd-signature-symbol">:</span> <a href="../interfaces/api_schema.handlerrequest.html" class="tsd-signature-type">HandlerRequest</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/conv.ts#L125">
+									src/conversation/conv.ts:125
+								</a>
+							</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="scene" class="tsd-anchor"></a>
+					<h3>scene</h3>
+					<div class="tsd-signature tsd-kind-icon">scene<span class="tsd-signature-symbol">:</span> <a href="../interfaces/api_schema.scene.html" class="tsd-signature-type">Scene</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/conv.ts#L163">
+									src/conversation/conv.ts:163
+								</a>
+							</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>Info on the current and next scene when the function was called. Will be filled
+							when the fulfillment call is made within the scope of a scene.</p>
+						</div>
+						</div><div class="tsd-comment tsd-typography tsd-comment-text">
+						<p>Represent a scene. Scenes can call fulfillment, add prompts, and collect slot values from
+							the user. Scenes are triggered by events or intents and can trigger events and match
+						intents to transition to other scenes.</p>
+						<p>Represents the current and next scene. If <code>Scene.next</code> is set the runtime will
+						immediately transition to the specified scene.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="session" class="tsd-anchor"></a>
+					<h3>session</h3>
+					<div class="tsd-signature tsd-kind-icon">session<span class="tsd-signature-symbol">:</span> <a href="../interfaces/api_schema.session.html" class="tsd-signature-type">Session</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/conv.ts#L190">
+									src/conversation/conv.ts:190
+								</a>
+							</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>Holds session data like the session id and session parameters.</p>
+						</div>
+						</div><div class="tsd-comment tsd-typography tsd-comment-text">
+						<p>Contains information on the current conversation session</p>
+						<p>Describes data for the current session, session parameters can be created,
+						updated, or removed by the fulfillment.</p>
+						</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+						<dl class="tsd-comment-tags"><dt>example</dt>
+							<dd><pre><code class="language-javascript"><span style="color: #008000">// Assign color to session storage</span>
+<span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">handle</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;storeColor&#039;</span><span style="color: #000000">, </span><span style="color: #001080">conv</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">color</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;red&#039;</span><span style="color: #000000">;</span>
+<span style="color: #000000">  </span><span style="color: #001080">conv</span><span style="color: #000000">.</span><span style="color: #001080">session</span><span style="color: #000000">.</span><span style="color: #001080">params</span><span style="color: #000000">.</span><span style="color: #001080">exampleColor</span><span style="color: #000000"> = </span><span style="color: #001080">color</span><span style="color: #000000">;</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #008000">// Retrieve color from session storage</span>
+<span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">handle</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;getStoredColor&#039;</span><span style="color: #000000">, </span><span style="color: #001080">conv</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">color</span><span style="color: #000000"> = </span><span style="color: #001080">conv</span><span style="color: #000000">.</span><span style="color: #001080">session</span><span style="color: #000000">.</span><span style="color: #001080">params</span><span style="color: #000000">.</span><span style="color: #001080">exampleColor</span><span style="color: #000000">;</span>
+<span style="color: #000000">});</span>
+</code></pre>
+							</dd><dt>see</dt>
+							<dd><p><a href="https://developers.google.com/assistant/conversational/storage-session" class="external">Session Storage documentation</a></p>
+						</dd></dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="user" class="tsd-anchor"></a>
+					<h3>user</h3>
+					<div class="tsd-signature tsd-kind-icon">user<span class="tsd-signature-symbol">:</span> <a href="conversation_handler_user.user.html" class="tsd-signature-type">User</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in
+								<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/conv.ts#L211">
+									src/conversation/conv.ts:211
+								</a>
+							</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+						<div class="lead">
+							<p>Represents the user making a request to the Action.</p>
+						</div>
+						</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+						<dl class="tsd-comment-tags"><dt>example</dt>
+							<dd><pre><code class="language-javascript"><span style="color: #008000">// Assign color to user storage</span>
+<span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">handle</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;storeColor&#039;</span><span style="color: #000000">, </span><span style="color: #001080">conv</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">color</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;red&#039;</span><span style="color: #000000">;</span>
+<span style="color: #000000">  </span><span style="color: #001080">conv</span><span style="color: #000000">.</span><span style="color: #001080">user</span><span style="color: #000000">.</span><span style="color: #001080">params</span><span style="color: #000000">.</span><span style="color: #001080">exampleColor</span><span style="color: #000000"> = </span><span style="color: #001080">color</span><span style="color: #000000">;</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #008000">// Retrieve color from user storage</span>
+<span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">handle</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;getStoredColor&#039;</span><span style="color: #000000">, </span><span style="color: #001080">conv</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">color</span><span style="color: #000000"> = </span><span style="color: #001080">conv</span><span style="color: #000000">.</span><span style="color: #001080">user</span><span style="color: #000000">.</span><span style="color: #001080">params</span><span style="color: #000000">.</span><span style="color: #001080">exampleColor</span><span style="color: #000000">;</span>
+<span style="color: #000000">});</span>
+</code></pre>
+							</dd><dt>see</dt>
+							<dd><p><a href="https://developers.google.com/assistant/conversational/storage-user" class="external">User Storage documentation</a></p>
+						</dd></dl>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="add" class="tsd-anchor"></a>
+					<h3>add</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>promptItems<span class="tsd-signature-symbol">: </span><a href="../modules/conversation_prompt_prompt.html#promptitem" class="tsd-signature-type">PromptItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="conversation_conv.conversationv3.html" class="tsd-signature-type">ConversationV3</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in
+										<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/conv.ts#L353">
+											src/conversation/conv.ts:353
+										</a>
+									</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Add prompt items to be sent back for fulfillment.</p>
+								</div>
+								</div><div class="tsd-comment tsd-typography tsd-comment-text">
+								<p>Prompt items are limited to 2 simple responses.
+									More than 2 will result in an error in fulfillment.
+									The first simple added in order will be set to <code>firstSimple</code>.
+								The last simple added in order will be set to <code>lastSimple</code>.</p>
+								</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+								<dl class="tsd-comment-tags"><dt>example</dt>
+									<dd><pre><code class="language-javascript">
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">app</span><span style="color: #000000"> = </span><span style="color: #795E26">conversation</span><span style="color: #000000">()</span>
+
+<span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">handle</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;main&#039;</span><span style="color: #000000">, </span><span style="color: #001080">conv</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ssml</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;&lt;speak&gt;Hi! &lt;break time=&quot;1&quot;/&gt; &#039;</span><span style="color: #000000"> +</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&#039;I can read out an ordinal like &lt;say-as interpret-as=&quot;ordinal&quot;&gt;123&lt;/say-as&gt;. &#039;</span><span style="color: #000000"> +</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&#039;Say a number.&lt;/speak&gt;&#039;</span>
+<span style="color: #000000">  </span><span style="color: #001080">conv</span><span style="color: #000000">.</span><span style="color: #795E26">add</span><span style="color: #000000">(</span><span style="color: #001080">ssml</span><span style="color: #000000">)</span>
+<span style="color: #000000">})</span>
+</code></pre>
+								</dd></dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>promptItems: <a href="../modules/conversation_prompt_prompt.html#promptitem" class="tsd-signature-type">PromptItem</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>A response fragment for the library to construct a single complete response</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="conversation_conv.conversationv3.html" class="tsd-signature-type">ConversationV3</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="append" class="tsd-anchor"></a>
+					<h3>append</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">append<span class="tsd-signature-symbol">(</span>speech<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="conversation_conv.conversationv3.html" class="tsd-signature-type">ConversationV3</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in
+										<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/conv.ts#L383">
+											src/conversation/conv.ts:383
+										</a>
+									</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Append speech responses to be sent back for fulfillment.</p>
+								</div>
+								</div><div class="tsd-comment tsd-typography tsd-comment-tags">
+								<dl class="tsd-comment-tags"><dt>example</dt>
+									<dd><pre><code class="language-javascript">
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">app</span><span style="color: #000000"> = </span><span style="color: #795E26">conversation</span><span style="color: #000000">()</span>
+
+<span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">handle</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;handler name&#039;</span><span style="color: #000000">, </span><span style="color: #001080">conv</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ssml</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;&lt;speak&gt;Hi! &lt;break time=&quot;1&quot;/&gt; &#039;</span><span style="color: #000000"> +</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&#039;I can read out an ordinal like &lt;say-as interpret-as=&quot;ordinal&quot;&gt;123&lt;/say-as&gt;. &#039;</span><span style="color: #000000"> +</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&#039;Say a number.&lt;/speak&gt;&#039;</span>
+<span style="color: #000000">  </span><span style="color: #001080">conv</span><span style="color: #000000">.</span><span style="color: #795E26">append</span><span style="color: #000000">(</span><span style="color: #001080">ssml</span><span style="color: #000000">)</span>
+<span style="color: #000000">})</span>
+</code></pre>
+								</dd></dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>speech: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>A speech string to be appended</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="conversation_conv.conversationv3.html" class="tsd-signature-type">ConversationV3</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+					<a name="json" class="tsd-anchor"></a>
+					<h3>json</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">json&lt;T&gt;<span class="tsd-signature-symbol">(</span>json<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="conversation_conv.conversationv3.html" class="tsd-signature-type">ConversationV3</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in
+										<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/conv.ts#L324">
+											src/conversation/conv.ts:324
+										</a>
+									</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Manually sets response JSON.</p>
+								</div>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>json: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="conversation_conv.conversationv3.html" class="tsd-signature-type">ConversationV3</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="response" class="tsd-anchor"></a>
+					<h3>response</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">response<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/api_schema.handlerresponse.html" class="tsd-signature-type">HandlerResponse</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in
+										<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/conv.ts#L401">
+											src/conversation/conv.ts:401
+										</a>
+									</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Returns generated JSON response.</p>
+								</div>
+								</div><div class="tsd-comment tsd-typography tsd-comment-text">
+								<p>Note this method sets the <code>digested</code> field to <code>true</code> and can only be
+								called once.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/api_schema.handlerresponse.html" class="tsd-signature-type">HandlerResponse</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="serialize" class="tsd-anchor"></a>
+					<h3>serialize</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">serialize<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/api_schema.handlerresponse.html" class="tsd-signature-type">HandlerResponse</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in
+										<a href="https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/src/conversation/conv.ts#L459">
+											src/conversation/conv.ts:459
+										</a>
+									</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Returns manually set JSON response or generates a response.</p>
+								</div>
+								</div><div class="tsd-comment tsd-typography tsd-comment-text">
+								<p>If the response has to be generated, it sets the <code>digested</code> field to
+								<code>true</code>.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/api_schema.handlerresponse.html" class="tsd-signature-type">HandlerResponse</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<!--{&quot;options&quot;:&quot;typedoc.json&quot;,&quot;tsconfig&quot;:&quot;/Users/taycaldwell/3.8.1/conversation-nodejs&quot;,&quot;entryPoints&quot;:[&quot;src/&quot;],&quot;exclude&quot;:[&quot;**/_test/**/*.*&quot;,&quot;node_modules/&quot;],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:true,&quot;excludeNotDocumented&quot;:false,&quot;excludeInternal&quot;:false,&quot;excludePrivate&quot;:true,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:false,&quot;disableAliases&quot;:false,&quot;includes&quot;:&quot;&quot;,&quot;media&quot;:&quot;&quot;,&quot;watch&quot;:false,&quot;preserveWatchOutput&quot;:false,&quot;emit&quot;:false,&quot;out&quot;:&quot;docs&quot;,&quot;json&quot;:&quot;&quot;,&quot;pretty&quot;:true,&quot;theme&quot;:&quot;node_modules/typedoc-neo-theme/bin/default&quot;,&quot;highlightTheme&quot;:&quot;light-plus&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:false,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:false,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:true,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false,&quot;links&quot;:[{&quot;label&quot;:&quot;Guides&quot;,&quot;url&quot;:&quot;https://developers.google.com/assistant/conversational/overview&quot;},{&quot;label&quot;:&quot;Codelabs&quot;,&quot;url&quot;:&quot;https://developers.google.com/assistant/codelabs&quot;},{&quot;label&quot;:&quot;Samples&quot;,&quot;url&quot;:&quot;https://developers.google.com/assistant/actions/samples&quot;},{&quot;label&quot;:&quot;Glossary&quot;,&quot;url&quot;:&quot;https://developers.google.com/assistant/actions/glossary&quot;}],&quot;outline&quot;:[{&quot;Conversation builder&quot;:{&quot;Overview&quot;:&quot;modules/conversation_conversation&quot;,&quot;App&quot;:&quot;interfaces/conversation_conversation.conversationv3app&quot;,&quot;Options&quot;:&quot;interfaces/conversation_conv.conversationv3options&quot;,&quot;Conversation&quot;:&quot;classes/conversation_conv.conversationv3&quot;},&quot;Prompt Items&quot;:{&quot;Overview&quot;:&quot;modules/conversation_prompt_prompt&quot;,&quot;Simple&quot;:&quot;classes/conversation_prompt_simple.simple&quot;,&quot;Card&quot;:&quot;classes/conversation_prompt_content_card.card&quot;,&quot;Collection&quot;:&quot;classes/conversation_prompt_content_collection.collection&quot;,&quot;CollectionBrowse&quot;:&quot;classes/conversation_prompt_content_collectionbrowse.collectionbrowse&quot;,&quot;Canvas&quot;:&quot;classes/conversation_prompt_canvas.canvas&quot;,&quot;Image&quot;:&quot;classes/conversation_prompt_content_image.image&quot;,&quot;List&quot;:&quot;classes/conversation_prompt_content_list.list&quot;,&quot;Media&quot;:&quot;classes/conversation_prompt_content_media.media&quot;,&quot;Table&quot;:&quot;classes/conversation_prompt_content_table.table&quot;,&quot;Link&quot;:&quot;classes/conversation_prompt_content_link.link&quot;,&quot;Suggestion&quot;:&quot;classes/conversation_prompt_suggestion.suggestion&quot;,&quot;OrderUpdate&quot;:&quot;classes/conversation_prompt_content_order.orderupdate&quot;},&quot;Highlighted Features&quot;:{&quot;Engagement&quot;:&quot;interfaces/api_schema.engagement&quot;,&quot;Package Entitlements&quot;:&quot;interfaces/api_schema.packageentitlements&quot;},&quot;api/schema&quot;:&quot;modules/api_schema&quot;}],&quot;search&quot;:[{&quot;name&quot;:&quot;conversation/prompt.*&quot;,&quot;subtitle&quot;:&quot;Prompt&quot;}],&quot;source&quot;:[{&quot;path&quot;:&quot;https://github.com/actions-on-google/assistant-conversation-nodejs/blob/master/&quot;,&quot;line&quot;:&quot;L&quot;}]}-->
+		</div>
+		<div class="col-2 col-menu secondary-menu">
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module root">
+						<a href="conversation_conv.conversationv3.html" class="tsd-kind-icon">Conversation<wbr>V3</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="conversation_conv.conversationv3.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_conv.conversationv3.html#body" class="tsd-kind-icon">body</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_conv.conversationv3.html#context" class="tsd-kind-icon">context</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_conv.conversationv3.html#device" class="tsd-kind-icon">device</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_conv.conversationv3.html#digested" class="tsd-kind-icon">digested</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_conv.conversationv3.html#expected" class="tsd-kind-icon">expected</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_conv.conversationv3.html#handler" class="tsd-kind-icon">handler</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_conv.conversationv3.html#headers" class="tsd-kind-icon">headers</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_conv.conversationv3.html#home" class="tsd-kind-icon">home</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_conv.conversationv3.html#intent" class="tsd-kind-icon">intent</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_conv.conversationv3.html#overwrite" class="tsd-kind-icon">overwrite</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_conv.conversationv3.html#prompt" class="tsd-kind-icon">prompt</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_conv.conversationv3.html#request" class="tsd-kind-icon">request</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_conv.conversationv3.html#scene" class="tsd-kind-icon">scene</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_conv.conversationv3.html#session" class="tsd-kind-icon">session</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="conversation_conv.conversationv3.html#user" class="tsd-kind-icon">user</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="conversation_conv.conversationv3.html#add" class="tsd-kind-icon">add</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="conversation_conv.conversationv3.html#append" class="tsd-kind-icon">append</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+								<a href="conversation_conv.conversationv3.html#json" class="tsd-kind-icon">json</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="conversation_conv.conversationv3.html#response" class="tsd-kind-icon">response</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="conversation_conv.conversationv3.html#serialize" class="tsd-kind-icon">serialize</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/conversation_conv.conversationv3options.html" class="tsd-kind-icon">Conversation<wbr>V3Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/conversation_conv.conversationverification.html" class="tsd-kind-icon">Conversation<wbr>Verification</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter root">
+						<a href="../interfaces/conversation_conv.exceptionhandler.html" class="tsd-kind-icon">Exception<wbr>Handler</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
