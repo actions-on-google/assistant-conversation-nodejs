@@ -24,37 +24,13 @@ fi
 set -e
 set -x
 
-# Install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-# Load nvm
-export NVM_DIR="$HOME/.nvm"
-. "$NVM_DIR/nvm.sh"
-
-# Test on Node.js 10.18.0
-echo "Running tests on Node 10.18.0"
-rm -rf node_modules yarn.lock package-lock.json
-nvm install 10.18.0
-nvm use 10.18.0
-npm i -g yarn
-
-# Actual build
-yarn
-yarn ci
-# only check coverage for 10.18.0
-sh script/coverage.sh
-# only generate docs using 10.18.0
-yarn docs
-
-# Test on Node.js 12
-echo "Running tests on Node 12"
-rm -rf node_modules yarn.lock package-lock.json
-nvm install 12
-nvm use 12
-npm i -g yarn
-
-# Actual build
-yarn
-yarn ci
+# Install n
+sudo npm install -g n@latest
+sudo n lts
+node --version
+npm --version
+npm i
+npm run ci
 
 # Setup Git Presubmit Linter
 GIT_PRESUBMIT_LINTER='./git-presubmit-linter'
